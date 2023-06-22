@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen grid place-items-center bg-gray-200">
+  <form class="expanded relative bg-white w-11/12 max-w-md grid px-6 py-8 rounded-lg rounded-tr-none shadow-lg">
+    <span class="text-xl font-bold text-center leading-tight max-w-[25ch] mx-auto" aria-hidden="true">
+      Why did you came to our support site today?
+    </span>
+    <div class="grid">
+      <button class="absolute -top-6 right-0 bg-white w-10 h-6 rounded-tl-lg rounded-tr-lg flex justify-center items-center text-2xl text-neutral-400" id="close" aria-expanded="true">
+        <span aria-hidden="true">&minus;</span>
+        <span class="sr-only">close</span>
+      </button>
+      <fieldset>
+        <legend class="sr-only">Why did you came to our support site today?</legend>
+        <div class="form-group | relative mt-8 p-4 bg-[#FAFAFE] border border-[#DADCF2] rounded-md text-neutral-700 transition-all ease hover:shadow-lg hover:bg-[#656EFF] hover:text-white">
+          <input type="radio" name="issue" id="bugs" class="appearance-none absolute inset-0 opacity-0" />
+          <label for="bugs">
+            <p class="text-sm">I found some bugs and I want to report them.</p>
+          </label>
+        </div>
+        <div class="form-group | relative mt-4 p-4 bg-[#FAFAFE] border border-[#DADCF2] rounded-md text-neutral-700 transition-all ease hover:shadow-lg hover:bg-[#656EFF] hover:text-white">
+          <input type="radio" name="issue" id="post" class="appearance-none absolute inset-0 opacity-0" />
+          <label for="post">
+            <p class="text-sm">I can't post to this forum.</p>
+          </label>
+        </div>
+        <div class="form-group | relative mt-4 p-4 bg-[#656EFF] shadow-lg text-white border border-[#DADCF2] rounded-md text-neutral-700 transition-all ease hover:shadow-lg hover:bg-[#656EFF] hover:text-white">
+          <input type="radio" name="issue" id="purchase" class="appearance-none absolute inset-0 opacity-0" />
+          <label for="purchase">
+            <p class="text-sm">I have in-game purchasing issues.</p>
+          </label>
+        </div>
+      </fieldset>
+      <button type="submit" class="text-[#656EFF] font-semibold mt-8 uppercase">Submit</button>
+    </div>
+  </form>
+</body>
+
+</html>
