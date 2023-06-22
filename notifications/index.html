@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              100: '#EBF2FF',
+              200: '#5878F4',
+              400: '#3457DD'
+            },
+            warning: '#E9667B'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-primary-100 grid place-items-center">
+  <main class="bg-primary-400 text-white w-11/12 max-w-4xl mx-auto grid content-center gap-4 min-h-[30rem] py-6 rounded-md shadow-lg shadow-primary-400/50 overflow-hidden">
+    <form class="w-11/12 max-w-xl mx-auto" id="form">
+      <fieldset>
+        <div>
+          <legend class="text-2xl font-bold">Payment</legend>
+          <p class="mt-2 font-light">Complete your pro membership.</p>
+          <p class="text-3xl font-bold my-2">
+            <span class="text-gray-400">$</span>89
+            <span class="text-xl font-medium text-gray-400">USD</span>
+          </p>
+          <hr class="border-primary-200">
+          <div class="sm:columns-2 space-y-2 py-4">
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-check inline-flex justify-center items-center text-sm bg-green-400 w-6 h-6 rounded-full"></i>
+              <span>All coding challenges</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-check inline-flex justify-center items-center text-sm bg-green-400 w-6 h-6 rounded-full"></i>
+              <span>All pro challenges</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-check inline-flex justify-center items-center text-sm bg-green-400 w-6 h-6 rounded-full"></i>
+              <span>Pro badge</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="fa-solid fa-check inline-flex justify-center items-center text-sm bg-green-400 w-6 h-6 rounded-full"></i>
+              <span>Private discord channel</span>
+            </p>
+          </div>
+        </div>
+        <div class="grid gap-2">
+          <label class="text-lg" for="amount">Enter Amount</label>
+          <input class="bg-transparent w-full border border-primary-100/50 px-4 py-2 rounded-xl focus:outline-primary-100" type="number" name="amount" id="amount" required placeholder="e.g. 89">
+        </div>
+        <div class="grid gap-2 mt-2 sm:grid-cols-2">
+          <button class="w-full bg-primary-100 text-black font-semibold py-2 rounded-xl transition-colors ease hover:bg-primary-100/70" type="submit">Make Payment</button>
+          <button class="w-full bg-warning font-semibold py-2 rounded-xl transition-colors ease hover:bg-warning/70" id="save">Save</button>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+</body>
+
+</html>
