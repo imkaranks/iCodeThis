@@ -1,0 +1,219 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': {
+              900: '#14171F',
+              800: '#141923',
+              700: '#1B202A'
+            },
+            'accent': {
+              'light': '#A5C6EA',
+              'dark': '#383F50',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen grid place-items-center bg-primary-900 text-accent-dark py-4 sm:py-8">
+  <div class="w-11/12 max-w-sm grid gap-4">
+    <div class="relative overflow-hidden py-4 bg-primary-700 shadow-lg shadow-[#11161C]">
+      <div class="px-4">
+        <h1 class="text-xl font-semibold text-accent-light">Browse</h1>
+        <ul class="flex flex-wrap gap-4 text-sm py-4">
+          <li>
+            <button class="tab relative active">
+              New Music
+            </button>
+          </li>
+          <li>
+            <button class="tab relative">
+              Playlist
+            </button>
+          </li>
+          <li>
+            <button class="tab relative">
+              Top Charts
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <section>
+          <!-- Albums -->
+          <div class="relative flex gap-4 px-4 py-2 overflow-x-scroll scroll-smooth" id="albums">
+            <div class="basis-[240px] flex-shrink-0">
+              <div class="flex items-center gap-2">
+                <div class="flex-1">
+                  <h2 class="text-sm font-semibold text-accent-light">Queen</h2>
+                  <p class="text-lg text-gray-400 leading-none font-light">Nicki Minaj</p>
+                </div>
+                <button
+                  class="text-xs text-accent-light px-1 border-2 border-[#F66059] uppercase rounded-full transition-all ease hover:bg-[#F66059] hover:text-white">
+                  New Album
+                </button>
+              </div>
+              <img src="https://www.goldderby.com/wp-content/uploads/2018/08/nicki-minaj-snl.jpg?w=620" class="w-full h-[8rem] mt-2 rounded-md object-cover shadow-lg shadow-[#11161C]" alt="Nicki Minaj">
+            </div>
+            <div class="basis-[240px] flex-shrink-0">
+              <div class="flex items-center gap-2">
+                <div class="flex-1">
+                  <h2 class="text-sm font-semibold text-accent-light">Queen</h2>
+                  <p class="text-lg text-gray-400 leading-none font-light">Nicki Minaj</p>
+                </div>
+                <button
+                  class="text-xs text-accent-light px-1 border-2 border-[#F66059] uppercase rounded-full transition-all ease hover:bg-[#F66059] hover:text-white">
+                  New Album
+                </button>
+              </div>
+              <img src="https://www.goldderby.com/wp-content/uploads/2018/08/nicki-minaj-snl.jpg?w=620" class="w-full h-[8rem] mt-2 rounded-md object-cover shadow-lg shadow-[#11161C]" alt="Nicki Minaj">
+            </div>
+          </div> <!-- /.Albums -->
+          <!-- Slide CTA -->
+          <div class="flex justify-center items-center">
+            <button class="px-6 transition-all ease hover:text-white" id="prev-btn">
+              <span class="sr-only">Previous</span>
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="px-6 transition-all ease hover:text-white" id="next-btn">
+              <span class="sr-only">Next</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div> <!-- /.Slide CTA -->
+          <div id="songs-content">
+            <h2 class="text-accent-light font-semibold px-4">Hot Songs</h2>
+          </div>
+        </section>
+      </div>
+
+      <!-- Player -->
+      <div class="relative bg-primary-800 flex flex-wrap items-center cursor-pointer gap-x-6 px-4 py-2" id="player-mini">
+        <div class="absolute top-0 left-0 right-0 w-full h-1 bg-accent-light before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-0 before:bg-[#F66059]" id="song-progress-mini">
+        </div>
+        <img src="https://images.unsplash.com/photo-1528728935509-22fb14722a30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c29uZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60" class="w-10 h-10 rounded-full object-cover" id="song-image-mini" alt="">
+        <div class="flex-1">
+          <h3 class="text-sm text-accent-light leading-none" id="song-title-mini">Tap</h3>
+          <p class="text-xs leading-none" id="song-artist-mini">To Open The Player</p>
+        </div>
+        <button class="text-accent-light transition-all ease hover:text-white" id="pause-btn">
+          <span class="sr-only">Pause</span>
+          <i class="fa-solid fa-pause" aria-hidden="true"></i>
+        </button>
+        <button class="text-accent-light transition-all ease hover:text-white" id="play-btn">
+          <span class="sr-only">Play</span>
+          <i class="fa-solid fa-play" aria-hidden="true"></i>
+        </button>
+      </div> <!-- /.Player -->
+      
+      <!-- Navigation -->
+      <div class="relative left-0 right-0 bottom-0 z-50 bg-[#20262F] text-accent-light -mb-4 p-4">
+        <ul class="flex gap-2 items-center justify-between text-xs">
+          <li>
+            <a href="#" class="flex flex-col items-center gap-1 transition-all ease hover:text-white">
+              <i class="fa-solid fa-house text-sm" aria-hidden="true"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex flex-col items-center gap-1 transition-all ease hover:text-white">
+              <i class="fa-solid fa-fire text-sm" aria-hidden="true"></i>
+              <span>Trending</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex flex-col items-center gap-1 transition-all ease text-[#F66059]">
+              <i class="fa-solid fa-magnifying-glass text-sm" aria-hidden="true"></i>
+              <span>Browse</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex flex-col items-center gap-1 transition-all ease hover:text-white">
+              <i class="fa-solid fa-folder-open text-sm" aria-hidden="true"></i>
+              <span>Library</span>
+            </a>
+          </li>
+        </ul>
+      </div> <!-- /.Navigation -->
+      
+      <div class="absolute inset-0 z-40 transition-transform ease-in-out translate-y-full" id="player-large">
+        <div class="bg-primary-700 h-full shadow-lg shadow-[#11161C]">
+          <div class="relative py-4">
+            <button class="text-accent-light absolute top-4 left-4 transition-all ease hover:text-white" id="player-exit">
+              <span class="sr-only">Exit Player View</span>
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <button class="text-accent-light absolute top-4 right-4 transition-all ease hover:text-white">
+              <span class="sr-only">More</span>
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </button>
+
+            <div class="text-center">
+              <img src="https://images.unsplash.com/photo-1528728935509-22fb14722a30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c29uZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60" class="w-11/12 max-w-[8rem] aspect-square mx-auto mt-6 rounded-full shadow-lg shadow-[#11161C] object-cover" id="song-image-large" alt="">
+              <h3 class="text-accent-light leading-none mt-2" id="song-title-large">Theme 01</h3>
+              <p class="text-sm leading-none" id="song-artist-large">NBSP</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 justify-between mt-4 px-4 text-accent-light text-xs">
+              <div class="relative w-full h-1 bg-accent-light shadow-sm shadow-[#11161C] before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-0 before:bg-[#F66059]" id="song-progress-large">
+              </div>
+              <span id="current">1:03</span>
+              <span id="duration">-2:29</span>
+            </div>
+
+            <ul class="flex items-center justify-center gap-8 text-accent-light mt-4 p-0">
+              <li>
+                <button class="text-xl transition-all ease hover:text-white" id="backward">
+                  <span class="sr-only">Backward</span>
+                  <i class="fa-solid fa-backward" aria-hidden="true"></i>
+                </button>
+              </li>
+              <li>
+                <button class="text-3xl transition-all ease hover:text-white" id="toggle">
+                  <span class="sr-only">Pause</span>
+                  <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                </button>
+              </li>
+              <li>
+                <button class="text-xl transition-all ease hover:text-white" id="forward">
+                  <span class="sr-only">Forward</span>
+                  <i class="fa-solid fa-forward" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
+            <div class="flex gap-4 px-4 my-4">
+              <button class="text-primary-900" id="low-volume-btn">
+                <span class="sr-only">Lower The Volume</span>
+                <i class="fa-solid fa-volume-low" aria-hidden="true"></i>
+              </button>
+              <input class="w-full" type="range" name="volume" id="volume" min="0" max="100" value="30"
+                style="--volume: 30%">
+              <button class="text-primary-900" id="high-volume-btn">
+                <span class="sr-only">Higher The Volume</span>
+                <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio src="http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3" id="audio-player" style="display: none;"></audio>
+</body>
+
+</html>
