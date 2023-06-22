@@ -1,0 +1,66 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  bottom: 0;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNjAwJyBoZWlnaHQ9JzEyMDAnPjxwYXRoIGQ9J001NjUuMjY0IDEyNzkuNzUyQzQ1MC43MzYgMTAxOS45MTUgMzg4LjQ0IDkyMC4yMTUgNzI0LjMzOCA1ODEuODU1YzQ4LjA2Mi00OC40MTQgMTMwLjU0OC04Ny4xMDggMzk0LjIyMi0xODEuMDQ2IDMxMS4zNS0xMTAuOTIzIDQ1Ny4yNzctNTUuNjMgNjY5LjExOCAyMzQuNjV2NjQ0LjI5M3onIHN0eWxlPSdmaWxsOiNmNmE3MjUnIHRyYW5zZm9ybT0ndHJhbnNsYXRlKC0xODcuNjc4IC03OS43NTIpJy8+PC9zdmc+");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.animate-slide-in {
+  opacity: 0;
+  animation: slide-in 300ms ease-in-out forwards;
+}
+
+.animate-slide-out {
+  animation: slide-out 300ms ease-in-out forwards;
+}
+
+.animate-crop-in {
+  animation: crop-in 300ms ease-in-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes crop-in {
+  from {
+    opacity: 0;
+    clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
