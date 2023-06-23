@@ -1,0 +1,139 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              100: '#F4F7FD',
+              200: '#E8ECF9'
+            },
+            accent: {
+              300: '#C5CDE8',
+              400: '#7579C4'
+            },
+            gray: '#9F9F9F'
+          },
+          screens: {
+            xs: '360px'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen grid place-items-center bg-primary-100 overflow-x-hidden">
+  <main class="flex flex-col gap-4 bg-white text-gray w-11/12 max-w-sm mx-auto p-6 shadow-lg shadow-primary-200 rounded-xl" id="main-content">
+    <!-- Controls -->
+    <div class="flex items-center justify-between text-accent-300">
+      <div class="flex gap-4 px-4 py-2 rounded-full shadow-md shadow-primary-200">
+        <button class="relative transition-colors ease hover:text-accent-400">
+          <span
+            class="absolute top-0 -right-1 bg-yellow-400 w-3 h-3 flex justify-center items-center text-[8px] text-white border border-white rounded-full">2</span>
+          <span class="sr-only">Messages</span>
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        </button>
+        <div class="border-l border-primary-100" aria-hidden="true"></div>
+        <button class="relative transition-colors ease hover:text-accent-400">
+          <span class="absolute top-0 -right-1 bg-yellow-400 w-3 h-3 flex justify-center items-center text-[8px] text-white border border-white rounded-full">2</span>
+          <span class="sr-only">Notifications</span>
+          <i class="fa-solid fa-bell" aria-hidden="true"></i>
+        </button>
+      </div>
+      <button class="w-10 h-10 inline-flex justify-center items-center shadow-md shadow-primary-200 rounded-full transition-colors ease hover:bg-[whitesmoke] hover:text-accent-400">
+        <span class="sr-only">Add</span>
+        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+      </button>
+    </div> <!-- Controls -->
+
+    <!-- Profile -->
+    <div class="flex flex-col gap-4 items-center xs:flex-row">
+      <img src="https://media.istockphoto.com/id/1325447575/photo/professional-carpenters-woodworking-teamwork-together-creatively-creative-carpenter-working.webp?b=1&s=170667a&w=0&k=20&c=3Ed4whwWJ1YG7mhwH5Yud3TXQ6Z3JubAretAg7_QeIA=" class="profile-img w-2/5 aspect-square object-cover rounded-full shadow-lg shadow-primary-200" alt="">
+      <div class="text-center xs:text-left xs:flex-1">
+        <h1 class="text-accent-400 font-semibold" id="profile-name">Mfwooddesign</h1>
+        <p class="text-sm text-black" id="profile-desc">
+          Hand painted unique decorations for your home. Send us your ideas and we'll bring them to life.
+        </p>
+      </div>
+    </div> <!-- /.Profile -->
+    <hr class="border-primary-100">
+
+    <!-- Engagement -->
+    <div class="flex gap-6 justify-center">
+      <div class="text-center">
+        <h2 class="text-sm">Likes</h2>
+        <p class="text-lg text-accent-400 font-bold">2,395</p>
+      </div>
+      <div class="text-center">
+        <h2 class="text-sm">Post Engagements</h2>
+        <p class="text-lg text-accent-400 font-bold">34,024</p>
+      </div>
+    </div> <!-- /.Engagement -->
+
+    <!-- CTA -->
+    <div class="bg-primary-100 flex flex-col gap-4 relative items-center p-4 rounded-sm">
+      <p class="text-sm text-center">
+        Say more about your mission and goals on your Page. It may help people find it more easily.
+      </p>
+      <button class="bg-white text-accent-400 font-semibold px-6 py-2 rounded-full shadow-md shadow-primary-200 transition-colors ease hover:bg-[whitesmoke]" id="update">Update Profile</button>
+      <button class="close-btn absolute top-0 right-0 w-6 h-6 text-xs inline-flex justify-center items-center rounded-full transition-colors ease hover:bg-[whitesmoke]">
+        <span class="sr-only">Close</span>
+        <i class="fa-solid fa-times" aria-hidden="true"></i>
+      </button>
+    </div> <!-- /.CTA -->
+  </main>
+
+  <form class="flex flex-col gap-4 bg-white text-gray w-11/12 max-w-sm mx-auto p-6 shadow-lg shadow-primary-200 rounded-xl" id="form" hidden>
+    <fieldset class="flex flex-col gap-4">
+      <legend class="text-lg text-accent-400 font-semibold mb-4">Edit Profile</legend>
+
+      <div class="flex flex-col gap-4 items-start xs:flex-row">
+        <div class="relative w-2/5">
+          <img src="https://media.istockphoto.com/id/1325447575/photo/professional-carpenters-woodworking-teamwork-together-creatively-creative-carpenter-working.webp?b=1&s=170667a&w=0&k=20&c=3Ed4whwWJ1YG7mhwH5Yud3TXQ6Z3JubAretAg7_QeIA=" class="profile-img w-full aspect-square object-cover rounded-full shadow-lg shadow-primary-200" alt="">
+          <button class="absolute bottom-0 left-0 transition-colors ease hover:text-black" id="edit-pic">
+            <span class="sr-only">Edit Picture</span>
+            <i class="fa-solid fa-edit" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="text-center xs:text-left xs:flex-1">
+          <div>
+            <label class="text-black" for="username">Username</label>
+            <input class="w-full border border-primary-200 p-2 focus:outline-accent-300" type="text" name="username"
+              id="username">
+          </div>
+          <div class="mt-4">
+            <label class="text-black" for="desc">Description</label>
+            <textarea class="text-sm w-full border border-primary-200 p-2 focus:outline-accent-300" name="desc"
+              id="desc"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button class="bg-accent-400 text-white font-semibold px-6 py-2 rounded-full shadow-md shadow-primary-200 mt-4"
+        type="submit" id="save">Save</button>
+    </fieldset>
+  </form>
+
+  <div class="w-11/12 max-w-md fixed flex flex-col gap-2 items-start bg-white p-6 rounded-xl" id="img-dialog" hidden>
+    <label for="img">Enter image URL</label>
+    <input class="w-full border border-primary-200 p-2 focus:outline-accent-300" type="text" name="img" id="img">
+    <button class="bg-accent-400 text-white font-semibold px-6 py-2 rounded-full shadow-md shadow-primary-200"
+      type="submit" id="change-pic">Change</button>
+    <button
+      class="close-btn absolute -top-1 -right-1 bg-red-400 text-white w-8 h-8 text-sm inline-flex justify-center items-center shadow-md shadow-primary-200 rounded-full transition-colors ease hover:bg-red-400/80">
+      <span class="sr-only">Close</span>
+      <i class="fa-solid fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+</body>
+
+</html>
