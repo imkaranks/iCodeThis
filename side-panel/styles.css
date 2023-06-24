@@ -1,0 +1,48 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0 30px 30px 0;
+  border-color: #ddd #E3DFEE;
+  transition: all ease 0.5s;
+  border-bottom-left-radius: .5rem;
+  box-shadow: 4px -4px 10px #E3DFEE;
+}
+
+main:hover::before {
+  border-width: 0 60px 60px 0;
+  border-color: #eee #E3DFEE
+}
+
+.animate-heart-beat {
+  animation: heart-beat 1500ms linear infinite;
+}
+
+@keyframes heart-beat {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.2);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.2);
+  }
+
+  60%,
+  100% {
+    transform: scale(1);
+  }
+}

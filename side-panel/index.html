@@ -1,0 +1,65 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neutral: {
+              dark: '#AFB0BA',
+              medium: '#E3DFEE',
+              light: '#FFFFFF'
+            },
+            accent: '#8E5CF6'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="min-h-screen bg-neutral-medium grid place-items-center py-6">
+  <main class="bg-neutral-light relative text-sm font-light w-11/12 max-w-sm mx-auto shadow-lg px-6 py-10 rounded-md">
+    <div class="text-center grid gap-4 place-items-center">
+      <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRJexhFkPwAQ-ROu0_IjsCnrI1gcbyck9r8HCC-emaC6YFnBKAy" alt="heart" class="w-32 object-contain animate-heart-beat">
+      <h1 class="text-lg font-semibold">
+        Unlock to see more like source
+      </h1>
+      <p class="font-regular max-w-[32ch]">
+        Upgrade to see who liked your shots in the last 90 days.
+      </p>
+      <button class="bg-accent text-neutral-light font-medium px-16 py-2 rounded-sm transition-all ease-in shadow-md shadow-accent/50 hover:bg-accent/75 hover:-translate-y-[3px]">
+        Try Free
+      </button>
+    </div>
+    <hr class="border-neutral-medium my-12">
+    <div class="flex items-start gap-2">
+      <img src="https://cdn0.iconfinder.com/data/icons/avatar-basic-colors-doodle-1/91/Avatar__Basic_Doodle_C-45-2-512.png" class="w-16 object-contain" alt="party-popper">
+      <div class="grid gap-2">
+        <h2 class="text-lg font-semibold">Profile views matter</h2>
+        <p class="text-base font-regular">
+          Getting more profile views can help you get found for the right opportunity.
+        </p>
+        <p class="text-neutral-dark">
+          Update your profile with latest information so people can find you in searches.
+        </p>
+        <p class="text-neutral-dark">
+          Connect with people to grow your network and get found for more opportunities.
+        </p>
+        <p class="text-neutral-dark">
+          Engage with your feed to be more visible to people that matter most to your career.
+        </p>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
