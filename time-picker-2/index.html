@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              100: '#F9FBFC',
+              200: '#E2ECF4',
+              900: '#8E99A6'
+            },
+            accent: '#0F94F4'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen grid place-items-center bg-primary-200">
+  <main class="w-11/12 max-w-md flex flex-col items-center gap-6 sm:flex-row">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 fill-accent animate-shake">
+      <path
+        d="M470 124.837l-98.443-81.78-27.814 32.931 98.442 81.769L470 124.837zM167.192 74.919L139.366 42 42 124.837l27.814 32.919 97.378-82.837zm99.509 97.709H234.6v127.446l101.649 60.539L352.3 334.06l-85.6-49.917V172.628zM256 87.665c-107 0-192.601 86.021-192.601 191.166C63.399 383.98 149 470 256 470c105.936 0 192.601-86.02 192.601-191.169 0-105.144-86.665-191.166-192.601-191.166zm0 339.855c-82.393 0-149.8-66.906-149.8-148.688 0-81.777 67.407-148.684 149.8-148.684 82.394 0 149.8 66.906 149.8 148.684 0 82.839-67.406 148.688-149.8 148.688z">
+      </path>
+    </svg>
+    <form class="relative bg-white shadow-lg shadow-black/25 before:content-[''] before:absolute before:-top-6 before:left-1/2 before:-translate-x-1/2 before:border-[.75rem] before:border-t-transparent before:border-l-transparent before:border-b-white before:border-r-transparent sm:before:border-b-transparent sm:before:border-r-white sm:before:translate-x-none sm:before:top-1/2 sm:before:-left-3 sm:before:-translate-y-1/2">
+      <fieldset class="flex flex-wrap justify-center py-4">
+        <legend class="bg-primary-100 text-center uppercase w-full font-semibold py-4">Select Time</legend>
+        <div class="p-2">
+          <label for="hour" class="sr-only">Hour</label>
+          <select name="hour" id="hour" class="bg-primary-100 border border-primary-900/50 rounded-sm pl-4 pr-8 py-1 focus:outline-accent">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+        </div>
+        <div class="p-2">
+          <label for="minutes" class="sr-only">Minutes</label>
+          <select name="minutes" id="minutes" class="bg-primary-100 border border-primary-900/50 rounded-sm pl-4 pr-8 py-1 focus:outline-accent">
+          </select>
+        </div>
+        <div class="p-2">
+          <label for="period" class="sr-only">Time Period</label>
+          <select name="period" id="period" class="bg-primary-100 border border-primary-900/50 rounded-sm pl-4 pr-8 py-1 focus:outline-accent">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+        <div class="w-full text-center">
+          <button class="bg-accent font-semibold text-white px-6 py-2 rounded-full mt-4 transition-colors ease hover:bg-accent/75" id="submit-btn">Set Alarm</button>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+</body>
+
+</html>
