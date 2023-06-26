@@ -1,0 +1,32 @@
+.animate-rotate {
+  animation: rotate 2000ms calc(var(--delay, 0) * 100ms) ease-in-out infinite alternate-reverse;
+}
+
+.animate-grow {
+  opacity: 0;
+  animation: grow 10000ms calc(var(--delay, 0) * 1000ms) linear infinite alternate;
+}
+
+@keyframes rotate {
+  10% {
+    transform: rotateX(90deg);
+  }
+
+  0%,
+  20%,
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes grow {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+}
