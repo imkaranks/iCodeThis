@@ -1,0 +1,85 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen grid place-items-center bg-[#FCFBFC] text-[#242e4c] overflow-hidden">
+  <div class="bg-white w-11/12 max-w-4xl mx-auto min-h-[20rem] p-6 shadow-lg shadow-black/30" id="reset-pass-content">
+    <p class="text-right text-sm text-[#93969e]">
+      You don't have an account? 
+      <a href="javascript:void(0)" class="text-[#859afe]" data-controls="sign-up-content">Sign up</a>
+    </p>
+    <form class="w-11/12 max-w-[35ch] mx-auto text-center py-16" id="reset-pass-form">
+      <fieldset class="grid">
+        <legend class="text-[1.3rem] font-semibold mb-2">Did you forgot your password?</legend>
+        <p class="text-xs mb-7 text-[#93969e]">
+          Enter your email address you're using for your account below and we'll send you a password reset link.
+        </p>
+        <div class="grid text-left">
+          <label for="email" class="text-sm font-semibold mb-1">
+            Email Address
+          </label>
+          <input class="text-sm border-2 rounded p-2 mb-5" type="email" name="email" id="email" required placeholder="myemail@address.com">
+        </div>
+        <button type="submit" class="text-sm font-semibold bg-[#242e4c] text-[#eaeaed] p-2 shadow-lg rounded border-2 border-transparent hover:border-[#242e4c] hover:text-[#242e4c] hover:bg-[#eaeaed] hover:ease duration-300 mb-5" id="req-reset-link">
+          Request Reset Link
+        </button>
+        <a href="javascript:void(0)" class="text-sm underline text-center text-[#8f96aa]" data-controls="sign-in-content">Back to sign in</a>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="bg-white w-11/12 max-w-4xl mx-auto min-h-[20rem] p-6 shadow-lg shadow-black/30" id="sign-up-content" hidden>
+    <form class="w-11/12 max-w-[35ch] mx-auto text-center py-16" id="sign-up-form">
+      <fieldset class="grid">
+        <legend class="text-[1.3rem] font-semibold mb-7">Sign up</legend>
+        <div class="grid text-left">
+          <label for="email" class="text-sm font-semibold mb-1">
+            Email Address
+          </label>
+          <input class="text-sm border-2 rounded p-2 mb-5" type="email" name="email" id="email" required placeholder="myemail@address.com">
+        </div>
+        <div class="grid text-left">
+          <label for="password" class="text-sm font-semibold mb-1">
+            Password
+          </label>
+          <input class="text-sm border-2 rounded p-2 mb-5" type="password" name="password" id="password" required>
+        </div>
+        <button type="submit" class="text-sm font-semibold bg-[#242e4c] text-[#eaeaed] p-2 shadow-lg rounded border-2 border-transparent hover:border-[#242e4c] hover:text-[#242e4c] hover:bg-[#eaeaed] hover:ease duration-300 mb-5" id="sign-up-cta">
+          Submit
+        </button>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="bg-white w-11/12 max-w-4xl mx-auto min-h-[20rem] p-6 shadow-lg shadow-black/30" id="sign-in-content" hidden>
+    <form class="w-11/12 max-w-[35ch] mx-auto text-center py-16" id="sign-in-form">
+      <fieldset class="grid">
+        <legend class="text-[1.3rem] font-semibold mb-7">Sign in</legend>
+        <div class="grid text-left">
+          <label for="email" class="text-sm font-semibold mb-1">
+            Email Address
+          </label>
+          <input class="text-sm border-2 rounded p-2 mb-5" type="email" name="email" id="email" required placeholder="myemail@address.com">
+        </div>
+        <div class="grid text-left">
+          <label for="password" class="text-sm font-semibold mb-1">
+            Password
+          </label>
+          <input class="text-sm border-2 rounded p-2 mb-5" type="password" name="password" id="password" required>
+        </div>
+        <button type="submit" class="text-sm font-semibold bg-[#242e4c] text-[#eaeaed] p-2 shadow-lg rounded border-2 border-transparent hover:border-[#242e4c] hover:text-[#242e4c] hover:bg-[#eaeaed] hover:ease duration-300 mb-5" id="sign-in-cta">
+          Submit
+        </button>
+        <a href="javascript:void(0)" class="text-sm underline text-center text-[#8f96aa]" data-controls="reset-pass-content">Forgot password</a>
+      </fieldset>
+    </form>
+  </div>
+</body>
+
+</html>
