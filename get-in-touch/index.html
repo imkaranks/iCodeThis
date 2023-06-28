@@ -4,75 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+        }
+      },
+      darkMode: 'class',
+    }
+  </script>
+  <script>
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 </head>
 
-<body class="min-h-screen grid place-items-center">
-  <main class="w-11/12 max-w-3xl mx-auto flex flex-col justify-between items-center gap-8 min-[697px]:flex-row">
-    <div class="w-full max-w-[300px] flex flex-col">
-      <div class="bg-[#071637] relative text-[#96A5CC] px-6 pb-6 border-4 border-white rounded-xl">
-        <span class="block w-fit text-sm text-center text-[#071637] bg-white px-4 py-1 mx-auto rounded-bl-md rounded-br-md">
-          Crafted with ❤ by <a href="javascript:void(0)" class="text-[#E19090]">Karan Sethi</a>
-        </span>
-        <button class="absolute top-0 right-2">
-          <span class="sr-only">Close</span>
-          <i class="fa-solid fa-times" aria-hidden="true"></i>
-        </button>
-        <h2 class="text-base text-center uppercase mt-4">Get in touch on</h2>
-        <div class="flex justify-center gap-4 mt-3">
-          <a class="w-8 h-8 inline-flex justify-center items-center border border-[#022063] rounded-full transition-colors ease hover:text-white hover:border-white hover:shadow-md hover:shadow-white/30" href="javascript:void(0)">
-            <span class="sr-only">Twitter</span>
-            <i class="fa-brands fa-twitter" aria-hidden="true"></i>
-          </a>
-          <a class="w-8 h-8 inline-flex justify-center items-center border border-[#022063] rounded-full transition-colors ease hover:text-white hover:border-white hover:shadow-md hover:shadow-white/30" href="javascript:void(0)">
-            <span class="sr-only">Instagram</span>
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-          </a>
-          <a class="w-8 h-8 inline-flex justify-center items-center border border-[#022063] rounded-full transition-colors ease hover:text-white hover:border-white hover:shadow-md hover:shadow-white/30" href="javascript:void(0)">
-            <span class="sr-only">Facebook</span>
-            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-          </a>
-          <a class="w-8 h-8 inline-flex justify-center items-center border border-[#022063] rounded-full transition-colors ease hover:text-white hover:border-white hover:shadow-md hover:shadow-white/30" href="javascript:void(0)">
-            <span class="sr-only">Linkedin</span>
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-          </a>
-        </div>
+<body class="min-h-screen bg-[#F8F9FF] dark:bg-[#022063] grid place-items-center">
+  <div class="w-full max-w-[300px]">
+    <div class="bg-white relative text-[#96A5CC] px-6 pb-6 border-4 border-[#022063] dark:border-white rounded-xl dark:bg-[#071637] dark:text-[#96A5CC]">
+      <span class="block w-fit text-sm text-center text-white bg-[#022063] px-4 py-1 rounded-bl-md rounded-br-md mx-auto dark:text-[#071637] dark:bg-white">
+        Crafted with ❤ by <a href="javascript:void(0)" class="text-[#E19090]">Karan Sethi</a>
+      </span>
+      <button class="absolute top-1 right-2">
+        <span class="sr-only">Close</span>
+        <i class="fa-solid fa-times" aria-hidden="true"></i>
+      </button>
+      <h2 class="text-base text-center uppercase mt-4">Get in touch on</h2>
+      <div class="flex justify-center gap-4 mt-3">
+        <a class="w-8 h-8 text-[#1EA3F4] dark:text-[#96A5CC] inline-flex justify-center items-center border border-[#96A5CC] rounded-full transition-colors ease hover:text-black hover:border-[#E19090] hover:shadow-md hover:shadow-[#E19090]/50 dark:border-[#022063] dark:hover:text-white dark:hover:border-white dark:hover:shadow-md dark:hover:shadow-white/30" href="javascript:void(0)">
+          <span class="sr-only">Twitter</span>
+          <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a class="w-8 h-8 text-[#1EA3F4] dark:text-[#96A5CC] inline-flex justify-center items-center border border-[#96A5CC] rounded-full transition-colors ease hover:text-black hover:border-[#E19090] hover:shadow-md hover:shadow-[#E19090]/50 dark:border-[#022063] dark:hover:text-white dark:hover:border-white dark:hover:shadow-md dark:hover:shadow-white/30" href="javascript:void(0)">
+          <span class="sr-only">Instagram</span>
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a class="w-8 h-8 text-[#1EA3F4] dark:text-[#96A5CC] inline-flex justify-center items-center border border-[#96A5CC] rounded-full transition-colors ease hover:text-black hover:border-[#E19090] hover:shadow-md hover:shadow-[#E19090]/50 dark:border-[#022063] dark:hover:text-white dark:hover:border-white dark:hover:shadow-md dark:hover:shadow-white/30" href="javascript:void(0)">
+          <span class="sr-only">Facebook</span>
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a class="w-8 h-8 text-[#1EA3F4] dark:text-[#96A5CC] inline-flex justify-center items-center border border-[#96A5CC] rounded-full transition-colors ease hover:text-black hover:border-[#E19090] hover:shadow-md hover:shadow-[#E19090]/50 dark:border-[#022063] dark:hover:text-white dark:hover:border-white dark:hover:shadow-md dark:hover:shadow-white/30" href="javascript:void(0)">
+          <span class="sr-only">Linkedin</span>
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        </a>
       </div>
-      <button class="text-sm px-4 py-2 bg-white rounded-full mt-2 mr-auto transition-all ease hover:bg-white/75 hover:-translate-y-1 hover:shadow-md hover:shadow-black/50">Get in Touch</button>
     </div>
-    <div class="w-full max-w-[300px] flex flex-col">
-      <div class="bg-white relative text-[#96A5CC] px-6 pb-6 border-4 border-[#022063] rounded-xl">
-        <span class="block w-fit text-sm text-center text-white bg-[#022063] px-4 py-1 rounded-bl-md rounded-br-md mx-auto">
-          Crafted with ❤ by <a href="javascript:void(0)" class="text-[#E19090]">Karan Sethi</a>
-        </span>
-        <button class="absolute top-0 right-2">
-          <span class="sr-only">Close</span>
-          <i class="fa-solid fa-times" aria-hidden="true"></i>
-        </button>
-        <h2 class="text-base text-center uppercase mt-4">Get in touch on</h2>
-        <div class="flex justify-center gap-4 mt-3">
-          <a class="w-8 h-8 text-[#1EA3F4] inline-flex justify-center items-center border border-[#96A5CC] rounded-full transition-colors ease hover:text-black hover:border-[#E19090] hover:shadow-md hover:shadow-[#E19090]/50" href="javascript:void(0)">
-            <span class="sr-only">Twitter</span>
-            <i class="fa-brands fa-twitter" aria-hidden="true"></i>
-          </a>
-          <a class="w-8 h-8 text-[#1EA3F4] inline-flex justify-center items-center border border-[#96A5CC] rounded-full transition-colors ease hover:text-black hover:border-[#E19090] hover:shadow-md hover:shadow-[#E19090]/50" href="javascript:void(0)">
-            <span class="sr-only">Instagram</span>
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-          </a>
-          <a class="w-8 h-8 text-[#1EA3F4] inline-flex justify-center items-center border border-[#96A5CC] rounded-full transition-colors ease hover:text-black hover:border-[#E19090] hover:shadow-md hover:shadow-[#E19090]/50" href="javascript:void(0)">
-            <span class="sr-only">Facebook</span>
-            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-          </a>
-          <a class="w-8 h-8 text-[#1EA3F4] inline-flex justify-center items-center border border-[#96A5CC] rounded-full transition-colors ease hover:text-black hover:border-[#E19090] hover:shadow-md hover:shadow-[#E19090]/50" href="javascript:void(0)">
-            <span class="sr-only">Linkedin</span>
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-      <button class="text-sm px-4 py-2 bg-[#022063] text-white rounded-full mt-2 ml-auto transition-all ease hover:bg-[#022063]/75 hover:-translate-y-1 hover:shadow-md hover:shadow-black/50">Get in Touch</button>
+    <div class="flex items-center justify-between mt-2">
+      <button class="text-sm px-4 py-2 bg-[#022063] dark:bg-white text-white dark:text-black rounded-full mr-auto transition-all ease hover:bg-[#022063]/75 hover:-translate-y-1 hover:shadow-md hover:shadow-black/50 dark:hover:bg-white/75 dark:hover:-translate-y-1 dark:hover:shadow-md dark:hover:shadow-black/50">Get in Touch</button>
+      <button id="theme-toggle" class="bg-[#022063] dark:bg-white text-white dark:text-black hover:bg-[#022063]/75 dark:hover:bg-white/75 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2">
+        <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </button>
     </div>
-  </main>
+  </div>
+  <script src="app.js"></script>
 </body>
 
 </html>

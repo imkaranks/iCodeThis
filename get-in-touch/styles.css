@@ -1,9 +1,0 @@
-body {
-  --tilt: -180deg;
-  background: linear-gradient(var(--tilt), #022063 50%, #F8F9FF 50%);
-}
-@media (min-width: 697px) {
-  body {
-    --tilt: 100deg;
-  }   
-}
