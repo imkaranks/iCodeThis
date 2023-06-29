@@ -1,0 +1,166 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-[#F2F2F2] grid place-items-center py-8">
+  <div class="w-11/12 max-w-7xl mx-auto bg-white shadow-[0_0_16px_#E1E3E5]">
+    <header class="bg-[#F3F5F7] pt-3">
+      <div class="w-11/12 mx-auto flex items-center gap-4">
+        <div class="bg-[#ECEEF2] text-[#B4B6C1] font-medium px-6 py-1 uppercase">Logo</div>
+        <button class="relative text-xl text-white isolate px-4 py-2 ml-auto before:content-[''] before:absolute before:-z-10 before:left-0 before:right-0 before:bottom-0 before:-top-3 before:bg-[#252E4D] before:rounded-b-lg" id="add">
+          <span class="sr-only">Add</span>
+          <span>&plus;</span>
+        </button>
+        <div class="text-sm text-[#252E4D] flex gap-1 items-center">
+          <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-social-media-user-vector-image-icon-default-avatar-profile-icon-social-media-user-vector-image-209162840.jpg" class="w-8 h-8 object-cover rounded-full" alt="default-avatar-icon">
+          <p>
+            Anthony Webb
+            <i class="fa-solid fa-chevron-down text-sm" aria-hidden="true"></i>
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="pt-8 pb-[7.25rem] bg-[#F3F5F7] text-[#B4B6C1]">
+        <div class="w-11/12 max-w-6xl mx-auto flex items-center gap-4">
+          <img src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW91bnRhSW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" class="w-12 h-12 rounded-2xl shadow-md shadow-black/20" alt="mountain">
+          <div>
+            <div class="text-sm flex gap-4 items-center">
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+              <ul class="flex gap-2">
+                <li>6 Boards</li>
+                <li class="relative pl-2 before:content-[''] before:absolute before:inline-block before:left-0 before:top-2 before:w-1 before:h-1 before:rounded-full before:bg-[#B4B6C1]">56 Tasks</li>
+              </ul>
+            </div>
+            <h1 class="text-xl font-bold text-[#252E4D]">Benjamin Franklin's Method of Habit Formation</h1>
+          </div>
+        </div>
+      </section>
+      <section class="py-8 -mt-32">
+        <div class="w-11/12 max-w-6xl mx-auto grid grid-cols-[repeat(auto-fit,_minmax(min(100%,_15rem),_1fr))] gap-4" id="card-deck">
+          <div class="bg-white rounded-md overflow-hidden shadow-md shadow-black/20 pb-4">
+            <div class="bg-[#B4B6C1] flex justify-between items-center px-4 py-2 border-b-4 border-gray-100">
+              <h2 class="text-base text-white font-bold uppercase">To do</h2>
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </div>
+            <button class="text-[#B4B6C1] px-4 mt-2">
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </button>
+            <article class="text-sm px-4 py-2">
+              <h3 class="text-base font-semibold leading-tight">
+                You can learn so much about life and a self-improvement audio book
+              </h3>
+              <p class="mt-2">
+                Here is the ultimate recipe for a very sad and short life.
+              </p>
+              <p>
+                You can learn so much about life and a self-improvement audio book.
+              </p>
+            </article>
+            <button class="text-[#B4B6C1] px-4 mt-4">
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </button>
+            <article class="text-sm px-4 py-2">
+              <h3 class="text-base font-semibold leading-tight">
+                You can learn so much about life and a self-improvement audio book
+              </h3>
+              <p class="mt-2">
+                Here is the ultimate recipe for a very sad and short life.
+              </p>
+              <p>
+                You can learn so much about life and a self-improvement audio book.
+              </p>
+            </article>
+          </div>
+          <div class="bg-white rounded-md overflow-hidden shadow-md shadow-black/20 pb-4">
+            <div class="bg-[#5497C5] flex justify-between items-center px-4 py-2 border-b-4 border-gray-100">
+              <h2 class="text-base text-white font-bold uppercase">In Progress</h2>
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </div>
+            <button class="text-[#B4B6C1] px-4 mt-2">
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </button>
+            <article class="text-sm px-4 py-2">
+              <h3 class="text-base font-semibold leading-tight">
+                You can learn so much about life and a self-improvement audio book
+              </h3>
+              <p class="mt-2">
+                Here is the ultimate recipe for a very sad and short life.
+              </p>
+              <p>
+                You can learn so much about life and a self-improvement audio book.
+              </p>
+            </article>
+            <button class="text-[#B4B6C1] px-4 mt-4">
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </button>
+            <article class="text-sm px-4 py-2">
+              <h3 class="text-base font-semibold leading-tight">
+                You can learn so much about life and a self-improvement audio book
+              </h3>
+              <p class="mt-2">
+                Here is the ultimate recipe for a very sad and short life.
+              </p>
+              <p>
+                You can learn so much about life and a self-improvement audio book.
+              </p>
+            </article>
+          </div>
+          <div class="bg-white rounded-md overflow-hidden shadow-md shadow-black/20 pb-4">
+            <div class="bg-[#5AB886] flex justify-between items-center px-4 py-2 border-b-4 border-gray-100">
+              <h2 class="text-base text-white font-bold uppercase">Done</h2>
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </div>
+            <button class="text-[#B4B6C1] px-4 mt-2">
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </button>
+            <article class="text-sm px-4 py-2">
+              <h3 class="text-base font-semibold leading-tight">
+                You can learn so much about life and a self-improvement audio book
+              </h3>
+              <p class="mt-2">
+                Here is the ultimate recipe for a very sad and short life.
+              </p>
+              <p>
+                You can learn so much about life and a self-improvement audio book.
+              </p>
+            </article>
+            <button class="text-[#B4B6C1] px-4 mt-4">
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </button>
+            <article class="text-sm px-4 py-2">
+              <h3 class="text-base font-semibold leading-tight">
+                You can learn so much about life and a self-improvement audio book
+              </h3>
+              <p class="mt-2">
+                Here is the ultimate recipe for a very sad and short life.
+              </p>
+              <p>
+                You can learn so much about life and a self-improvement audio book.
+              </p>
+            </article>
+          </div>
+          <div id="new-column-cta">
+            <button class="inline-flex w-full justify-center items-center gap-2 bg-white text-lg text-[#B4B6C1] p-4 rounded-md hover:bg-[#ECEEF2]" id="new-column">
+              <span aria-hidden="true">&plus;</span>
+              <span>Add New Column</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <form class="fixed top-1/2 left-1/2 w-11/12 max-w-xl bg-[#ECEEF2] -translate-x-1/2 -translate-y-1/2 flex flex-wrap gap-2 p-4 shadow-[0px_0px_8px_100vmax_rgba(0,_0,_0,_0.5)]" style="display:none;" id="form">
+      <textarea name="markdown" id="markdown" class="w-full h-[20rem] resize-none p-4"></textarea>
+      <button class="px-6 py-1 bg-white font-medium" type="submit" id="save">Save</button>
+      <button class="px-6 py-1 bg-white font-medium" id="cancel">Cancel</button>
+    </form>
+  </div>
+</body>
+
+</html>
