@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #radarChart-content {
+      width: 80%;
+      max-width: 350px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-[#EBF2FD] grid">
+  <header class="bg-[#E2E8FD] py-4">
+    <div class="flex items-center gap-4 bg-[#F1F4FF] max-w-fit px-4 py-2 mx-auto rounded-full">
+      <div class="flex items-center gap-2 font-semibold">
+        <img src="https://media.istockphoto.com/id/1399170810/photo/outdoor-portrait-of-pretty-young-teenage-gir-with-brown-hair-posing-on-white-background.webp?b=1&s=170667a&w=0&k=20&c=yo09uBNw3T1IjlLf_2QS1hqI_b8r_m8prVTO7h72-04=" class="w-14 aspect-square object-cover border-4 border-[#F0A8B5] rounded-full" alt="">
+        <p class="text-sm sm:text-base">Christine</p>
+      </div>
+      <p class="text-xs sm:text-sm">vs</p>
+      <div class="flex items-center gap-2 font-semibold">
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" class="w-14 aspect-square object-cover border-4 border-[#B6C9FF] rounded-full" alt="">
+        <p class="text-sm sm:text-base">Jordan</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="radarChart-content">
+    <canvas id="radarChart"></canvas>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
