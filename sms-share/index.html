@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-slate-200 grid place-items-center">
+  <main class="bg-white w-11/12 max-w-md px-6 py-8 mx-auto rounded-md shadow-lg">
+    <h2 class="font-semibold mb-2">
+      Send install link to mobile device
+    </h2>
+    <p class="text-xs text-slate-400 mb-6">
+      Send via SMS or visit the private URL on the mobile device to install this app directly to the device
+    </p>
+    <form class="text-sm flex mb-6">
+      <select class="bg-slate-200 pl-4 rounded-tl rounded-bl focus:outline-blue-500" name="country" id="country">
+        <option value="in">IN</option>
+        <option value="us">US</option>
+        <option value="gb-uk">UK</option>
+      </select>
+      <input class="bg-slate-200 w-full flex-1 p-2 focus:outline-blue-500" placeholder="Enter mobile number" value="+91" type="text">
+      <button class="bg-blue-500 text-white px-5 py-2 rounded-tr rounded-br" id="send">Send</button>
+    </form>
+    <div class="text-sm flex gap-2 flex-wrap">
+      <h2 class="w-full font-semibold uppercase">Share link</h2>
+      <p class="text-xs flex-1">
+        https://www.staggeringbeauty.com/
+      </p>
+      <button class="font-medium text-blue-500" id="copy">Copy</button>
+    </div>
+  </main>
+  <div class="bg-white relative text-center w-11/12 max-w-md px-6 py-8 mx-auto rounded-md shadow-lg" id="success-alert" hidden>
+    <button class="absolute top-0 right-2 text-xl" id="close-alert">
+      <span class="sr-only">Close Alert</span>
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="text-3xl text-green-400 animate-pulse" aria-hidden="true">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <h3 class="font-semibold mt-4">Successfully sent the link</h3>
+    <p class="text-sm">Please check you number <span id="phone"></span></p>
+  </div>
+</body>
+
+</html>
