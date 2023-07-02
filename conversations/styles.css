@@ -1,0 +1,26 @@
+::-webkit-scrollbar {
+  width: .25rem;
+  /* height: .25rem; */
+}
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: .5rem;
+}
+.not-seen {
+  position: relative;
+  padding-top: 3rem;
+}
+.not-seen::before {
+  content: var(--message);
+  position: absolute;
+  top: .5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  padding: 0.25em 1em;
+  background-color: #f472b6;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  border-radius: 100vmax;
+}

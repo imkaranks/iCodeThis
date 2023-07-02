@@ -1,0 +1,98 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-slate-200">
+  <main class="h-screen w-11/12 max-w-5xl mx-auto flex gap-2">
+    <div class="flex-[0.3] pr-1 flex flex-col gap-4 overflow-y-auto">
+      <div class="person | relative bg-white text-sm text-center rounded p-4 shadow-lg cursor-pointer">
+        <span class="unread | absolute top-0 left-0 text-xs text-white font-semibold rounded-tl rounded-br bg-pink-400 px-3 py-1">4</span>
+        <button class="w-full mb-2">
+          <span class="sr-only">More</span>
+          <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+        </button>
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1lbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" class="w-full aspect-[1/0.75] object-cover rounded" alt="">
+        <h2 class="font-semibold mt-2 flex items-center justify-center gap-0.5">
+          <span class="inline-block bg-green-400 w-2 h-2 rounded-full" aria-hidden="true"></span>
+          John Doe
+        </h2>
+        <p class="text-xs leading-none">Interaction Designer</p>
+        <button class="text-xs text-blue-400 font-semibold px-7 py-1 border border-blue-400 rounded-full shadow-lg shadow-blue-400/30 mt-4 transition-colors ease hover:bg-blue-400 hover:text-white">Close</button>
+      </div>
+      <div class="person | relative bg-white text-sm text-center rounded p-4 shadow-lg cursor-pointer">
+        <span class="unread | absolute top-0 left-0 text-xs text-white font-semibold rounded-tl rounded-br bg-pink-400 px-3 py-1">2</span>
+        <button class="w-full mb-2">
+          <span class="sr-only">More</span>
+          <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+        </button>
+        <img src="https://images.unsplash.com/photo-1631947430066-48c30d57b943?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2lybHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" class="w-full aspect-[1/0.75] object-cover rounded" alt="">
+        <h2 class="font-semibold mt-2 flex items-center justify-center gap-0.5">
+          <span class="inline-block bg-green-400 w-2 h-2 rounded-full" aria-hidden="true"></span>
+          Estelle Warner
+        </h2>
+        <p class="text-xs leading-none">Art Director</p>
+        <button class="text-xs text-blue-400 font-semibold px-7 py-1 border border-blue-400 rounded-full shadow-lg shadow-blue-400/30 mt-4 transition-colors ease hover:bg-blue-400 hover:text-white">Close</button>
+      </div>
+      <div class="person | relative bg-white text-sm text-center rounded p-4 shadow-lg cursor-pointer">
+        <span class="unread | absolute top-0 left-0 text-xs text-white font-semibold rounded-tl rounded-br bg-pink-400 px-3 py-1">5</span>
+        <button class="w-full mb-2">
+          <span class="sr-only">More</span>
+          <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+        </button>
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" class="w-full aspect-[1/0.75] object-cover rounded" alt="">
+        <h2 class="font-semibold mt-2 flex items-center justify-center gap-0.5">
+          <span class="inline-block bg-green-400 w-2 h-2 rounded-full" aria-hidden="true"></span>
+          Jane Doe
+        </h2>
+        <p class="text-xs leading-none">UI Designer</p>
+        <button class="text-xs text-blue-400 font-semibold px-7 py-1 border border-blue-400 rounded-full shadow-lg shadow-blue-400/30 mt-4 transition-colors ease hover:bg-blue-400 hover:text-white">Close</button>
+      </div>
+    </div>
+    <div class="relative flex-[0.7] md:flex-1 self-center flex flex-col gap-4 bg-white p-4 rounded-lg shadow-lg" id="chats">
+      <h1 class="font-semibold" id="person-name">Estelle Warner</h1>
+      <button class="absolute top-0 right-0 bg-gray-400 text-white px-4 py-2 rounded-tr-lg rounded-bl-lg">
+        <span class="sr-only">close</span>
+        <i class="fa-solid fa-times" aria-hidden="true"></i>
+      </button>
+      <!-- <div class="flex flex-col gap-2 text-sm">
+        <div class="flex items-center gap-1">
+            <h3 class="ml-auto font-semibold leading-none">You</h3>
+            <time class="text-xs" datetime="13:32">13:32</time>
+        </div>
+        <p class="ml-auto p-2 bg-blue-400 text-white rounded">Hey!</p>
+        <p class="ml-auto p-2 bg-blue-400 text-white rounded">Okay, let me know!</p>
+      </div>
+      <div class="flex flex-col gap-2 text-sm">
+        <div class="flex items-center gap-1">
+            <h3 class="font-semibold leading-none">Estelle Warner</h3>
+            <time class="text-xs" datetime="14:04">14:04</time>
+        </div>
+        <p class="mr-auto p-2 bg-gray-200 text-black rounded">Hey!</p>
+        <p class="mr-auto p-2 bg-gray-200 text-black rounded">Ready in 57</p>
+      </div> -->
+      <div class="h-full max-h-[20rem] pr-1 overflow-y-auto" id="chat-box"></div>
+      <input class="text-sm p-2 focus:outline-blue-400" type="text" placeholder="Type your message here" data-controls="2">
+      <div class="flex gap-6 items-center">
+        <button class="text-lg text-gray-600 transition-colors ease hover:text-gray-400">
+          <i class="fa-solid fa-image"></i>
+        </button>
+        <button class="text-lg text-gray-600 transition-colors ease hover:text-gray-400">
+          <i class="fa-solid fa-camera"></i>
+        </button>
+        <button class="text-lg text-gray-600 transition-colors ease hover:text-gray-400">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <button class="text-sm font-semibold bg-blue-400 text-white py-1 px-4 ml-auto rounded-full shadow-lg shadow-blue-400/40 transition-colors ease hover:bg-blue-400/75" id="send">Send</button>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
