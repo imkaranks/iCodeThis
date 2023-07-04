@@ -1,0 +1,98 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-[#fb9362] to-[#ffca6e] grid place-items-center">
+  <!-- ======================================
+        Todo: Add counter functionality
+    ====================================== -->
+  <main
+    class="relative isolate bg-white text-sm w-11/12 max-w-sm mx-auto px-3 rounded-md shadow-xl shadow-black/20 before:content-[''] before:absolute before:-z-10 before:top-0 before:left-0 before:right-0 before:h-20 before:rounded-t-md before:bg-[#ff694a]">
+    <div class="bg-white w-fit mx-auto mt-8 p-1 rounded-full">
+      <img src="https://www.pizzahut.co.in/order/images/logos/logo_home@x2.2058c7f78a870b6322dc0dc0ecb77325.png"
+        class="w-20 rounded-full" alt="pizza-hut">
+    </div>
+    <h1 class="text-center leading-tight mb-6">
+      Your order from
+      <span class="block font-medium">Pizza Hut</span>
+    </h1>
+    <div id="order-content">
+      <div class="flex items-center gap-4 mb-3">
+        <p class="flex-1">British Pizza | Medium</p>
+        <div class="flex items-center">
+          <button class="text-base" data-item="minus" aria-controls="counter-1">
+            <span>&minus;</span>
+          </button>
+          <span class="font-medium px-4" id="counter-1">1</span>
+          <button class="text-base" data-item="plus" aria-controls="counter-1">
+            <span>&plus;</span>
+          </button>
+        </div>
+        <span class="font-medium" data-item="price" data-initialPrice="7.99">$7,99</span>
+        <button class="inline-flex justify-center items-center w-5 h-5 bg-gray-200 rounded-full" data-item="close">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="flex items-center gap-4 mb-3">
+        <p class="flex-1">Pizza Diavola | Medium</p>
+        <div class="flex items-center">
+          <button class="text-base" data-item="minus" aria-controls="counter-2">
+            <span>&minus;</span>
+          </button>
+          <span class="font-medium px-4" id="counter-2">1</span>
+          <button class="text-base" data-item="plus" aria-controls="counter-2">
+            <span>&plus;</span>
+          </button>
+        </div>
+        <span class="font-medium" data-item="price" data-initialPrice="7.99">$7,99</span>
+        <button class="inline-flex justify-center items-center w-5 h-5 bg-gray-200 rounded-full" data-item="close">
+          <span>&times;</span>
+        </button>
+      </div>
+      <select class="text-sm font-medium border py-1.5 px-4 mt-3 mb-2 focus:outline-[#ff694a]" name="beverage"
+        id="beverage">
+        <option value="default">
+          🍹 Add a beverage
+        </option>
+        <option value="Coca Cola">Coca Cola</option>
+        <option value="Fanta">Fanta</option>
+        <option value="Sprite">Sprite</option>
+      </select>
+    </div>
+    <div id="alert" class="flex flex-col items-center justify-center pb-4" style="display: none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+        class="w-12 h-12 text-emerald-500 flip-in-diag-1-tr">
+        <path fill-rule="evenodd"
+          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+          clip-rule="evenodd"></path>
+      </svg>
+      <h2 class="font-bold">Order Placed</h2>
+      <p class="text-xs text-gray-600 px-12 text-center">Your order is being prepared and will be delivered soon.</p>
+    </div>
+    <div class="bg-slate-200 p-2 rounded-lg space-y-1 mt-2 mb-6" id="bill">
+      <div class="flex items-center justify-between text-xs">
+        <p>Subtotal</p>
+        <span class="font-medium" id="subtotal">$15,98</span>
+      </div>
+
+      <div class="flex items-center justify-between text-xs">
+        <p>Shipping</p>
+        <span class="font-medium" id="shipping">$2</span>
+      </div>
+
+      <div class="flex items-center justify-between text-xs">
+        <p>Total(TVA incl.)</p>
+        <span class="font-medium" id="total">$17,98</span>
+      </div>
+    </div>
+    <button
+      class="bg-[#ff694a] py-1.5 text-sm rounded-md shadow-xl shadow-[#ffca6e]/30 hover:bg-[#ff694a]/75 text-white w-full mb-3 transition-all"
+      id="checkout">Checkout</button>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+.shrink-in {
+  animation: shrink-in 300ms linear forwards;
+}
+.shrink-out {
+  animation: shrink-out 300ms linear forwards;
+}
+@keyframes shrink-out {
+  0% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+@keyframes shrink-in {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(90deg);
+  }
+}
