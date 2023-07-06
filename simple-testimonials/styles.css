@@ -1,0 +1,48 @@
+*::before,
+*::after {
+  font-family: FontAwesome;
+}
+body {
+  font-family: 'Mulish', sans-serif;
+}
+.animate-crop-in {
+  opacity: 0;
+  animation: crop-in 300ms calc(var(--stagger, 0) * 200ms) linear forwards;
+}
+.animate-crop-in>blockquote {
+  opacity: 0;
+  animation: slide-in 300ms calc((var(--stagger, 0) + 1) * 300ms) linear forwards;
+}
+@keyframes crop-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translate(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@supports (clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%)) and (clip-path: polygon(calc(0% - .5rem) calc(0% - .5rem), 100% calc(0% - .5rem), 100% 100%, calc(0% - .5rem) 100%)) {
+  @keyframes crop-in {
+    0% {
+      opacity: 0;
+      clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+    }
+
+    100% {
+      opacity: 1;
+      clip-path: polygon(calc(0% - .5rem) calc(0% - .5rem), 100% calc(0% - .5rem), 100% 100%, calc(0% - .5rem) 100%);
+    }
+  }
+}
