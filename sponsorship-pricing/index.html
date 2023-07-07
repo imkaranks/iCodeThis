@@ -1,0 +1,95 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'body': '#ffd148',
+            'sponsorship': '#f3f5f7',
+            'card': '#ffffff',
+            'card-btn': '#14181d',
+            'sold-out-info': '#e2e2e2'
+          },
+          animation: {
+            'spin-slow': 'spin 3s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-body grid place-items-center py-6">
+  <main class="bg-sponsorship w-11/12 max-w-5xl mx-auto px-8 py-12 rounded-lg">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-2xl font-regular">Website - Sponsorship</h1>
+      <p class="text-sm mt-1">In the event that we do not have a full 30-days, we extrapolate based on data we have.</p>
+    </div>
+    <ul class="max-w-4xl mx-auto mt-8 flex flex-wrap justify-center gap-6">
+      <li class="card relative isolate w-[280px] overflow-hidden p-0.5 before:content-[''] before:absolute before:-z-10 before:-inset-[2rem] rounded-lg before:aspect-square before:bg-red-400 before:[background:_conic-gradient(rgba(0,0,0,0)_270deg,#ffb049,rgba(0,0,0,0))] before:animate-spin-slow">
+        <article class="bg-card group text-sm font-light px-6 py-4 rounded-lg lg:flex-1 sm:px-8">
+          <h2 class="font-regular text-base text-center mt-8">Sidebar Block</h2>
+          <p class="text-sm text-center mt-1">
+            <span class="text-card-btn text-3xl font-bold before:content-['$']">250</span>
+            <span>/mo</span>
+          </p>
+          <button class="bg-card-btn text-white w-full px-4 py-2 text-base font-medium mt-12 rounded transition-colors ease duration-300 hover:bg-card-btn/75">
+            add to cart
+          </button>
+          <ul class="list-disc list-inside marker:text-rose-600 flex flex-col gap-2 mt-8">
+            <li>439,000 Est.Impression</li>
+            <li>180 x 150</li>
+            <li>Middle Right</li>
+          </ul>
+          <div class="glow"></div>
+        </article>
+      </li>
+      <li class="card relative isolate w-[280px] overflow-hidden p-0.5 before:content-[''] before:absolute before:-z-10 before:-inset-[2rem] rounded-lg before:aspect-square before:bg-red-400 before:[background:_conic-gradient(rgba(0,0,0,0)_270deg,#ffb049,rgba(0,0,0,0))] before:animate-spin-slow">
+        <article class="bg-card text-sm font-light px-6 py-4 rounded-lg lg:flex-1 sm:px-8">
+          <h2 class="font-regular text-base text-center mt-8">Sidebar Block</h2>
+          <p class="text-sm text-center mt-1">
+            <span class="text-card-btn text-3xl font-bold before:content-['$']">400</span>
+            <span>/mo</span>
+          </p>
+          <button class="bg-card-btn text-white w-full px-4 py-2 text-base font-medium mt-12 rounded transition-colors ease duration-300 hover:bg-card-btn/75">
+            add to cart
+          </button>
+          <ul class="list-disc list-inside marker:text-rose-600 flex flex-col gap-2 mt-8">
+            <li>439,000 Est.Impression</li>
+            <li>180 x 150</li>
+            <li>Middle Right</li>
+          </ul>
+          <div class="glow"></div>
+        </article>
+      </li>
+      <li class="card relative isolate w-[280px] overflow-hidden p-0.5 before:content-[''] before:absolute before:-z-10 before:-inset-[2rem] rounded-lg before:aspect-square before:bg-red-400 before:[background:_conic-gradient(rgba(0,0,0,0)_270deg,#ffb049,rgba(0,0,0,0))] before:animate-spin-slow">
+        <article class="bg-card relative text-sm font-light px-6 py-4 rounded-lg lg:flex-1 sm:px-8">
+          <span class="bg-sold-out-info absolute rounded-b-lg text-base font-medium px-6 py-1 top-0 left-1/2 -translate-x-1/2">Sold Out</span>
+          <h2 class="font-regular text-base text-center mt-8">Premium Sidebar</h2>
+          <p class="text-sm text-center mt-1">
+            <span class="text-card-btn text-3xl font-bold before:content-['$']">2,600</span>
+            <span>/mo</span>
+          </p>
+          <button class="bg-tranparent border border-sold-out-info w-full px-4 py-2 text-base font-medium mt-12 rounded transition-colors ease duration-300 hover:bg-card-btn hover:text-white">
+            get on the waiting list
+          </button>
+          <ul class="list-disc list-inside marker:text-rose-600 flex flex-col gap-2 mt-8">
+            <li>439,000 Est.Impression</li>
+            <li>180 x 150</li>
+            <li>Middle Right</li>
+          </ul>
+          <div class="glow"></div>
+        </article>
+      </li>
+    </ul>
+  </main>
+</body>
+
+</html>
