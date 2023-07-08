@@ -76,16 +76,38 @@
   ];
 
   loadApps();
+  loadDropdownList();
 
-  function loadApps() {
-    data.forEach(item => {
-      $appsContent.appendChild(loadApp(item));
+  function loadDropdownList() {
+    const $dropdownList = document.getElementById('dropdown-list');
+    const categories = new Set();
+    categories.add('all');
+    data.map(item => categories.add(item.category));
+    categories.forEach(category => {
+      const $listItem = document.createElement('li');
+      $listItem.textContent = category;
+      $listItem.className = "px-4 py-1 border-b border-b-[#47dda3] cursor-pointer";
+      $listItem.onclick = () => loadApps(category);
+      $dropdownList.appendChild($listItem);
     });
+  }
+
+  function loadApps(category = null) {
+    $appsContent.innerHTML = '';
+    if (!category || category === 'all') {
+      data.forEach(item => $appsContent.appendChild(loadApp(item)));
+    } else {
+      data.forEach(item => {
+        if (category && item.category === category) {
+          $appsContent.appendChild(loadApp(item));
+        }
+      });
+    }
   }
 
   function loadApp(details) {
     const $app = document.createElement('div');
-    $app.className = "w-full max-w-[330px] lg:max-w-auto flex-shrink-0 flex flex-col text-center items-center gap-5 p-5 rounded-md shadow-[0_0_15px_#111] sm:flex-row sm:text-left";
+    $app.className = "w-full max-w-[330px] lg:max-w-auto flex-shrink-0 flex flex-col text-center items-center gap-5 p-5 rounded-md shadow-[0_0_15px_#111] transition-all ease hover:bg-[#181a1c]/50 sm:flex-row sm:text-left";
     $app.innerHTML = `<img src="${details.imgURL}" class="w-full max-w-[120px] aspect-square" alt="${details.title}">`;
     const $downloadBtn = document.createElement('button');
     $downloadBtn.className = "text-xs mt-3 px-[15px] py-[7px] bg-[#191b1d] border-b-4 border-b-[#47dda3] uppercase rounded-md transition-all ease hover:bg-[#191b1d]/75 hover:shadow-md hover:shadow-black/20 hover:scale-110";
@@ -109,7 +131,7 @@
     let ratings = '';
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
-        ratings += '<i class="fa-solid fa-star text-yellow-400" aria-hidden="true"></i>';
+        ratings += '<i class="fa-solid fa-star text-[#f8bc00]" aria-hidden="true"></i>';
       } else {
         ratings += '<i class="fa-solid fa-star text-[#191b1d]" aria-hidden="true"></i>';
       }
@@ -135,6 +157,6 @@
         spread: 70,
         origin: { y: 0.6 },
       });
-    }, 1200);
+    }, 1500);
   }
 })();

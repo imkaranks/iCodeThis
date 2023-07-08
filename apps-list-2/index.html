@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.10.1/tsparticles.confetti.bundle.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -32,19 +33,24 @@
 <body class="min-h-screen bg-[#282a2c]">
   <header class="bg-[#181a1c] text-[#848687] pt-[2.6875rem] sm:pt-[4.6875rem] pb-4">
     <div class="w-11/12 mx-auto max-w-6xl flex items-center justify-center sm:justify-unset">
-      <nav class="" id="primary-navigation" aria-label="Primary">
+      <nav class="text-sm sm:text-base" id="primary-navigation" aria-label="Primary">
         <ul class="flex flex-wrap justify-center gap-8">
           <li>
-            <a class="relative before:content-[''] before:absolute before:-left-2 before:-right-2 before:-bottom-[17px] before:h-1 before:bg-[#47dda3]/30 before:origin-center before:opacity-0 before:transition-all before:ease before:scale-x-0 hover:before:scale-x-100 hover:before:opacity-100" href="#">Home</a>
+            <a class="relative before:content-[''] before:absolute before:-left-2 before:-right-2 before:-bottom-[17px] before:h-1 before:bg-[#47dda3]/30 before:origin-center before:opacity-0 before:transition-all before:ease before:scale-x-0 hover:before:scale-x-100 hover:before:opacity-100" href="javascript:void(0)">Home</a>
           </li>
           <li>
-            <a class="relative before:content-[''] before:absolute before:-left-2 before:-right-2 before:-bottom-[17px] before:h-1 before:bg-[#47dda3]" href="#">Apps</a>
+            <a class="relative text-[#47dda3] before:content-[''] before:absolute before:-left-2 before:-right-2 before:-bottom-[17px] before:h-1 before:bg-[#47dda3]" href="javascript:void(0)">Apps</a>
           </li>
           <li>
-            <a class="relative before:content-[''] before:absolute before:-left-2 before:-right-2 before:-bottom-[17px] before:h-1 before:bg-[#47dda3]/30 before:origin-center before:opacity-0 before:transition-all before:ease before:scale-x-0 hover:before:scale-x-100 hover:before:opacity-100" href="#">Accounts</a>
+            <a class="relative before:content-[''] before:absolute before:-left-2 before:-right-2 before:-bottom-[17px] before:h-1 before:bg-[#47dda3]/30 before:origin-center before:opacity-0 before:transition-all before:ease before:scale-x-0 hover:before:scale-x-100 hover:before:opacity-100" href="javascript:void(0)">Accounts</a>
           </li>
-          <li>
-            <a class="relative before:content-[''] before:absolute before:-left-2 before:-right-2 before:-bottom-[17px] before:h-1 before:bg-[#47dda3]/30 before:origin-center before:opacity-0 before:transition-all before:ease before:scale-x-0 hover:before:scale-x-100 hover:before:opacity-100" href="#">Categories</a>
+          <li class="relative" id="dropdown">
+            <a class="relative flex gap-1 items-center before:content-[''] before:absolute before:-left-2 before:-right-2 before:-bottom-[17px] before:h-1 before:bg-[#47dda3]/30 before:origin-center before:opacity-0 before:transition-all before:ease before:scale-x-0 hover:before:scale-x-100 hover:before:opacity-100" href="javascript:void(0)">
+              <span>Categories</span>
+              <i class="fa-solid fa-chevron-down text-xs translate-y-[2px]" aria-hidden="true"></i>
+            </a>
+            <ul class="absolute translate-y-[8px] bg-black capitalize" id="dropdown-list">
+            </ul>
           </li>
         </ul>
       </nav>

@@ -1,0 +1,23 @@
+#dropdown-list {
+  height: 0px;
+  transition: all 300ms ease-in-out;
+}
+
+#dropdown-list {
+  overflow: hidden;
+}
+
+#dropdown:hover>#dropdown-list {
+  overflow: unset;
+  height: fit-content;
+}
+
+#dropdown-list::before {
+  --_size: 8px;
+  content: '';
+  position: absolute;
+  border: var(--_size) solid transparent;
+  border-bottom-color: black;
+  top: calc(var(--_size) * -2);
+  left: var(--_size);
+}
