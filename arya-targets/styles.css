@@ -1,0 +1,73 @@
+div[hidden] {
+  display: none;
+}
+
+.pie {
+  position: relative;
+  background-image: conic-gradient(#7491e8 0% calc((360deg / var(--total, 3)) * var(--completed, 2)), rgb(241 245 249) calc((360deg / var(--total, 3)) * var(--completed, 2)) 360deg);
+  border-radius: 50%;
+}
+.pie::before {
+  content: var(--content, '3');
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-in {
+  animation: slide-in 300ms linear forwards;
+}
+
+.slide-out {
+  animation: slide-out 300ms linear forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@supports (clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%)) and (clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%)) {
+  @keyframes slide-in {
+    0% {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+      opacity: 0;
+    }
+  
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-out {
+    0% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      opacity: 1;
+    }
+  
+    100% {
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      opacity: 0;
+    }
+  }
+}
