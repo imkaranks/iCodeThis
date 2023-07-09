@@ -23,9 +23,9 @@
     <form class="w-full flex flex-col items-center gap-4 mt-8">
       <label for="passwd" class="sr-only">Enter your password</label>
       <input class="border-2 w-11/12 px-3 py-2 rounded focus:outline-slate-400" type="password" name="passwd" id="passwd" placeholder="Enter your password">
-      <button class="w-3/5 bg-[#232e4d] text-white uppercase text-sm shadow-[#232e4d]/30 py-2 px-8 rounded" id="log-in" type="submit">Log in</button>
+      <button class="w-3/5 bg-[#232e4d] text-white uppercase text-sm shadow-[#232e4d]/30 py-2 px-8 rounded transition-colors ease hover:bg-[#232e4d]/75" id="log-in" type="submit">Log in</button>
     </form>
-    <a class="text-sm text-[#7491e8] mt-16" href="javascript:void(0)">Unable to log in?</a>
+    <a class="text-sm text-[#7491e8] mt-16 hover:underline" href="javascript:void(0)">Unable to log in?</a>
   </div>
   <div class="bg-slate-100 w-11/12 max-w-[20rem] min-h-[30rem] mx-auto flex flex-col items-center gap-4 rounded-lg shadow-lg" id="step-2" hidden>
     <div class="bg-white w-full flex items-center p-4 rounded-t-lg">
@@ -38,11 +38,13 @@
         <i class="fa-solid fa-search" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="w-[calc(100%-2rem)] flex items-center bg-white cursor-pointer p-4 rounded-md shadow-lg hover:bg-[whitesmoke]" id="targets">
-      <h2 class="font-bold flex-1">Targets</h2>
-      <div class="pie w-10 h-10"></div>
+    <div class="w-[calc(100%-2rem)] flex flex-col gap-2" id="lists">
+      <!-- <div class="w-full flex items-center bg-white cursor-pointer p-4 rounded-md shadow-lg hover:bg-[whitesmoke]" id="targets">
+        <h2 class="font-bold flex-1">Targets</h2>
+        <div class="pie w-10 h-10"></div>
+      </div> -->
     </div>
-    <a href="javascript:void(0)" class="self-start text-[#7491e8] ml-4 text-sm">
+    <a href="javascript:void(0)" class="self-start text-[#7491e8] ml-4 text-sm hover:underline" id="add-new-list">
       <i class="fa-solid fa-plus" aria-hidden="true"></i>
       <span>Add New List</span>
     </a>
@@ -53,14 +55,14 @@
         <span class="sr-only">Go back</span>
         <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
       </button>
-      <h2 class="font-bold">Targets</h2>
+      <h2 class="font-bold capitalize" id="list-content-title"></h2>
       <button class="ml-auto" id="more">
         <span class="sr-only">More</span>
         <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="w-[calc(100%-2rem)] flex flex-col gap-2" id="target-content">
-      <div class="target bg-white flex flex-row-reverse gap-2 items-center p-4 shadow-md rounded-md">
+    <div class="w-[calc(100%-2rem)] flex flex-col gap-2" id="list-content">
+      <!-- <div class="target bg-white flex flex-row-reverse gap-2 items-center p-4 shadow-md rounded-md">
         <input class="peer/1" type="checkbox" name="1" id="1">
         <label class="relative flex-1 font-bold peer-checked/1:text-gray-300 before:content-[''] before:absolute before:top-1/2 before:left-0 before:right-0 before:h-[1px] before:bg-gray-400 before:-translate-y-1/2 before:hidden peer-checked/1:before:block" for="1">Lorem, ipsum.</label>
       </div>
@@ -71,9 +73,9 @@
       <div class="target bg-white flex flex-row-reverse gap-2 items-center p-4 shadow-md rounded-md">
         <input class="peer/3" type="checkbox" name="3" id="3">
         <label class="relative flex-1 font-bold peer-checked/3:text-gray-300 before:content-[''] before:absolute before:top-1/2 before:left-0 before:right-0 before:h-[1px] before:bg-gray-400 before:-translate-y-1/2 before:hidden peer-checked/3:before:block" for="3">Lorem, ipsum.</label>
-      </div>
+      </div> -->
     </div>
-    <button class="mt-auto w-full sticky left-0 right-0 bottom-0 bg-[#232e4d] text-white uppercase text-sm py-4 px-8 rounded-b-md" id="add-new">
+    <button class="mt-auto w-full sticky left-0 right-0 bottom-0 bg-[#232e4d] text-white uppercase text-sm py-4 px-8 rounded-b-md transition-colors ease hover:bg-[#232e4d]/75" id="add-new">
       <i class="fa-solid fa-plus" aria-hidden="true"></i>
       <span>Add New</span>
     </button>
