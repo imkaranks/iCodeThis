@@ -1,3 +1,11 @@
+body {
+  background: linear-gradient(to bottom left, #f8fafc 50%, #f1f5f9 50%);
+  font-family: Roboto, sans-serif;
+}
+html.dark body {
+  background: linear-gradient(to bottom left, #202c3f 50%, #1e293b 50%);
+}
+
 .background-animate::before {
   background-size: 400%;
 
