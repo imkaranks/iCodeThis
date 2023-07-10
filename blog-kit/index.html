@@ -1,0 +1,154 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+    <script>
+      if (
+    localStorage.getItem('color-theme') === 'dark' ||
+    (!('color-theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+      document.documentElement.classList.add('dark');
+      } else {
+      document.documentElement.classList.remove('dark');
+      }
+  </script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen grid place-items-center bg-slate-100 text-sm md:text-base text-slate-900 dark:bg-slate-900 dark:text-white">
+  <div class="w-11/12 max-w-6xl mx-auto flex flex-wrap gap-4 py-8">
+    <aside class="md:flex-[0.3]">
+      <div class="sticky md:top-8 md:mt-8 pt-1 shadow-lg background-animate before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-r before:from-violet-600 before:to-fuchsia-400 before:-z-10">
+        <article class="bg-white dark:bg-slate-950 px-4 py-6">
+          <div class="flex items-start justify-between gap-4">
+            <h2 class="text-xl md:text-2xl font-bold capitalize cursor-pointer transition-all ease duration-300 hover:underline hover:underline-offset-8 hover:text-violet-600" data-hoverable>
+              Always look on the bright side of life
+            </h2>
+            <button data-hoverable>
+              <span class="sr-only">Bookmark</span>
+              <i class="fa-regular fa-bookmark"></i>
+            </button>
+          </div>
+          <p class="text-sm font-semibold mt-4">Daniel A. Schmaitz</p>
+          <p class="text-xs text-slate-700 dark:text-white/75">2 hours ago</p>
+          <p class="mt-4">
+            I was always somebody who felt quite sorry for myself, what I had not got compared to my friends, how much of a struggle my life seemed to be compared to others. I was caught up in a web of negativity and needed
+          </p>
+          <button class="text-xs md:text-sm inline-flex gap-2 items-center mt-4 uppercase group/read transition-all ease duration-300 hover:underline hover:underline-offset-8 hover:text-violet-600" data-hoverable>
+            <span>Read more</span>
+            <i class="fa-solid fa-angles-right transition-all ease duration-300 group-hover/read:translate-x-2"></i>
+          </button>
+        </article>
+      </div>
+    </aside>
+    <main class="w-full md:flex-[0.7] flex flex-col gap-4">
+      <article class="bg-white dark:bg-slate-950 flex gap-4 items-start p-4 shadow-lg">
+        <img src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60" class="w-[15%] aspect-square object-cover object-center" alt="">
+        <div class="flex-1">
+          <h2 class="text-xl md:text-2xl md:max-w-[20ch] leading-none font-semibold capitalize transition-all ease duration-300 hover:underline hover:underline-offset-8 hover:text-violet-600 cursor-pointer" data-hoverable>A brief history of creation</h2>
+          <p class="text-sm mt-4 font-semibold leading-none">Eugene Franklin</p>
+          <time class="text-xs text-slate-700 dark:text-white/75" datetime="10:30">10:30PM</time>
+        </div>
+        <button data-hoverable>
+          <span class="sr-only">Bookmark</span>
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+      </article>
+      <article class="bg-white dark:bg-slate-950 flex gap-4 items-start p-4 shadow-lg">
+        <img src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60" class="w-[15%] aspect-square object-cover object-center" alt="">
+        <div class="flex-1">
+          <h2 class="text-xl md:text-2xl md:max-w-[20ch] leading-none font-semibold capitalize transition-all ease duration-300 hover:underline hover:underline-offset-8 hover:text-violet-600 cursor-pointer" data-hoverable>The Importance Of Human Life</h2>
+          <p class="text-sm mt-4 font-semibold leading-none">Cole Phillips</p>
+          <time class="text-xs text-slate-700 dark:text-white/75" datetime="10:32">10:32AM</time>
+        </div>
+        <button data-hoverable>
+          <span class="sr-only">Bookmark</span>
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+      </article>
+      <article class="bg-white dark:bg-slate-950 flex gap-4 items-start p-4 shadow-lg">
+        <img src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=700&q=60" class="w-[15%] aspect-square object-cover object-center" alt="">
+        <div class="flex-1">
+          <h2 class="text-xl md:text-2xl md:max-w-[20ch] leading-none font-semibold capitalize transition-all ease duration-300 hover:underline hover:underline-offset-8 hover:text-violet-600 cursor-pointer" data-hoverable>The Basics Of Western Astrology Explained</h2>
+          <p class="text-sm mt-4 font-semibold leading-none">Mark Greene</p>
+          <time class="text-xs text-slate-700 dark:text-white/75" datetime="06:25">06:25PM</time>
+        </div>
+        <button data-hoverable>
+          <span class="sr-only">Bookmark</span>
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+      </article>
+    </main>
+    <footer class="w-full flex flex-wrap gap-x-16 gap-y-4 bg-white dark:bg-slate-950 p-4 shadow-lg">
+      <div class="w-full flex items-center gap-4">
+        <h2 class="text-lg md:text-xl flex-1 font-bold capitalize">Top bloggers this week</h2>
+        <button class="text-xs md:text-sm inline-flex gap-2 items-center mt-4 uppercase group/view transition-all ease duration-300 hover:underline hover:underline-offset-8 hover:text-violet-600" data-hoverable>
+          <span>View all</span>
+          <i class="fa-solid fa-angles-right transition-all ease duration-300 group-hover/view:translate-x-2"></i>
+        </button>
+      </div>
+      <div class="relative flex gap-2">
+        <span class="bg-white absolute w-4 aspect-square border flex justify-center items-center text-xs text-slate-900 font-bold rounded-full">1</span>
+        <img src="https://i.pravatar.cc/300?img=63" class="w-12 aspect-square object-center object-cover rounded-full" alt="">
+        <div>
+          <h3 class="font-semibold transition-all ease duration-300 hover:underline hover:underline-offset-4 hover:text-violet-600 cursor-pointer" data-hoverable>Elva Malone</h3>
+          <p class="text-xs text-slate-700 dark:text-white/75">3456 Followers</p>
+        </div>
+      </div>
+      <div class="relative flex gap-2">
+        <span class="bg-white absolute w-4 aspect-square border flex justify-center items-center text-xs text-slate-900 font-bold rounded-full">2</span>
+        <img src="https://i.pravatar.cc/300?img=47" class="w-12 aspect-square object-center object-cover rounded-full" alt="">
+        <div>
+          <h3 class="font-semibold transition-all ease duration-300 hover:underline hover:underline-offset-4 hover:text-violet-600 cursor-pointer" data-hoverable>Mina Rodgers</h3>
+          <p class="text-xs text-slate-700 dark:text-white/75">3456 Followers</p>
+        </div>
+      </div>
+      <div class="relative flex gap-2">
+        <span class="bg-white absolute w-4 aspect-square border flex justify-center items-center text-xs text-slate-900 font-bold rounded-full">3</span>
+        <img src="https://i.pravatar.cc/300?img=43" class="w-12 aspect-square object-center object-cover rounded-full" alt="">
+        <div>
+          <h3 class="font-semibold transition-all ease duration-300 hover:underline hover:underline-offset-4 hover:text-violet-600 cursor-pointer" data-hoverable>Lucy Bush</h3>
+          <p class="text-xs text-slate-700 dark:text-white/75">3456 Followers</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="fixed z-[9999] opacity-0 w-4 aspect-square rounded-full transition-transform ease duration-300 pointer-events-none bg-purple-600" id="cursor"></div>
+  <div class="fixed z-[9999] opacity-0 aspect-square rounded-full pointer-events-none w-[230px] bg-purple-600/20 dark:bg-purple-600/10 blur-lg" id="cursor-blur"></div>
+  <button id="theme-toggle" class="fixed right-4 bottom-4 bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-slate-900/75 dark:hover:bg-white/75 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2" data-hoverable>
+    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+    </svg>
+    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+        fill-rule="evenodd" clip-rule="evenodd"></path>
+    </svg>
+  </button>
+</body>
+
+</html>
