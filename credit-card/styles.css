@@ -4,4 +4,5 @@ body {
 .checkbox:has(input:checked) {
   outline: 1px solid #00C3FF;
   background-color: white;
+  box-shadow: 2px 2px 16px #074d8e4b;
 }
