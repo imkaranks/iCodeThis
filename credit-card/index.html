@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#f5f6fd] font-light text-[#074c8e] min-h-screen grid place-items-center">
+  <main class="bg-[#f8f9fd] w-11/12 max-w-6xl py-8 sm:py-12 lg:py-16 shadow-lg">
+    <div class="w-11/12 max-w-4xl grid gap-20 md:grid-cols-3 mx-auto">
+      <div class="hidden md:block md:col-span-1">
+        <img class="w-full max-w-[200px] ml-auto" src="https://i.ibb.co/59SbBCh/beer.png" alt="">
+      </div>
+      <div class="md:col-span-2">
+        <h1>
+          <span class="opacity-60" aria-hidden="true">4/4</span>
+          <span class="block text-2xl font-semibold">Last step!</span>
+        </h1>
+        <p>Enter your payment info below.</p>
+        <form class="text-sm">
+          <fieldset class="flex flex-wrap gap-6 items-center my-[27px]">
+            <legend class="sr-only">Payment Method</legend>
+            <div class="checkbox flex rounded relative border border-[#ddd] h-16 min-w-[210px] flex-1 px-4 items-center gap-2" data-controls="paypal-details">
+              <label class="flex flex-1 items-center gap-2" for="paypal">
+                <svg viewBox="0 0 1024 1024" class="h-12" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path d="M894.509511 249.605689H330.752a37.660444 37.660444 0 0 0-37.546667 37.762844v342.448356a37.660444 37.660444 0 0 0 37.546667 37.762844h563.757511a37.660444 37.660444 0 0 0 37.558045-37.762844V287.368533a37.660444 37.660444 0 0 0-37.558045-37.762844z" fill="#CCCCCC"></path>
+                    <path d="M293.216711 333.585067H932.067556v97.655466H293.216711z" fill="#4D4D4D"></path>
+                    <path d="M688.685511 388.278044H124.928a37.660444 37.660444 0 0 0-37.546667 37.762845v342.448355a37.660444 37.660444 0 0 0 37.546667 37.762845h563.757511a37.660444 37.660444 0 0 0 37.546667-37.762845V426.040889a37.660444 37.660444 0 0 0-37.546667-37.762845z" fill="#7d9ffa"></path>
+                    <path d="M87.381333 472.257422h638.850845v97.655467H87.381333z" fill="#4D4D4D"></path>
+                    <path d="M213.595022 692.974933a58.595556 58.254222 90 1 0 116.508445 0 58.595556 58.254222 90 1 0-116.508445 0Z" fill="#47A7DD"></path>
+                    <path d="M155.3408 692.974933a58.595556 58.254222 90 1 0 116.508444 0 58.595556 58.254222 90 1 0-116.508444 0Z" fill="#FC583D"></path>
+                    <path d="M894.509511 234.951111H720.406756c-8.044089 0-14.563556 6.5536-14.563556 14.6432s6.519467 14.654578 14.563556 14.654578h174.102755c12.686222 0 22.994489 10.376533 22.994489 23.131022v31.561956H307.768889V287.379911c0-12.754489 10.308267-23.131022 22.994489-23.131022H671.857778c8.044089 0 14.552178-6.564978 14.552178-14.654578S679.913244 234.951111 671.869156 234.951111h-341.105778c-28.740267 0-52.1216 23.517867-52.1216 52.417422v86.254934H124.928c-28.728889 0-52.110222 23.517867-52.110222 52.417422V663.665778c0 8.100978 6.519467 14.654578 14.563555 14.654578 8.044089 0 14.563556-6.564978 14.563556-14.654578v-79.086934h609.723733v183.9104c0 12.743111-10.308267 23.108267-22.983111 23.108267H124.928a23.074133 23.074133 0 0 1-22.983111-23.108267v-55.990044c0-8.0896-6.519467-14.6432-14.563556-14.6432-8.044089 0-14.563556 6.5536-14.563555 14.6432v55.990044c0 28.899556 23.381333 52.406044 52.110222 52.406045h563.757511c28.728889 0 52.110222-23.506489 52.110222-52.406045V426.040889c0-28.899556-23.381333-52.417422-52.110222-52.417422H307.780267v-25.383823h609.735111v68.357689H772.846933c-8.044089 0-14.563556 6.5536-14.563555 14.6432s6.519467 14.654578 14.563555 14.654578h144.668445v183.9104a23.096889 23.096889 0 0 1-22.994489 23.131022H774.781156c-8.044089 0-14.552178 6.5536-14.552178 14.6432s6.508089 14.6432 14.552178 14.6432h119.728355c28.728889 0 52.1216-23.506489 52.1216-52.417422V287.379911C946.631111 258.468978 923.249778 234.951111 894.509511 234.951111z m-182.840889 191.089778v31.573333H178.642489c-8.044089 0-14.563556 6.5536-14.563556 14.6432s6.519467 14.654578 14.563556 14.654578h533.026133v68.357689H101.944889v-68.357689h28.16c8.044089 0 14.563556-6.564978 14.563555-14.654578s-6.519467-14.6432-14.563555-14.6432H101.944889v-31.573333c0-12.743111 10.308267-23.119644 22.983111-23.119645h563.757511a23.096889 23.096889 0 0 1 22.983111 23.119645z" fill=""></path>
+                    <path d="M242.744889 760.069689a72.100978 72.100978 0 0 0 29.104355 6.155378c40.152178 0 72.817778-32.8704 72.817778-73.250134 0-40.402489-32.6656-73.250133-72.817778-73.250133-10.069333 0-19.979378 2.127644-29.104355 6.132622a72.078222 72.078222 0 0 0-29.149867-6.132622c-40.152178 0-72.817778 32.847644-72.817778 73.250133 0 40.379733 32.6656 73.250133 72.817778 73.250134 10.365156 0 20.218311-2.218667 29.149867-6.155378z m72.795022-67.094756c0 24.223289-19.603911 43.9296-43.690667 43.9296h-0.034133a73.056711 73.056711 0 0 0 14.609067-43.9296 73.079467 73.079467 0 0 0-14.609067-43.952355h0.034133c24.098133 0 43.690667 19.706311 43.690667 43.952355z m-145.624178 0c0-24.246044 19.592533-43.952356 43.690667-43.952355 24.086756 0 43.690667 19.706311 43.690667 43.952355 0 24.223289-19.603911 43.9296-43.690667 43.9296-24.098133 0.011378-43.690667-19.706311-43.690667-43.9296zM655.633067 647.5776c8.032711 0 14.563556-6.5536 14.563555-14.6432s-6.530844-14.6432-14.563555-14.6432H440.103822c-8.044089 0-14.563556 6.5536-14.563555 14.6432s6.519467 14.6432 14.563555 14.6432h215.529245z" fill=""></path>
+                  </g>
+                </svg>
+                <span class="font-medium">Credit Card</span>
+              </label>
+              <input class="peer/1 absolute inset-0 opacity-0" type="checkbox" name="paypal" id="paypal">
+              <span class="block w-6 h-6 border border-[#ddd] text-transparent peer-checked/1:text-green-400 peer-checked/1:border-green-400 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41L9 16.17z"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="checkbox flex rounded relative border border-[#ddd] h-16 min-w-[210px] flex-1 px-4 items-center gap-2" data-controls="card-details">
+              <label class="flex-1 font-normal" for="credit-card">
+                <img class="h-[30px]" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c530.png" alt="">
+              </label>
+              <input class="peer/2 absolute inset-0 opacity-0" type="checkbox" name="credit-card" id="credit-card">
+              <span class="block w-6 h-6 border border-[#ddd] text-transparent peer-checked/2:text-green-400 peer-checked/2:border-green-400 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41L9 16.17z"></path>
+                </svg>
+              </span>
+            </div>
+          </fieldset>
+          <fieldset class="mt-3" id="credit-card-details">
+            <div class="flex flex-col gap-1">
+              <label class="font-normal" for="card-no">Card Number</label>
+              <input class="bg-white w-full border border-[#ddd] rounded px-4 py-2 focus:outline-[#00C3FF]" placeholder="123 4567 8912 3456" type="text" name="card-no" id="card-no">
+            </div>
+            <div class="flex mt-3 gap-4">
+              <div class="flex flex-wrap gap-x-4 gap-y-1 w-full">
+                <label class="w-full font-normal" for="expiry">Expiration Date</label>
+                <select class="bg-white w-fit flex-1 border border-[#ddd] rounded pl-4 pr-8 py-2 focus:outline-[#00C3FF]" name="expiry" id="expiry">
+                  <option value="default" selected>Month</option>
+                  <option value="jan">January</option>
+                  <option value="feb">February</option>
+                  <option value="mar">March</option>
+                  <option value="apr">April</option>
+                  <option value="may">May</option>
+                  <option value="jun">June</option>
+                  <option value="jul">July</option>
+                  <option value="aug">August</option>
+                  <option value="sep">September</option>
+                  <option value="oct">October</option>
+                  <option value="nov">November</option>
+                  <option value="dec">December</option>
+                </select>
+                <select class="bg-white w-fit flex-1 border border-[#ddd] rounded pl-4 pr-8 py-2 focus:outline-[#00C3FF]" name="expiry" id="expiry">
+                  <option value="default" selected>Day</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                </select>
+              </div>
+              <div class="flex flex-col gap-1 w-full">
+                <label class="font-normal" for="cvc">CVC</label>
+                <input class="bg-white w-full max-w-[230px] border border-[#ddd] rounded px-4 py-2 focus:outline-[#00C3FF]" placeholder="123" name="cvc" id="cvc">
+              </div>
+            </div>
+          </fieldset>
+          <p class="text-xs mt-4">
+            By creating an account, you agree to Study.com's <strong>Terms of Use</strong> and <strong>Privacy Policy</strong>.
+          </p>
+          <button class="bg-[#074c8e] text-white font-medium px-8 py-3 w-full max-w-[250px] rounded mt-5 shadow-md transition-colors ease duration-300 hover:bg-[#074c8e]/75" type="submit">Join Now</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
