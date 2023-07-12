@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-100 grid place-items-center">
+  <main class="bg-white w-11/12 max-w-md mx-auto px-4 py-6 shadow-lg">
+    <ul class="flex gap-6 font-medium">
+      <li class="cursor-pointer border-b-4 border-b-[#8d92d5]">Flight</li>
+      <li class="cursor-pointer text-gray-500 hover:text-black hover:border-b-4 hover:border-b-[#8d92d5]/50">Hotels</li>
+      <li class="cursor-pointer text-gray-500 hover:text-black hover:border-b-4 hover:border-b-[#8d92d5]/50">Cars</li>
+    </ul>
+    <form class="bg-[#fbfbfb] border border-[#f1f1f1] px-8 py-4 mt-4 relative">
+      <div class="absolute -left-1.5 top-16">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAj0lEQVR4nO2ZMQrAMAzE/OuO9ZhfpxQ6lBBC2uV8IIF3HdqSCIDSZES0MJbvzzVn+e42IifyNiNyIV9+RG7Ilx2RH+TLjhgZhe3oDBBDATUUUEMBNRRQQwE1FFBDATUUUEMBNRRQQwE1FFBjVeD48bh7hvGIcvJfRpSV3xlRXn41wkZ+NsJO/v31dB9AFOUCM33ROWweUvYAAAAASUVORK5CYII=">
+      </div>
+      <div class="relative z-0 w-full my-6 group">
+        <input type="text" name="origin" id="origin" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-500 peer" placeholder=" " required />
+        <label for="origin" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Origin</label>
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <input type="text" name="destination" id="destination" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-500 peer" placeholder=" " required />
+        <label for="destination" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Destination</label>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+        <div class="relative col-span-full sm:col-span-1 z-0 w-full group">
+          <input type="date" name="departure" id="departure" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-500 peer" placeholder=" " required />
+          <label for="departure" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Departure</label>
+        </div>
+        <div class="relative col-span-full sm:col-span-1 z-0 w-full group">
+          <input type="date" name="arrival" id="arrival" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-500 peer" placeholder=" " required />
+          <label for="arrival" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Arrival</label>
+        </div>
+        <div class="relative col-span-full md:col-span-1 z-0 w-full group">
+          <input type="text" name="passengers" id="passengers" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-500 peer" placeholder=" " required />
+          <label for="passengers" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Passengers</label>
+        </div>
+      </div>
+      <button class="uppercase text-sm bg-[#8d92d5] text-white text-center font-semibold tracking-wider py-4 w-full shadow-lg shadow-[#8d92d5]/30 hover:bg-[#8d92d5]/75" type="submit">
+        Search
+      </button>
+      <a class="block mt-4 text-sm font-medium hover:text-[#8d92d5] hover:underline hover:underline-offset-4" href="javascript:void(0)">Flexible on Dates?</a>
+    </form>
+  </main>
+</body>
+
+</html>
