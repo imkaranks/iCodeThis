@@ -3,13 +3,28 @@
   const $sliderBtns = document.querySelectorAll('[data-slider-btn]>button');
   const $galleryImages = document.querySelectorAll('[data-gallery-image]');
   const $menuBtn = document.querySelector('#menu_btn');
+  const $scroller = document.querySelector('#scroller');
+  const $imageView = document.querySelector('#image_view');
+  const $imageViewClose = document.querySelector('#image_view_close');
+  const $imageViewImg = document.querySelector('#image_view_img');
+  const $prevBtn = document.querySelector('#prev_btn');
+  const $nextBtn = document.querySelector('#next_btn');
+  const $galleryPrevBtn = document.querySelector('#image_prev_btn');
+  const $galleryNextBtn = document.querySelector('#image_next_btn');
   const $primaryNav = document.querySelector('#primary_navigation');
   let currSlide = 0;
+  let currImage = 0;
+  let currViewedImg = null;
   let timer;
 
   changeSlidesAuto();
 
-  $galleryImages.forEach($galleryImage => {
+  $galleryImages.forEach(($galleryImage, index) => {
+    $galleryImage.onclick = function () {
+      currViewedImg = index;
+      $imageView.classList.remove('hidden');
+      $imageViewImg.src = $galleryImage.src;
+    }
     $galleryImage.onload = function (e) {
       const $parent = e.currentTarget.parentNode;
       e.currentTarget.classList.remove('opacity-0');
@@ -17,12 +32,36 @@
     };
   });
 
+  $imageViewClose.onclick = function () {
+    $imageView.classList.add('hidden');
+  }
+
   $sliderBtns.forEach(($sliderBtn, index) => {
     $sliderBtn.onclick = function () {
       changeSlide(index);
       changeSlidesAuto();
     }
-  })
+  });
+
+  $prevBtn.onclick = function () {
+    currImage = loopedDecrement(currImage, $galleryImages.length);
+    $scroller.scrollLeft -= 212;
+  }
+
+  $nextBtn.onclick = function () {
+    currImage = loopedIncrement(currImage, $galleryImages.length);
+    $scroller.scrollLeft += 212;
+  }
+
+  $galleryPrevBtn.onclick = function () {
+    currViewedImg = loopedDecrement(currViewedImg, $galleryImages.length);
+    $imageViewImg.src = $galleryImages[currViewedImg].src;
+  }
+
+  $galleryNextBtn.onclick = function () {
+    currViewedImg = loopedIncrement(currViewedImg, $galleryImages.length);
+    $imageViewImg.src = $galleryImages[currViewedImg].src;
+  }
 
   $menuBtn.onclick = function (e) {
     console.log('toggle menu')
@@ -39,10 +78,10 @@
   function changeSlide(specificIndex = null) {
     $sliderImages[currSlide].classList.add('hidden');
     $sliderBtns[currSlide].classList.replace('bg-white', 'bg-white/50');
-    if (currSlide < $sliderImages.length - 1) {
-      currSlide = specificIndex ?? currSlide + 1;
+    if (specificIndex) {
+      currSlide = specificIndex;
     } else {
-      currSlide = 0;
+      currSlide = loopedIncrement(currSlide, $sliderImages.length);
     }
     $sliderImages[currSlide].classList.replace('opacity-0', 'opacity-100');
     $sliderBtns[currSlide].classList.replace('bg-white/50', 'bg-white');
@@ -54,8 +93,25 @@
       clearInterval(timer);
     }
     timer = setInterval(() => {
-      console.log('slide changed');
       changeSlide();
     }, 3000);
+  }
+
+  function loopedIncrement(count, max) {
+    if (count < max - 1) {
+      count++;
+    } else {
+      count = 0;
+    }
+    return count;
+  }
+
+  function loopedDecrement(count, max) {
+    if (count > 1) {
+      count--;
+    } else {
+      count = max - 1;
+    }
+    return count;
   }
 })();
