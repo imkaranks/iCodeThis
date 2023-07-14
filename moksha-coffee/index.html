@@ -1,0 +1,117 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js" defer></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-neutral-800 min-h-screen grid place-items-center py-6">
+  <div class="w-11/12 max-w-6xl mx-auto bg-neutral-700 text-neutral-100 shadow-lg shadow-neutral-950/50">
+    <header>
+      <div class="pr-4 flex sm:justify-center items-center relative">
+        <img src="https://i.ibb.co/6vnxhyw/moksha-coffee.webp" class="h-14 object-contain -mb-2 sm:absolute sm:top-0 sm:left-1/2 sm:-translate-x-1/2 z-50 shadow-md shadow-black/50" alt="moksha-coffee">
+        <button class="ml-auto mt-4 mb-2 w-8 aspect-square border-2 rounded-full sm:hidden" aria-expanded="false" aria-controls="primary_navigation" id="menu_btn">
+          <span class="sr-only">Menu</span>
+          <span aria-hidden="true">&#9776;</span>
+        </button>
+        <nav class="absolute top-full left-0 right-0 bg-neutral-900 z-40 transition-all ease duration-300 grid grid-rows-[0fr] sm:pt-4 sm:pb-1 sm:static sm:bg-transparent sm:block" id="primary_navigation" aria-label="Primary">
+          <ul class="flex flex-col justify-center overflow-hidden sm:gap-4 sm:flex-row">
+            <li class="relative py-2 cursor-pointer before:content-[''] before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[1px] before:bg-neutral-800 before:transition-all before:ease before:duration-300 hover:before:bg-white text-center sm:py-0 sm:before:origin-center sm:before:h-0.5 sm:before:scale-0 sm:hover:before:scale-100">
+              <a href="javascript:void(0)">Our Story</a>
+            </li>
+            <li class="relative py-2 cursor-pointer before:content-[''] before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[1px] before:bg-neutral-800 before:transition-all before:ease before:duration-300 hover:before:bg-white text-center sm:py-0 sm:ml-4 sm:list-disc sm:marker:text-black sm:before:origin-center sm:before:h-0.5 sm:before:scale-0 sm:hover:before:scale-100 sm:mr-36">
+              <a href="javascript:void(0)">Food</a>
+            </li>
+            <li class="relative py-2 cursor-pointer before:content-[''] before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[1px] before:bg-neutral-800 before:transition-all before:ease before:duration-300 hover:before:bg-white text-center sm:py-0 sm:before:origin-center sm:before:h-0.5 sm:before:scale-0 sm:hover:before:scale-100">
+              <a href="javascript:void(0)">Coffee</a>
+            </li>
+            <li class="relative py-2 cursor-pointer before:content-[''] before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[1px] before:bg-neutral-800 before:transition-all before:ease before:duration-300 hover:before:bg-white text-center sm:py-0 sm:ml-4 sm:list-disc sm:marker:text-black sm:before:origin-center sm:before:h-0.5 sm:before:scale-0 sm:hover:before:scale-100">
+              <a href="javascript:void(0)">Find us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section class="relative isolate py-16" aria-labelledby="hero_title" role="banner">
+        <div class="w-11/12 max-w-5xl mx-auto text-center space-y-4">
+          <h1 class="text-2xl font-semibold uppercase" id="hero_title">Our Coffee</h1>
+          <p class="text-sm max-w-[60ch] mx-auto">
+            When it comes to the important stuff - the coffee - we are committed to sourcing and serving one of the
+            highest quality and we believe is nothing short of the best coffee possible.
+          </p>
+          <button class="font-medium px-5 py-1 border-2 transition-all ease duration-300 hover:outline hover:outline-neutral-800 hover:-outline-offset-[6px] hover:bg-white hover:text-black">Download our menu</button>
+        </div>
+        <ul class="absolute inset-0 -z-10 isolate before:content-[''] before:absolute before:inset-0 before:bg-black/50"
+          data-slider>
+          <li class="h-full" data-slider-image>
+            <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" class="w-full h-full object-cover" alt="">
+          </li>
+          <li class="h-full hidden" data-slider-image>
+            <img src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FmZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="">
+          </li>
+          <li class="h-full hidden" data-slider-image>
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhZmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover" alt="">
+          </li>
+        </ul>
+        <ul class="absolute left-0 right-0 bottom-2 flex justify-center items-center gap-8">
+          <li data-slider-btn>
+            <button class="w-2 aspect-square bg-white rounded-full transition-colors ease duration-300 hover:bg-white">
+              <span class="sr-only">Slide 1</span>
+            </button>
+          </li>
+          <li data-slider-btn>
+            <button class="w-2 aspect-square bg-white/50 rounded-full transition-colors ease duration-300 hover:bg-white">
+              <span class="sr-only">Slide 2</span>
+            </button>
+          </li>
+          <li data-slider-btn>
+            <button class="w-2 aspect-square bg-white/50 rounded-full transition-colors ease duration-300 hover:bg-white">
+              <span class="sr-only">Slide 3</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+    </header>
+    <section class="py-8" aria-labelledby="gallery_title">
+      <div class="relative w-11/12 max-w-5xl mx-auto">
+        <h2 class="text-xl font-semibold" id="gallery_title">Gallery</h2>
+        <div class="flex flex-wrap items-center gap-4 mt-4 px-8">
+          <div class="bg-neutral-600 min-w-[180px] flex-1 h-[7rem] animate-pulse transition-all ease duration-300 hover:z-10 hover:scale-[1.1]">
+            <img src="https://plus.unsplash.com/premium_photo-1661757403591-b1282fbc3334?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mjh8fGNhZmV8ZW58MHx8fHwxNjg5MjU5NzA5fDE&ixlib=rb-4.0.3&q=80&w=1080" class="w-full h-full object-cover opacity-0 rounded shadow-md" alt="..." data-gallery-image>
+          </div>
+          <div class="bg-neutral-600 min-w-[180px] flex-1 h-[7rem] animate-pulse transition-all ease duration-300 hover:z-10 hover:scale-[1.1]">
+            <img src="https://plus.unsplash.com/premium_photo-1668472272074-9fcd3d3302d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8MzB8fGNhZmV8ZW58MHx8fHwxNjg5MjU5NzA5fDE&ixlib=rb-4.0.3&q=80&w=1080" class="w-full h-full object-cover opacity-0 rounded shadow-md" alt="..." data-gallery-image>
+          </div>
+          <div class="bg-neutral-600 min-w-[180px] flex-1 h-[7rem] animate-pulse transition-all ease duration-300 hover:z-10 hover:scale-[1.1]">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover opacity-0 rounded shadow-md" data-gallery-image alt="...">
+          </div>
+          <div class="bg-neutral-600 min-w-[180px] flex-1 h-[7rem] animate-pulse transition-all ease duration-300 hover:z-10 hover:scale-[1.1]">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhZmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" class="w-full h-full object-cover opacity-0 rounded shadow-md" alt="..." data-gallery-image>
+          </div>
+        </div>
+        <button class="absolute top-1/2 translate-y-1/2 left-0 z-40" id="prev-btn">
+          <span class="sr-only">Previous Image</span>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="absolute top-1/2 translate-y-1/2 right-0 z-40" id="next-btn">
+          <span class="sr-only">Next Image</span>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
