@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-sky-400/70 grid place-items-center">
+  <div class="w-11/12 max-w-4xl mx-auto bg-white rounded-md shadow-lg shadow-black/30">
+    <header class="px-8 py-8 rounded-t-md md:px-16 md:py-12 lg:px-24 bg-[hsl(190,_100%,_99%)]">
+      <nav class="isolate">
+        <ul class="relative flex justify-between items-center before:content-[''] before:absolute before:top-1/2 before:left-0 before:right-0 before:-z-10 before:-translate-y-1/2 before:h-0.5 before:bg-[hsl(186,_9%,_78%)]">
+          <li class="bg-[hsl(190,_100%,_99%)] font-medium text-center px-1">
+            <div class="text-sky-400/70">
+              <i class="fa-solid fa-cart-shopping text-2xl"></i>
+              <p class="text-[hsl(239,_36%,_46%)]">Shopping Cart</p>
+            </div>
+          </li>
+          <li class="bg-[hsl(190,_100%,_99%)] font-medium text-center px-1">
+            <div class="text-sky-400/70">
+              <i class="fa-solid fa-map-location-dot text-2xl"></i>
+              <p class="text-[hsl(239,_36%,_46%)]">Delivery Address</p>
+            </div>
+          </li>
+          <li class="bg-[hsl(190,_100%,_99%)] font-medium text-center px-1">
+            <div class="text-[hsl(201,_11%,_43%)]">
+              <i class="fa-solid fa-credit-card text-2xl"></i>
+              <p>Payment Method</p>
+            </div>
+          </li>
+          <li class="bg-[hsl(190,_100%,_99%)] font-medium text-center px-1">
+            <div class="text-[hsl(186,_9%,_78%)]">
+              <i class="fa-regular fa-file-lines text-2xl"></i>
+              <p>Preview Order</p>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="px-4 py-6 space-y-6 sm:p-8 md:px-16 md:py-12 lg:px-24">
+      <h1 class="text-lg sm:text-xl text-[hsl(202,_11%,_51%)] font-semibold uppercase">Payment Method</h1>
+      <form class="grid gap-8 sm:grid-cols-[auto_1fr]">
+        <fieldset class="flex sm:flex-col gap-4">
+          <legend class="sr-only">Payment Mode</legend>
+          <div class="relative sm:flex-1">
+            <input checked class="absolute inset-0 opacity-0 cursor-pointer peer" type="radio" name="paymentMode" id="card">
+            <label class="block w-full sm:max-w-[11rem] bg-white peer-checked:outline peer-checked:outline-sky-400/70 shadow-lg shadow-black/20" for="card">
+              <img src="https://i.ibb.co/wRJLFKj/visa.webp" class="w-full object-fit" alt="visa-card">
+            </label>
+          </div>
+          <div class="relative sm:flex-1">
+            <input class="absolute inset-0 opacity-0 cursor-pointer peer" type="radio" name="paymentMode" id="paypal">
+            <label class="block w-full sm:max-w-[11rem] bg-white peer-checked:outline peer-checked:outline-sky-400/70 shadow-lg shadow-black/20" for="paypal">
+              <img src="https://i.ibb.co/Nxvxhx4/paypal.webp" class="w-full object-fit" alt="paypal">
+            </label>
+          </div>
+          <div class="relative sm:flex-1">
+            <input class="absolute inset-0 opacity-0 cursor-pointer peer" type="radio" name="paymentMode" id="bitcoin">
+            <label class="block w-full sm:max-w-[11rem] bg-white peer-checked:outline peer-checked:outline-sky-400/70 shadow-lg shadow-black/20" for="bitcoin">
+              <img src="https://i.ibb.co/sCgVLkn/bitcoin.webp" class="w-full object-fit" alt="bitcoin">
+            </label>
+          </div>
+        </fieldset>
+        <div>
+          <fieldset class="bg-[hsl(150,_20%,_98%)] p-4 rounded-md">
+            <legend class="sr-only">Payment Details</legend>
+            <div class="flex flex-col gap-1">
+              <label class="text-[hsl(202,_10%,_62%)] font-medium" for="cardNum">Card Number</label>
+              <div class="flex gap-2 items-center">
+                <input class="bg-white w-full px-3 py-2 rounded-md focus:outline focus:outline-sky-400" placeholder="4569 8859 8744 3244" type="number" name="cardNum" id="cardNum">
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4 mt-4">
+              <div class="min-w-[150px] flex-1 flex flex-col gap-1">
+                <label class="text-[hsl(202,_10%,_62%)] font-medium" for="cardExpiry">Expiration Date</label>
+                <div class="flex gap-2 items-center">
+                  <input class="bg-white w-full px-3 py-2 rounded-md focus:outline focus:outline-sky-400" type="date" name="cardExpiry" id="cardExpiry">
+                </div>
+              </div>
+              <div class="min-w-[150px] flex-1 flex flex-col gap-1">
+                <label class="text-[hsl(202,_10%,_62%)] font-medium" for="cardCvv">CVV</label>
+                <div class="flex gap-2 items-center">
+                  <input class="bg-white w-full px-3 py-2 rounded-md focus:outline focus:outline-sky-400" placeholder="477" type="number" name="cardCvv" id="cardCvv">
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col mt-4 gap-1">
+              <label class="text-[hsl(202,_10%,_62%)] font-medium" for="cardHolder">Card Holder Name</label>
+              <div class="flex gap-2 items-center">
+                <input class="bg-white w-full px-3 py-2 rounded-md focus:outline focus:outline-sky-400" placeholder="John Green" type="text" name="cardHolder" id="cardHolder">
+              </div>
+            </div>
+          </fieldset>
+          <button class="mt-5 bg-sky-500/90 text-white w-full px-4 py-5 font-semibold rounded-lg shadow-lg shadow-black/20 hover:bg-sky-500/70" type="submit">Confirm Payment</button>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+
+</html>
