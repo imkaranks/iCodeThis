@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+
+  <body class="min-h-screen bg-gradient-to-r from-[#3E3C54] to-[#353349] text-sm text-white overflow-hidden">
+    <div class="mx-auto w-full px-8 max-w-4xl" id="page">
+      <header class="flex items-center py-4 md:py-6">
+        <button class="ml-auto flex flex-col gap-2 sm:hidden" aria-expanded="true" aria-controls="primary-nav">
+          <span class="sr-only">Menu</span>
+          <span class="h-0.5 w-8 bg-white"></span>
+          <span class="h-0.5 w-8 bg-white"></span>
+          <span class="h-0.5 w-8 bg-white"></span>
+        </button>
+        <nav class="ease fixed left-0 right-0 top-14 grid w-full grid-rows-[0fr] text-center transition-all duration-300 sm:static sm:flex" aria-label="Primary" id="primary-nav">
+          <ul class="flex flex-col overflow-hidden bg-[#2d2b40] text-base font-medium sm:ml-auto sm:flex-row sm:items-center sm:gap-8 sm:overflow-visible sm:bg-transparent">
+            <li class="border-b border-b-[#58566b] py-2 sm:border-b-0 sm:py-0">
+              <a href="javascript:void(0)">Browse</a>
+            </li>
+            <li class="border-b border-b-[#58566b] py-2 sm:border-b-0 sm:py-0">
+              <a href="javascript:void(0)">Support</a>
+            </li>
+            <li class="border-b border-b-[#58566b] py-2 sm:border-b-0 sm:py-0">
+              <a href="javascript:void(0)">Blog</a>
+            </li>
+            <li class="border-b border-b-[#58566b] py-2 sm:border-b-0 sm:py-0">
+              <button>Sign in</button>
+            </li>
+            <li class="border-b border-b-[#58566b] py-2 sm:border-b-0 sm:py-0">
+              <button class="ease rounded-md bg-[#6c63ff] px-5 py-2 shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-[#6c63ff]/75 hover:shadow-lg hover:shadow-black/40 active:translate-y-0 active:scale-95">Sign up</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="grid items-center gap-4 py-12 sm:grid-cols-2" aria-labelledby="main_headline">
+          <div class="text-center sm:text-left">
+            <h1 class="mx-auto mb-3 max-w-[23ch] text-xl sm:mx-0 sm:text-2xl md:text-3xl" id="main_headline">You're never paying full price for software again.</h1>
+            <p class="mx-auto mb-5 max-w-[45ch] sm:mx-0 sm:max-w-[50ch]">We will send you the hottest deals straight to your inbox so you're always in on the best-kept software secrets.</p>
+            <div class="mx-auto flex max-w-md items-center gap-2 sm:mx-0 sm:text-base">
+              <input class="w-full flex-1 rounded-md border border-[#58566b] bg-[#3f3d56] bg-transparent p-2 focus:outline-[#6c63ff]" placeholder="Email Address" type="text" />
+              <button class="ease rounded-md bg-[#6c63ff] px-5 py-2 shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-[#6c63ff]/75 hover:shadow-lg hover:shadow-black/40 active:translate-y-0 active:scale-95">Sign up</button>
+            </div>
+          </div>
+          <div>
+            <img class="mx-auto w-full max-w-[400px]" src="https://i.ibb.co/S5j7gQY/hero.png" />
+          </div>
+        </section>
+        <section class="mb-4 flex flex-wrap justify-center gap-8 rounded-lg bg-[#2d2b40] p-4 text-center sm:gap-6 sm:p-8 md:gap-4 md:p-12" aria-labelledby="section_title">
+          <h2 class="sr-only" id="section_title">Features</h2>
+          <article class="flex-1 basis-[250px]">
+            <img src="https://i.ibb.co/KxHbX2b/fire.png" class="mx-auto mb-1 h-[64px] object-contain" alt="fire" />
+            <h3 class="mx-auto mb-3 max-w-[30ch] text-base font-medium leading-tight">We partner with the hottest tech companies.</h3>
+            <p class="mx-auto max-w-[25ch]">We're talling Evernote, MailChamp, Depositphotos... just to name a few</p>
+          </article>
+          <article class="flex-1 basis-[250px]">
+            <img src="https://i.ibb.co/zhWhy5q/like.png" class="mx-auto mb-1 h-[64px] object-contain" alt="like" />
+            <h3 class="mx-auto mb-3 max-w-[30ch] text-base font-medium leading-tight">We run insane deals on their products.</h3>
+            <p class="mx-auto max-w-[25ch]">But don't sleep on it! Our deals sell out within a couple weeks.</p>
+          </article>
+          <article class="flex-1 basis-[250px]">
+            <img src="https://i.ibb.co/Qv6fx60/coin.png" class="mx-auto mb-1 h-[64px] object-contain" alt="coins" />
+            <h3 class="mx-auto mb-3 max-w-[30ch] text-base font-medium leading-tight">You save thousands of dollars.</h3>
+            <p class="mx-auto max-w-[25ch]">And build up a full arsenal of tools to grow your business.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
