@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  >
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#242e4c',
+            accent: '#738bfd',
+            alert: '#f55623',
+            secondary: {
+              600: '#767e96',
+              200: '#e9eaed',
+              100: '#f3f4f6',
+            }
+          },
+          fontSize: {
+            'title': '28px',
+            'sub-title': '16px',
+            'sub-sub': '14px',
+            'normal': '12px',
+          },
+          fontFamily: {
+            primary: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-primary">
+  <div class="mx-auto grid w-full max-w-5xl sm:grid-cols-2">
+    <div class="border-l">
+      <section class="py-16 pb-8">
+        <h2 class="mb-4 w-fit rounded-br-full rounded-tr-full bg-secondary-200 py-0.5 pl-6 pr-4 uppercase text-secondary-600">Buttons</h2>
+  
+        <div class="flex flex-wrap gap-4 px-8">
+          <button class="w-fit rounded-md bg-primary px-6 py-2 text-sub-sub text-secondary-100">Primary Button</button>
+          <button class="w-fit rounded-md bg-primary px-6 py-2 text-sub-sub text-secondary-100 shadow-md shadow-black/20">Primary Button</button>
+          <button class="w-fit rounded-md bg-secondary-200 px-6 py-2 text-sub-sub text-primary shadow-md">Primary Button</button>
+          <button class="w-fit rounded-md bg-secondary-200 px-6 py-2 text-sub-sub text-primary shadow-md shadow-black/20">Primary Button</button>
+        </div>
+      </section>
+      <section class="py-8">
+        <h2 class="mb-4 w-fit rounded-br-full rounded-tr-full bg-secondary-200 py-0.5 pl-6 pr-4 uppercase text-secondary-600">Inputs</h2>
+  
+        <div class="space-y-3 px-8">
+          <div class="flex flex-wrap gap-0.5 text-sub-sub">
+            <label class="w-full font-bold text-primary" for="fullName">Full Name</label>
+            <div class="flex w-full items-center gap-4">
+              <input class="w-full flex-[0.7] rounded-md border border-secondary-600 px-3 py-2 outline-none" placeholder="ex. Lida Owen" type="text" name="fullName" id="fullName" />
+              <span class="flex-[0.3] text-normal text-secondary-600 font-medium italic">Default</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-0.5 text-sub-sub">
+            <label class="w-full font-bold text-primary" for="fullName">Your Name</label>
+            <div class="flex w-full items-center gap-4">
+              <input class="w-full flex-[0.7] rounded-md border border-secondary-600 px-3 py-2 outline-none" value="Anthony Webb" placeholder="ex. Lida Owen" type="text" name="fullName" id="fullName" />
+              <span class="flex-[0.3] text-normal text-secondary-600 font-medium italic">Filled</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-0.5 text-sub-sub">
+            <label class="w-full font-bold text-primary" for="fullName">Password</label>
+            <div class="flex w-full items-center gap-4">
+              <input class="w-full flex-[0.7] rounded-md border-2 border-accent px-3 py-2 outline-none" placeholder="ex. Lida Owen" type="text" name="fullName" id="fullName" />
+              <span class="flex-[0.3] text-normal text-secondary-600 font-medium italic">Focused</span>
+            </div>
+            <span class="text-normal text-alert font-medium">Your password must be 6 characters long.</span>
+          </div>
+          <div class="flex flex-wrap gap-0.5 text-sub-sub">
+            <label class="w-full font-bold text-primary" for="fullName">Email</label>
+            <div class="flex w-full items-center gap-4">
+              <input class="w-full flex-[0.7] rounded-md border border-secondary-600 bg-secondary-100 px-3 py-2" placeholder="myemail@address.com" type="text" name="fullName" id="fullName" />
+              <span class="flex-[0.3] text-normal text-secondary-600 font-medium italic">Inactive</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-8">
+        <h2 class="mb-4 w-fit rounded-br-full rounded-tr-full bg-secondary-200 py-0.5 pl-6 pr-4 uppercase text-secondary-600">Cards</h2>
+  
+        <div class="grid grid-cols-2 gap-4 px-8">
+          <p class="text-normal">Default Card Background</p>
+          <p class="text-normal">Hovered Card Background</p>
+          <div class="aspect-square rounded-md bg-white shadow-[0_0_4px_rgba(0,_0,_0,_0.15)]"></div>
+          <div class="aspect-square rounded-md bg-white shadow-[0_0_16px_rgba(0,_0,_0,_0.3)]"></div>
+        </div>
+      </section>
+    </div>
+    <div class="border-l">
+      <section class="py-16 pb-8">
+        <h2 class="mb-4 w-fit rounded-br-full rounded-tr-full bg-secondary-200 py-0.5 pl-6 pr-4 uppercase text-secondary-600">Colors</h2>
+  
+        <div class="flex flex-wrap items-center gap-4 px-8 text-normal">
+          <span class="flex-shrink-none flex aspect-square w-16 items-center justify-center bg-primary text-secondary-100">#242E4C</span>
+          <span class="flex-shrink-none flex aspect-square w-16 items-center justify-center bg-accent text-secondary-100">#738BFD</span>
+          <span class="flex-shrink-none flex aspect-square w-16 items-center justify-center bg-alert text-secondary-100">#F55623</span>
+          <span class="flex-shrink-none flex aspect-square w-16 items-center justify-center bg-secondary-600 text-secondary-100">#F3F4F6</span>
+          <span class="flex-shrink-none flex aspect-square w-16 items-center justify-center bg-secondary-200 text-primary">#E9EAED</span>
+          <span class="flex-shrink-none flex aspect-square w-16 items-center justify-center bg-secondary-100 text-primary">#767E96</span>
+        </div>
+      </section>
+      <section class="py-8" class="space-y-4">
+        <h2 class="mb-4 w-fit rounded-br-full rounded-tr-full bg-secondary-200 py-0.5 pl-6 pr-4 uppercase text-secondary-600">Fonts | <span class="capitalize">Montserrat</span></h2>
+  
+        <div class="space-y-3 px-8">
+          <p class="text-title font-bold text-primary">Page Title | 28px Bold #1E1A50</p>
+          <p class="text-sub-sub font-bold text-primary">Secondary Title | 16px Bold #1E1A50</p>
+          <p class="text-sub-sub font-bold text-primary">Tertiary Title | 14px Bold #1A2950</p>
+          <p class="text-sub-sub font-medium text-accent">Link | Montserrat 14px Medium #738BFD</p>
+          <p class="text-sub-sub font-medium text-secondary-600">Input Placeholder | 14px Medium #767E96</p>
+          <p class="text-normal font-medium text-primary">Basic Paragraph | 12px Medium #1A2950</p>
+          <p class="text-normal font-medium text-secondary-600">Board Summary Label | 12px Medium #767E96</p>
+          <p class="text-normal font-medium text-alert">Alert Message | 12px Medium #F55623</p>
+        </div>
+      </section>
+      <section class="py-8">
+        <h2 class="mb-4 w-fit rounded-br-full rounded-tr-full bg-secondary-200 py-0.5 pl-6 pr-4 uppercase text-secondary-600">Icons</h2>
+        <div class="flex flex-wrap gap-6 pl-4 sm:pl-8">
+          <div class="flex h-8 w-8 items-center justify-center text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6l1.41-1.41z"></path>
+            </svg>
+          </div>
+  
+          <div class="flex h-8 w-8 items-center justify-center text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"></path>
+            </svg>
+          </div>
+  
+          <div class="flex h-8 w-8 items-center justify-center text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+              <path fill="currentColor" d="M28 32H15.33L19 28.37l-9.9-9.9L3.54 24a1.83 1.83 0 0 0 0 2.6L9 32H3a1 1 0 0 0 0 2h25a1 1 0 0 0 0-2Z" class="clr-i-solid clr-i-solid-path-1"></path>
+              <path fill="currentColor" d="m34.08 10.65l-7.3-7.3a1.83 1.83 0 0 0-2.6 0L10.47 17.06l9.9 9.9l13.71-13.71a1.85 1.85 0 0 0 0-2.6Z" class="clr-i-solid clr-i-solid-path-2"></path>
+              <path fill="none" d="M0 0h36v36H0z"></path>
+            </svg>
+          </div>
+  
+          <div class="flex h-8 w-8 items-center justify-center text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0zm0-6a2 2 0 1 0 4 0a2 2 0 0 0-4 0zm0 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0z"></path>
+            </svg>
+          </div>
+  
+          <div class="flex h-8 w-8 items-center justify-center text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM21.41 6.34l-3.75-3.75l-2.53 2.54l3.75 3.75l2.53-2.54z"></path>
+            </svg>
+          </div>
+  
+          <div class="flex h-8 w-8 items-center justify-center text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5l-1.5 1.5l-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16A6.5 6.5 0 0 1 3 9.5A6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14S14 12 14 9.5S12 5 9.5 5Z"></path>
+            </svg>
+          </div>
+  
+          <div class="flex h-8 w-8 items-center justify-center text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+            </svg>
+          </div>
+  
+          <div class="flex h-8 w-8 items-center justify-center text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M10 2H3c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1zm0 11H3c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1zM21 2h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1zm0 11h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1z"></path>
+            </svg>
+          </div>
+  
+          <div class="flex h-8 w-8 items-center justify-center text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z"></path>
+            </svg>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>  
+</body>
+
+</html>
