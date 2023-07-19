@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    #slider::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#36434c',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="from-primary/90 to-primary grid min-h-screen place-items-center bg-gradient-to-tr py-6 text-white">
+  <main class="mx-auto max-w-md overflow-hidden rounded-md shadow-lg shadow-black/20">
+    <img class="rounded-t-md" src="https://chorus.fm/wp-content/uploads/2016/05/muse.jpg" alt="" />
+    <div class="via-primary/50 to-primary relative -mt-14 space-y-2.5 bg-gradient-to-b from-transparent to-20% px-4 pb-6 pt-10 backdrop-blur-sm">
+      <article class="space-y-2 text-sm">
+        <div class="flex items-start">
+          <h1 class="text-2xl font-medium">Muse World Tour 2017</h1>
+          <button class="ease ml-auto rounded-md bg-orange-600 px-5 py-2 font-medium uppercase shadow-md shadow-black/20 transition-colors duration-300 hover:bg-orange-500">Buy Ticket</button>
+        </div>
+        <ul class="grid gap-1">
+          <li class="flex items-center gap-2">
+            <span class="sr-only">Location</span>
+            <i class="fa-solid fa-location-dot w-3" aria-hidden="true"></i>
+            <span>Berlin, Germay</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="sr-only">Time</span>
+            <i class="fa-regular fa-clock w-3" aria-hidden="true"></i>
+            <time datetime="2017-08-19">19 Aug 2017</time>
+          </li>
+        </ul>
+        <div>
+          <p id="desc">Muse, the world renowned multi-platinum selling and multi-award winning band, embarked on their ambitious Drones World Tour in 2015-16, playing over 1...</p>
+          <button class="font-medium text-orange-500" id="desc-control" aria-controls="desc">Read More</button>
+        </div>
+      </article>
+      <h2 class="text-xl font-medium">Reccomended</h2>
+      <div class="flex gap-5 overflow-x-scroll scroll-smooth" id="slider">
+        <figure class="relative flex-shrink-0 basis-[180px] overflow-hidden rounded-sm text-xs shadow shadow-black/20">
+          <img src="https://chorus.fm/wp-content/uploads/2016/05/muse.jpg" alt="" />
+          <figcaption class="from-primary/80 absolute bottom-0 left-0 right-0 grid bg-gradient-to-t to-transparent pb-2 text-center">
+            <span>Depeche Mode</span>
+            <span>Global Spirit Tour</span>
+          </figcaption>
+        </figure>
+        <figure class="relative flex-shrink-0 basis-[180px] overflow-hidden rounded-sm text-xs shadow shadow-black/20">
+          <img src="https://chorus.fm/wp-content/uploads/2016/05/muse.jpg" alt="" />
+          <figcaption class="from-primary/80 absolute bottom-0 left-0 right-0 grid bg-gradient-to-t to-transparent pb-2 text-center">
+            <span>Coldplay</span>
+            <span>A head full of dreams Tour</span>
+          </figcaption>
+        </figure>
+        <figure class="relative flex-shrink-0 basis-[180px] overflow-hidden rounded-sm text-xs shadow shadow-black/20">
+          <img src="https://chorus.fm/wp-content/uploads/2016/05/muse.jpg" alt="" />
+          <figcaption class="from-primary/80 absolute bottom-0 left-0 right-0 grid bg-gradient-to-t to-transparent pb-2 text-center">
+            <span>Greenday</span>
+            <span>World Tour</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="absolute bottom-14 left-0 right-0 flex justify-between">
+        <button class="aspect-square w-8 rounded-br-full rounded-tr-full bg-orange-500" id="slider-prev">
+          <span class="sr-only">Previous</span>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="aspect-square w-8 rounded-bl-full rounded-tl-full bg-orange-500" id="slider-next">
+          <span class="sr-only">Next</span>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
