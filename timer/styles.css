@@ -1,0 +1,129 @@
+:root {
+  --clr-primary: #1b88a9;
+  --clr-neutral: #fff;
+  --gradient: linear-gradient(to top, #5be0c4, #00b0c5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--clr-primary);
+  font-family: sans-serif;
+}
+
+.timer {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 90%;
+  max-width: 20rem;
+  background: var(--gradient);
+  border-radius: 1rem;
+  overflow: hidden;
+  color: var(--clr-neutral);
+  padding-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 0 50px rgb(0 0 0 / .2);
+}
+
+.timer__header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.timer__header-btn {
+  --_bg-rgb: 0 0 0;
+  --_bg-opacity: 20%;
+  border: 0;
+  color: inherit;
+  display: inline-flex;
+  gap: .25rem;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(var(--_bg-rgb) / var(--_bg-opacity));
+  padding-block: 1rem;
+  font-size: 1rem;
+}
+
+.timer__header-btn.active {
+  --_bg-opacity: 50%;
+}
+
+.timer__header-btn:hover {
+  --_bg-opacity: 35%;
+}
+
+.timer__body {
+  position: relative;
+  padding: 3rem 1rem 5rem 1rem;
+}
+
+.timer__time {
+  position: relative;
+  width: 80%;
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.timer__time > p {
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timer__time > svg {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.timer__progress,
+.timer__progress-dot {
+  fill: transparent;
+  stroke: white;
+}
+
+.timer__progress:first-child {
+  stroke-width: 0.5;
+  transition: all 150ms ease;
+}
+
+.timer__progress:last-child {
+  stroke-width: 2;
+  transition: all 150ms ease;
+}
+
+.timer__progress-dot {
+  stroke-width: 4;
+  transition: all 150ms ease;
+}
+
+.timer__controls {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.timer__controls-btn {
+  border: 0;
+  aspect-ratio: 1;
+  width: 4rem;
+  background-color: rgb(255 255 255 / .5);
+  border-radius: 50%;
+  font-size: 1.25rem;
+}
+
+.timer__controls-btn:first-child {
+  color: red;
+}
+
+.timer__controls-btn:last-child {
+  color: #333;
+}

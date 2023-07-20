@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="timer">
+    <div class="timer__header">
+      <button class="timer__header-btn">
+        <i class="fa-regular fa-clock" aria-hidden="true"></i>
+        <span>Alarm</span>
+      </button>
+      <button class="timer__header-btn active">
+        <i class="fa-solid fa-hourglass" aria-hidden="true"></i>
+        <span>Timer</span>
+      </button>
+      <button class="timer__header-btn">
+        <i class="fa-solid fa-stopwatch-20" aria-hidden="true"></i>
+        <span>Stopwatch</span>
+      </button>
+    </div>
+    <div class="timer__body">
+      <h1>Timer</h1>
+      <div class="timer__time">
+        <p>
+          <span id="minutes">26</span>:<span id="seconds">04</span>
+        </p>
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <filter id="shadow" color-interpolation-filters="sRGB">
+              <feDropShadow dx="0" dy="0" stdDeviation="0.5" flood-color="white"></feDropShadow>
+              <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="white"></feDropShadow>
+              <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="white"></feDropShadow>
+          </filter>
+
+          <circle class="timer__progress" cx="50" cy="50" r="45"></circle>
+          <circle class="timer__progress" cx="50" cy="50" r="45" stroke-linecap="round" stroke-dasharray="282.7433388230814" stroke-dashoffset="282.7433388230814" style="stroke-dashoffset: 70.6858;">
+          </circle>
+          <circle cx="50" cy="50" r="45" stroke-linecap="round" class="timer__progress-dot" filter="url(#shadow)" stroke-dasharray="0 282.7433388230814" stroke-dashoffset="282.7433388230814" style="stroke-dashoffset: 70.6858;"></circle>
+        </svg>
+      </div>
+    </div>
+    <div class="timer__controls">
+      <button class="timer__controls-btn" id="close">
+        <i class="fa-solid fa-times"></i>
+        <span class="sr-only">Close</span>
+      </button>
+      <button class="timer__controls-btn" id="togglePause">
+        <i class="fa-solid fa-pause"></i>
+        <span class="sr-only">Pause</span>
+      </button>
+    </div>
+  </div>
+</body>
+</html>
