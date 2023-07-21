@@ -1,0 +1,125 @@
+:root {
+  --gradient: linear-gradient(to bottom right, #826db2, #3b4c7d);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--gradient);
+  font-family: sans-serif;
+  color: #1e293b;
+}
+
+.apps {
+  width: 90%;
+  max-width: 25rem;
+  margin-inline: auto;
+  background-color: white;
+  padding: 1.25em;
+  border-radius: .25em;
+  box-shadow: 0 0 40px rgb(0 0 0 / .3);
+}
+
+.apps__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: .5em;
+  margin-bottom: .5em;
+  border-bottom: 2px solid whitesmoke;
+}
+
+.apps__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.apps__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 120px;
+  flex-shrink: 0;
+  transition: all 300ms ease;
+  padding: 1em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+
+.apps__card:hover {
+  box-shadow: 0 0 20px rgb(0 0 0 / .2);
+}
+
+.apps__card-img {
+  display: block;
+  width: 4rem;
+  object-fit: cover;
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.apps__card-title {
+  margin-top: .5rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.btn {
+  border: 0;
+  padding: .5em;
+  width: 100%;
+  background: var(--_bg);
+  font-weight: 500;
+  color: var(--_clr);
+  border-radius: .25em;
+  cursor: pointer;
+  transition: opacity 300ms ease;
+}
+
+.btn:hover {
+  opacity: .75;
+}
+
+.apps__card-cta {
+  --_bg: #7ed321;
+  --_clr: white;
+  max-width: 4rem;
+  margin-top: .5rem;
+  position: absolute;
+  bottom: 1em;
+  transition: all 300ms ease;
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.apps__card:hover .apps__card-title {
+  opacity: 0;
+}
+
+.apps__card:hover .apps__card-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.apps__cta {
+  --_bg: var(--gradient);
+  --_clr: white;
+  margin-top: 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: .75em 1em;
+  transition: all 300ms ease;
+  background-size: 200%;
+}
+
+.apps__cta:hover {
+  background-size: 100%;
+}
