@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="grid place-items-center bg-[#eee] py-6">
+  <main class="w-11/12 max-w-4xl mx-auto bg-white shadow-lg shadow-black/30">
+    <h1 class="text-xl text-slate-500 uppercase py-4 px-5 border-b">Your accounts</h1>
+    <div class="flex flex-col sm:flex-row">
+      <div class="sm:flex-[0.4] flex flex-col relative">
+        <div class="flex gap-3 bg-[#e7e6fb] py-2 px-4 cursor-pointer">
+          <div class="bg-[#2198f6] text-slate-100 w-12 h-12 rounded-full flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-dollar-sign"></i>
+          </div>
+          <div class="flex flex-col gap-1 text-xs text-black font-medium">
+            <h2>USD Wallet</h2>
+            <p class="before:content-['$']">254.00</p>
+            <div class="flex items-center gap-2">
+              <button class="bg-white py-1 px-2 rounded-full flex items-center gap-1">
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
+                <span>Deposit</span>
+              </button>
+              <button class="bg-white py-1 px-2 rounded-full flex items-center gap-1">
+                <i class="fa-solid fa-upload" aria-hidden="true"></i>
+                <span>Withdraw</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-3 border-t py-2 px-4 cursor-pointer coin" data-tab="2">
+          <div class="bg-amber-400 text-slate-100 w-12 h-12 rounded-full flex items-center justify-center text-2xl">
+            <i class="fa-brands fa-btc"></i>
+          </div>
+
+          <div class="flex flex-col gap-1 text-xs text-black">
+            <h3 class="font-medium">BTC Wallet</h3>
+            <p class="font-medium">0.00000 BTC = <span class="text-slate-400">000</span> </p>
+
+            <div class="flex items-center gap-3">
+              <button class=" py-1 px-2 rounded-full flex items-center gap-1 bg-slate-100 ">
+                <i class="fa-solid fa-paper-plane"></i>
+                <a href="#" class="text-slate-500 send" data-tab="BTC">Send</a>
+              </button>
+
+              <button class="bg-white border py-1 px-2 rounded-full flex items-center gap-1 ">
+                <i class="fa-solid fa-receipt"></i>
+                <a href="#" class="text-slate-500 receive">Receive</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-3 border-t py-2 px-4 cursor-pointer coin" data-tab="2">
+          <div class="bg-[#7fd522] text-slate-100 w-12 h-12 rounded-full flex items-center justify-center text-2xl">
+            <i class="fa-brands fa-btc rotate-[-30deg]"></i>
+          </div>
+
+          <div class="flex flex-col gap-1 text-xs text-black">
+            <h3 class="font-medium">BCH Wallet</h3>
+            <p class="font-medium">0.00000 BTC = <span class="text-slate-400">000</span> </p>
+
+            <div class="flex items-center gap-3">
+              <button class=" py-1 px-2 rounded-full flex items-center gap-1 bg-slate-100 ">
+                <i class="fa-solid fa-paper-plane"></i>
+                <a href="#" class="text-slate-500 send" data-tab="BTC">Send</a>
+              </button>
+
+              <button class="bg-white border py-1 px-2 rounded-full flex items-center gap-1 ">
+                <i class="fa-solid fa-receipt"></i>
+                <a href="#" class="text-slate-500 receive">Receive</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-3 border-t py-2 px-4 cursor-pointer coin" data-tab="2">
+          <div class="bg-[#667ddc] text-slate-100 w-12 h-12 rounded-full flex items-center justify-center text-2xl">
+            <i class="fa-brands fa-ethereum"></i>
+          </div>
+
+          <div class="flex flex-col gap-1 text-xs text-black">
+            <h3 class="font-medium">ETH Wallet</h3>
+            <p class="font-medium">0.00000 BTC = <span class="text-slate-400">000</span> </p>
+
+            <div class="flex items-center gap-3">
+              <button class=" py-1 px-2 rounded-full flex items-center gap-1 bg-slate-100 ">
+                <i class="fa-brand fa-paper-plane"></i>
+                <a href="#" class="text-slate-500 send" data-tab="BTC">Send</a>
+              </button>
+
+              <button class="bg-white border py-1 px-2 rounded-full flex items-center gap-1 ">
+                <i class="fa-solid fa-receipt"></i>
+                <a href="#" class="text-slate-500 receive">Receive</a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-3 border-t py-2 px-4 cursor-pointer coin" data-tab="2">
+          <div class="bg-slate-400 text-slate-100 w-12 h-12 rounded-full flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-l"></i>
+          </div>
+
+          <div class="flex flex-col gap-1 text-xs text-black">
+            <h3 class="font-medium">LTC Wallet</h3>
+            <p class="font-medium">0.00000 BTC = <span class="text-slate-400">000</span> </p>
+
+            <div class="flex items-center gap-3">
+              <button class=" py-1 px-2 rounded-full flex items-center gap-1 bg-slate-100 ">
+                <i class="fa-solid fa-paper-plane"></i>
+                <a href="#" class="text-slate-500 send" data-tab="BTC">Send</a>
+              </button>
+
+              <button class="bg-white border py-1 px-2 rounded-full flex items-center gap-1 ">
+                <i class="fa-solid fa-receipt"></i>
+                <a href="#" class="text-slate-500 receive">Receive</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button class="mt-auto mb-4 bg-[#b4adf3] text-white font-medium shadow-xl shadow-[#b4adf3]/30 transition-all rounded-full py-2 px-2 w-[80%] mx-auto">
+          <i class="fa-solid fa-plus"></i>
+          <a href="#">New Account</a>
+        </button>
+      </div>
+      <div class="sm:flex-[0.6] py-2 px-4">
+        <h2 class="uppercase text-slate-500 text-sm">Transactions</h2>
+        <div class="flex flex-col">
+          <div class="flex items-center w-full justify-between mt-2 border-b py-2">
+            <p class="uppercase text-xs">Jun <br> 12</p>
+            <div class="w-6 h-6 rounded-full border flex items-center justify-center">
+              <i class="fa-solid fa-arrow-left text-blue-500"></i>
+            </div>
+            <div class="flex items-center gap-3 w-[70%] sm:w-[85%] justify-between">
+              <p class="text-sm font-medium text-black">Bought Etherum <br>
+                <span class="font-normal text-slate-500 text-xs">Using USD Wallet</span>
+              </p>
+              <div class="flex flex-col gap-2 font-medium text-black text-xs">
+                <span class="font-bold">-$6.83</span>
+                <span class="text-slate-400">$6.83</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full justify-between mt-2 border-b py-2">
+            <p class="uppercase text-xs">Jun <br> 9</p>
+            <div class="w-6 h-6 rounded-full border flex items-center justify-center">
+              <i class="fa-solid fa-arrow-right text-orange-500"></i>
+            </div>
+            <div class="flex items-center gap-3 w-[70%] sm:w-[85%] justify-between">
+              <p class="text-sm font-medium text-black">Sold Bitcoin <br>
+                <span class="font-normal text-slate-500 text-xs">Using USD Wallet</span>
+              </p>
+              <div class="flex flex-col gap-2 font-medium text-black text-xs">
+                <span class="font-bold">-$6.83</span>
+                <span class="text-slate-400">$6.83</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full justify-between mt-2 border-b py-2">
+            <p class="uppercase text-xs">Jun <br> 7</p>
+            <div class="w-6 h-6 rounded-full border flex items-center justify-center">
+              <i class="fa-solid fa-arrow-left text-blue-500"></i>
+            </div>
+            <div class="flex items-center gap-3 w-[70%] sm:w-[85%] justify-between">
+              <p class="text-sm font-medium text-black">Bought Etherum <br>
+                <span class="font-normal text-slate-500 text-xs">Using USD Wallet</span>
+              </p>
+              <div class="flex flex-col gap-2 font-medium text-black text-xs">
+                <span class="font-bold">-$6.83</span>
+                <span class="text-slate-400">$6.83</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full justify-between mt-2 border-b py-2">
+            <p class="uppercase text-xs">May <br> 27</p>
+            <div class="w-6 h-6 rounded-full border flex items-center justify-center">
+              <i class="fa-solid fa-arrow-left text-blue-500"></i>
+            </div>
+            <div class="flex items-center gap-3 w-[70%] sm:w-[85%] justify-between">
+              <p class="text-sm font-medium text-black">Bought Litecoin <br>
+                <span class="font-normal text-slate-500 text-xs">Using USD Wallet</span>
+              </p>
+              <div class="flex flex-col gap-2 font-medium text-black text-xs">
+                <span class="font-bold">-$25.97</span>
+                <span class="text-slate-400">$25.97</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full justify-between mt-2 border-b py-2">
+            <p class="uppercase text-xs">May <br> 22</p>
+            <div class="w-6 h-6 rounded-full border flex items-center justify-center">
+              <i class="fa-solid fa-arrow-left text-blue-500"></i>
+            </div>
+            <div class="flex items-center gap-3 w-[70%] sm:w-[85%] justify-between">
+              <p class="text-sm font-medium text-black">Bought Etherum <br>
+                <span class="font-normal text-slate-500 text-xs">Using USD Wallet</span>
+              </p>
+              <div class="flex flex-col gap-2 font-medium text-black text-xs">
+                <span class="font-bold">-$6.83</span>
+                <span class="text-slate-400">$6.83</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full justify-between mt-2 border-b py-2">
+            <p class="uppercase text-xs">May <br> 5</p>
+            <div class="w-6 h-6 rounded-full border flex items-center justify-center">
+              <i class="fa-solid fa-arrow-right text-orange-500"></i>
+            </div>
+            <div class="flex items-center gap-3 w-[70%] sm:w-[85%] justify-between">
+              <p class="text-sm font-medium text-black">Sold Bitcoin <br>
+                <span class="font-normal text-slate-500 text-xs">Using USD Wallet</span>
+              </p>
+              <div class="flex flex-col gap-2 font-medium text-black text-xs">
+                <span class="font-bold">-$6.83</span>
+                <span class="text-slate-400">$6.83</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full justify-between mt-2 border-b py-2">
+            <p class="uppercase text-xs">Apr <br> 19</p>
+            <div class="w-6 h-6 rounded-full border flex items-center justify-center">
+              <i class="fa-solid fa-arrow-left text-blue-500"></i>
+            </div>
+            <div class="flex items-center gap-3 w-[70%] sm:w-[85%] justify-between">
+              <p class="text-sm font-medium text-black">Bought Etherum <br>
+                <span class="font-normal text-slate-500 text-xs">Using USD Wallet</span>
+              </p>
+              <div class="flex flex-col gap-2 font-medium text-black text-xs">
+                <span class="font-bold">-$6.83</span>
+                <span class="text-slate-400">$6.83</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center w-full justify-between mt-2 border-b py-2">
+            <p class="uppercase text-xs">Apr <br> 1</p>
+            <div class="w-6 h-6 rounded-full border flex items-center justify-center">
+              <i class="fa-solid fa-arrow-left text-green-500"></i>
+            </div>
+            <div class="flex items-center gap-3 w-[70%] sm:w-[85%] justify-between">
+              <p class="text-sm font-medium text-black">Sold Bitcoin Cash <br>
+                <span class="font-normal text-slate-500 text-xs">Using USD Wallet</span>
+              </p>
+              <div class="flex flex-col gap-2 font-medium text-black text-xs">
+                <span class="font-bold">-$6.83</span>
+                <span class="text-slate-400">$6.83</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
