@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="grid min-h-screen place-items-center bg-[#eee] py-6">
+  <div class="mx-auto w-11/12 max-w-sm overflow-hidden rounded-lg bg-white shadow-lg">
+    <header class="bg-gradient-to-r from-[#3dc8f0] to-[#06d2ab]">
+      <section>
+        <div class="mx-auto flex w-11/12 items-center justify-between gap-2 py-1 text-sm">
+          <div class="device__network">
+            <i class="fa-solid fa-signal"></i>
+            <span>Sketch</span>
+            <i class="fa-solid fa-wifi"></i>
+          </div>
+          <time class="device__time">9:41 AM</time>
+          <div class="device__status">
+            <i class="fa-brands fa-bluetooth"></i>
+            <span>100%</span>
+            <i class="fa-solid fa-battery-full"></i>
+          </div>
+        </div>
+        <div class="mx-auto flex w-10/12 justify-between py-2 text-2xl text-white">
+          <button class="nav__toggle">
+            <span class="sr-only">Menu</span>
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+          <button class="nav__search">
+            <span class="sr-only">Search</span>
+            <i class="fa-solid fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </section>
+      <section class="pb-3" aria-labelledby="event__title">
+        <div class="mx-auto w-10/12">
+          <h1 class="mb-4 text-center text-lg font-bold text-white" id="event__title">Event Highlights</h1>
+  
+          <div class="flex gap-4">
+            <div class="relative isolate flex aspect-square flex-shrink-0 basis-[150px] flex-col justify-end overflow-hidden rounded-lg p-4 text-sm text-white before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-slate-200/20">
+              <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWMlMjBmZXN0aXZhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60" class="absolute inset-0 -z-10 h-full w-full object-cover object-center" alt="A group of people raising their hands in the concert" />
+              <h2 class="font-medium z-10">
+                <time>13 Jul<span class="sr-only">y</span></time>
+                <span class="sr-only">to</span>
+                <span aria-hidden="true">-</span>
+                <time>18 Jul<span class="sr-only">y</span></time>
+              </h2>
+              <p class="capitalize z-10">Rainforest world music festival</p>
+            </div>
+            <div class="relative isolate flex aspect-square flex-shrink-0 basis-[150px] flex-col justify-end overflow-hidden rounded-lg p-4 text-sm text-white before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-slate-200/20">
+              <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWMlMjBmZXN0aXZhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60" class="absolute inset-0 -z-10 h-full w-full object-cover object-center" alt="A group of people raising their hands in the concert" />
+              <h2 class="font-medium z-10">
+                <time>13 Jul<span class="sr-only">y</span></time>
+                <span class="sr-only">to</span>
+                <span aria-hidden="true">-</span>
+                <time>18 Jul<span class="sr-only">y</span></time>
+              </h2>
+              <p class="capitalize z-10">Rainforest world music festival</p>
+            </div>
+            <div class="relative isolate flex aspect-square flex-shrink-0 basis-[150px] flex-col justify-end overflow-hidden rounded-lg p-4 text-sm text-white before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-slate-200/20">
+              <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWMlMjBmZXN0aXZhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60" class="absolute inset-0 -z-10 h-full w-full object-cover object-center" alt="A group of people raising their hands in the concert" />
+              <h2 class="font-medium z-10">
+                <time>13 Jul<span class="sr-only">y</span></time>
+                <span class="sr-only">to</span>
+                <span aria-hidden="true">-</span>
+                <time>18 Jul<span class="sr-only">y</span></time>
+              </h2>
+              <p class="capitalize z-10">Rainforest world music festival</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section class="py-4">
+      <div class="mx-auto w-10/12">
+        <div class="flex flex-wrap-reverse gap-2">
+          <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWMlMjBmZXN0aXZhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60" class="h-44 w-full rounded-lg object-cover object-center" alt="A group of people raising their hands in the concert" />
+          <h2 class="order-last w-full text-xs font-medium text-slate-400 sm:w-auto sm:flex-[0.3] sm:text-right">
+            <time>13 Jul<span class="sr-only">y</span></time>
+            <span class="sr-only">to</span>
+            <span aria-hidden="true">-</span>
+            <time>18 Jul<span class="sr-only">y</span></time>
+          </h2>
+          <p class="text-sm font-bold capitalize leading-tight sm:flex-[0.7]">World Puppet Carnival in Kuching</p>
+        </div>
+        <div class="mt-8 flex flex-wrap-reverse gap-2">
+          <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWMlMjBmZXN0aXZhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60" class="h-44 w-full rounded-lg object-cover object-center" alt="A group of people raising their hands in the concert" />
+          <h2 class="order-last w-full text-xs font-medium text-slate-400 sm:w-auto sm:flex-[0.3] sm:text-right">
+            <time>13 Jul<span class="sr-only">y</span></time>
+            <span class="sr-only">to</span>
+            <span aria-hidden="true">-</span>
+            <time>18 Jul<span class="sr-only">y</span></time>
+          </h2>
+          <p class="text-sm font-bold capitalize leading-tight sm:flex-[0.7]">33rd Sabah Annual Art</p>
+        </div>
+      </div>
+    </section>
+  </div>  
+</body>
+</html>
