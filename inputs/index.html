@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#eee] min-h-screen flex flex-wrap gap-4 items-center justify-center">
+  <div class="w-11/12 max-w-fit space-y-4 rounded-lg bg-white p-6 shadow-lg shadow-black/20">
+    <h2 class="px-2 text-lg font-bold">Days</h2>
+    <div class="flex flex-col">
+      <label class="cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+        <input type="checkbox" class="accent-pink-400" name="mon" id="mon" />
+        Monday
+      </label>
+      <label class="cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+        <input type="checkbox" class="accent-pink-400" name="tue" id="tue" />
+        Tuesday
+      </label>
+      <label class="cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+        <input type="checkbox" class="accent-pink-400" name="wed" id="wed" />
+        Wednesday
+      </label>
+      <label class="cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+        <input type="checkbox" class="accent-pink-400" name="thu" id="thu" />
+        Thursday
+      </label>
+      <label class="cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+        <input type="checkbox" class="accent-pink-400" name="fri" id="fri" />
+        Friday
+      </label>
+      <label class="cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+        <input type="checkbox" class="accent-pink-400" name="sat" id="sat" />
+        Saturday
+      </label>
+      <label class="cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+        <input type="checkbox" class="accent-pink-400" name="sun" id="sun" />
+        Sunday
+      </label>
+    </div>
+    <button class="rounded bg-black px-6 py-2 font-medium text-white" id="clear-filter">Remove all filter</button>
+  </div>
+  
+  <div class="w-11/12 max-w-[20rem] space-y-4 rounded-lg bg-white p-4 shadow-lg shadow-black/20">
+    <div class="flex items-center gap-2">
+      <button>
+        <span class="sr-only">Go Back</span>
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      </button>
+      <h2 class="text-lg font-semibold">Settings</h2>
+    </div>
+    <div class="relative flex items-center justify-between">
+      <span class="font-medium">Smart sorting</span>
+      <input class="appearence-none peer absolute inset-0 opacity-0" type="checkbox" name="sorting" id="sorting" />
+      <label class="before:ease relative block h-4 w-10 cursor-pointer rounded-full border-2 border-pink-400 before:absolute before:-left-1 before:-top-1 before:aspect-square before:w-5 before:rounded-full before:bg-pink-400 before:transition-all before:duration-300 before:content-[''] peer-checked:before:translate-x-[calc(100%+.25rem)]" for="sorting"></label>
+    </div>
+  
+    <div>
+      <div class="flex cursor-pointer items-center gap-2 rounded border border-transparent p-2 hover:border-pink-200 hover:bg-pink-200/20" data-dropdown>
+        <i class="fa-regular fa-moon" aria-hidden="true"></i>
+        <span class="flex-1 font-medium">Toggle theme</span>
+        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+      </div>
+      <div class="ease grid grid-rows-[0fr] transition-all duration-300" data-dropdown-list>
+        <div class="flex flex-col overflow-hidden">
+          <label class="flex items-center gap-2 px-4 py-2">
+            <input type="radio" name="theme" />
+            <span>Light</span>
+          </label>
+          <label class="flex items-center gap-2 px-4 py-2">
+            <input type="radio" name="theme" />
+            <span>Dark</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <div class="flex cursor-pointer items-center gap-2 rounded border border-transparent p-2 hover:border-pink-200 hover:bg-pink-200/20" data-dropdown>
+        <i class="fa-regular fa-flag" aria-hidden="true"></i>
+        <span class="flex-1 font-medium">Choose Language</span>
+        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+      </div>
+      <div class="ease grid grid-rows-[0fr] transition-all duration-300" data-dropdown-list>
+        <div class="flex flex-col overflow-hidden">
+          <label class="flex items-center gap-2 px-4 py-2">
+            <input type="radio" name="lang" />
+            <span>English</span>
+          </label>
+          <label class="flex items-center gap-2 px-4 py-2">
+            <input type="radio" name="lang" />
+            <span>Hindi</span>
+          </label>
+          <label class="flex items-center gap-2 px-4 py-2">
+            <input type="radio" name="lang" />
+            <span>Spanish</span>
+          </label>
+          <label class="flex items-center gap-2 px-4 py-2">
+            <input type="radio" name="lang" />
+            <span>French</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="w-11/12 max-w-[20rem] space-y-4">
+    <input class="peer w-full border-2 p-2" type="text" placeholder="All types" />
+    <div class="grid grid-rows-[0fr] rounded-lg bg-white shadow-lg shadow-black/20 peer-focus-within:grid-rows-[1fr] peer-focus:grid-rows-[1fr]">
+      <div class="flex flex-col overflow-hidden">
+        <label class="mx-2 mt-2 cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+          <input type="checkbox" class="accent-pink-400" />
+          Product Discovery
+        </label>
+        <label class="mx-2 cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+          <input type="checkbox" class="accent-pink-400" />
+          Software
+        </label>
+        <label class="mx-2 cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+          <input type="checkbox" class="accent-pink-400" />
+          Service Management
+        </label>
+        <label class="mx-2 mb-2 cursor-pointer rounded border border-transparent p-2 font-medium hover:border-pink-200 hover:bg-pink-200/20">
+          <input type="checkbox" class="accent-pink-400" />
+          Business
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+
+</html>
