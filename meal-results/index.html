@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="grid min-h-screen place-items-center bg-[#eee] py-6">
+  <main class="mx-auto w-11/12 max-w-2xl space-y-8 rounded-lg bg-white px-6 py-8 shadow-lg shadow-black/20">
+    <div class="flex flex-col gap-2 min-[480px]:flex-row">
+      <div class="flex-1">
+        <h1 class="text-xl font-bold leading-tight">Results for "Avacado"</h1>
+        <p class="text-xs font-medium text-slate-400">2 results found</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <p class="text-sm text-slate-600">Choose display</p>
+        <div class="flex w-16 rounded bg-slate-200">
+          <label class="relative inline-flex w-1/2 items-center justify-center rounded bg-blue-500 py-1 text-white">
+            <i class="fa-solid fa-grip-vertical" aria-hidden="true"></i>
+            <input class="absolute inset-0 appearance-none opacity-0" type="radio" name="display" />
+          </label>
+          <label class="relative inline-flex w-1/2 items-center justify-center rounded py-1 text-white">
+            <i class="fa-solid fa-bars-staggered" aria-hidden="true"></i>
+            <input class="absolute inset-0 appearance-none opacity-0" type="radio" name="display" />
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative flex flex-wrap gap-2 filter">
+      <div class="flex w-fit cursor-pointer items-center gap-1 rounded border px-2 py-1" data-dropdown>
+        <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+        <span>Filters</span>
+        <span class="filter__count inline-block flex aspect-square w-4 items-center justify-center rounded-full bg-blue-500 text-[10px] font-medium text-white">3</span>
+      </div>
+      <div class="flex w-fit items-center gap-1 rounded border border-blue-500 bg-blue-500 px-3 py-1 text-white">
+        <span>Vegetarian</span>
+        <i class="fa-regular fa-circle-xmark"></i>
+      </div>
+      <div class="flex w-fit items-center gap-1 rounded border border-blue-500 bg-blue-500 px-3 py-1 text-white">
+        <span>Protein</span>
+        <i class="fa-regular fa-circle-xmark"></i>
+      </div>
+      <div class="flex w-fit items-center gap-1 rounded border border-blue-500 bg-blue-500 px-3 py-1 text-white">
+        <span>Dinner</span>
+        <i class="fa-regular fa-circle-xmark"></i>
+      </div>
+      <div class="ease absolute left-0 right-0 top-full grid grid-rows-[0fr] transition-all duration-300" data-dropdown-list>
+        <div class="overflow-hidden bg-white">
+          <div class="filter__option cursor-pointer rounded border-t px-2 py-1">Vegetarian</div>
+          <div class="filter__option cursor-pointer rounded border-t px-2 py-1">Protein</div>
+          <div class="filter__option cursor-pointer rounded border-t px-2 py-1">Dinner</div>
+          <div class="filter__option cursor-pointer rounded border-t px-2 py-1">Breakfast</div>
+          <div class="filter__option cursor-pointer rounded border-y px-2 py-1">Lunch</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid gap-2 sm:grid-cols-2" id="recipes">
+      <div class="flex items-start gap-4 rounded border p-4">
+        <img class="aspect-square w-20 rounded-full object-cover" src="https://images.unsplash.com/photo-1659778059522-d280d965fde8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhY2FkbyUyMHNhbmR3aXRjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Avacado sandwitch" />
+        <div class="flex-1">
+          <h2 class="text-base font-semibold leading-none">Avacado sandwitch with boiled egg</h2>
+          <div class="mt-2 flex items-center gap-1 text-sm">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+            <span>Under 1 hour</span>
+          </div>
+        </div>
+        <button class="bookmark__btn">
+          <span class="sr-only">Bookmark</span>
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+      </div>
+      <div class="flex items-start gap-4 rounded border p-4">
+        <img class="aspect-square w-20 rounded-full object-cover" src="https://images.unsplash.com/photo-1659778059522-d280d965fde8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhY2FkbyUyMHNhbmR3aXRjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Avacado sandwitch" />
+        <div class="flex-1">
+          <h2 class="text-base font-semibold leading-none">Avacado sandwitch with boiled egg</h2>
+          <div class="mt-2 flex items-center gap-1 text-sm">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+            <span>Under 1 hour</span>
+          </div>
+        </div>
+        <button class="bookmark__btn">
+          <span class="sr-only">Bookmark</span>
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+      </div>
+      <div class="flex items-start gap-4 rounded border p-4">
+        <img class="aspect-square w-20 rounded-full object-cover" src="https://images.unsplash.com/photo-1659778059522-d280d965fde8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhY2FkbyUyMHNhbmR3aXRjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Avacado sandwitch" />
+        <div class="flex-1">
+          <h2 class="text-base font-semibold leading-none">Avacado sandwitch with boiled egg</h2>
+          <div class="mt-2 flex items-center gap-1 text-sm">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+            <span>Under 1 hour</span>
+          </div>
+        </div>
+        <button class="bookmark__btn">
+          <span class="sr-only">Bookmark</span>
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
