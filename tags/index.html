@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="grid min-h-screen place-items-center bg-slate-100">
+  <form class="mx-auto w-11/12 max-w-4xl space-y-4">
+    <div class="flex flex-col gap-3">
+      <label class="text-xl font-bold" for="tags">Tags</label>
+      <input type="text" name="tags" id="tags" class="w-full rounded-lg border-2 border-slate-300 bg-white/75 px-3 py-2.5 focus:bg-white focus:outline-pink-500" aria-describedby="tags-hint" placeholder="Add tags separated by comma" />
+      <p class="text-sm font-semibold" id="tags-hint">For example: <span class="text-blue-500">fitness app, dashboard, navigation, webshop, landing page</span></p>
+    </div>
+    <div class="tags__content | mt-2 flex flex-wrap items-center gap-3 rounded-lg border-2 border-slate-300 p-2">
+      <div class="tag | cursor-pointer rounded-lg bg-[#232448] px-3 py-2 text-white">
+        <span class="tag__text">tag name</span>
+        <button class="tag__btn">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Remove Tag</span>
+        </button>
+      </div>
+      <div class="tag | cursor-pointer rounded-lg bg-[#232448] px-3 py-2 text-white">
+        <span class="tag__text">tag name</span>
+        <button class="tag__btn">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Remove Tag</span>
+        </button>
+      </div>
+      <div class="tag | cursor-pointer rounded-lg bg-[#232448] px-3 py-2 text-white">
+        <span class="tag__text">tag name</span>
+        <button class="tag__btn">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Remove Tag</span>
+        </button>
+      </div>
+      <div class="tag | cursor-pointer rounded-lg bg-pink-600 px-3 py-2 text-white">
+        <span class="tag__text">about to be deleted</span>
+        <button class="tag__btn">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Remove Tag</span>
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3">
+      <label class="text-xl font-bold" for="category">Category</label>
+      <select class="w-full rounded-lg border-2 border-slate-300 bg-white/75 px-3 py-2.5 focus:bg-white focus:outline-pink-500" name="category" id="category">
+        <option value="" selected>Select something</option>
+        <option value="web">Web</option>
+        <option value="mobile">Mobile</option>
+        <option value="ui-kit">UI Kit</option>
+        <option value="coded">Coded</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  </form>
+  
+  <script src="script.js"></script>
+</body>
+</html>

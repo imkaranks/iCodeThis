@@ -1,0 +1,4 @@
+.tag:has(.tag__btn:hover) {
+  background-color: #db2777;
+  transition: background-color 300ms ease;
+}
