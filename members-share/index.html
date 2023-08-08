@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            primary: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen font-primary grid place-items-center bg-[#242641]">
+  <main class="bg-[#30324f] text-slate-100 w-11/12 max-w-[32rem] mx-auto py-8 px-7 rounded-2xl shadow-lg">
+    <div class="flex justify-between items-center">
+      <button class="bg-white text-black w-10 h-10 rounded-full flex items-center justify-center text-sm hover:bg-indigo-500 hover:text-white cursor-pointer hover:scale-95 transition-all duration-300">
+        <span class="sr-only">Go Back</span>
+        <i class="fa-solid fa-share" aria-hidden="true"></i>
+      </button>
+      <button class="group flex items-center gap-2">
+        <span class="text-sm">Settings</span>
+        <i class="fa-solid fa-gear transition-all ease-in-out duration-300 rotate-[0deg] group-hover:text-indigo-500 group-hover:rotate-[60deg]" aria-hidden="true"></i>
+      </button>
+    </div>
+    <h1 class="text-lg sm:text-xl font-medium max-w-[15ch] mt-8 leading-tight">
+      Share with people and groups
+    </h1>
+    <div class="flex flex-wrap gap-2 items-center w-full border border-slate-100/30 mt-6 rounded-3xl p-2 bg-[#242641]" id="contacts">
+      <!-- <div class="border border-white/20 flex items-center gap-2 bg-[#41436d] rounded-3xl py-1 px-2">
+        <img class="w-7 h-7 rounded-full" src="https://i.pravatar.cc/100" alt="">
+        <span>Karan</span>
+        <button>
+          <span class="sr-only">Remove Contact</span>
+          <i class="fa-solid fa-times" aria-hidden="true"></i>
+        </button>
+      </div> -->
+      <label class="sr-only" for="people">People and group</label>
+      <input class="flex-1 pl-4 bg-transparent outline-none" type="text" name="people" id="people">
+    </div>
+    <div class="mt-4 flex items-center gap-2 text-sm font-medium">
+      <input type="checkbox" name="notify" id="notify">
+      <label for="notify">Notify people</label>
+    </div>
+    <div class="text-sm font-medium mt-8 flex flex-wrap justify-center items-center gap-4">
+      <a class="w-full text-blue-500 text-center hover:underline hover:underline-offset-4 hover:text-indigo-500 sm:w-auto" href="javascript:void(0)">
+        Send feedback
+      </a>
+      <button class="py-3 px-6 sm:ml-auto rounded-md bg-[#242641] hover:bg-indigo-500 shadow-xl transition-500 duration-300" id="cancel-btn">Cancel</button>
+      <button class="py-3 px-7 rounded-md bg-blue-500 shadow-xl hover:bg-indigo-500 transition-500 duration-300" id="send-btn">Send</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

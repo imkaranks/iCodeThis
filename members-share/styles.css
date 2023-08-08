@@ -1,0 +1,3 @@
+#contacts:has(>#people:focus) {
+  border-color: #3b82f6;
+}
