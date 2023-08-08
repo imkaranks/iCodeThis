@@ -27,46 +27,52 @@
     }
   </script>
 </head>
-<body class="min-h-screen font-primary grid place-items-center bg-[#242641]">
-  <main class="bg-[#30324f] text-slate-100 w-11/12 max-w-[32rem] mx-auto py-8 px-7 rounded-2xl shadow-lg">
-    <div class="flex justify-between items-center">
-      <button class="bg-white text-black w-10 h-10 rounded-full flex items-center justify-center text-sm hover:bg-indigo-500 hover:text-white cursor-pointer hover:scale-95 transition-all duration-300">
+<body class="font-primary grid min-h-screen place-items-center bg-[#242641]">
+  <main class="mx-auto w-11/12 max-w-[32rem] rounded-2xl bg-[#30324f] px-7 py-8 text-slate-100 shadow-lg">
+    <div class="flex items-center justify-between">
+      <button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-sm text-black transition-all duration-300 hover:scale-95 hover:bg-indigo-500 hover:text-white">
         <span class="sr-only">Go Back</span>
         <i class="fa-solid fa-share" aria-hidden="true"></i>
       </button>
       <button class="group flex items-center gap-2">
         <span class="text-sm">Settings</span>
-        <i class="fa-solid fa-gear transition-all ease-in-out duration-300 rotate-[0deg] group-hover:text-indigo-500 group-hover:rotate-[60deg]" aria-hidden="true"></i>
+        <i class="fa-solid fa-gear rotate-[0deg] transition-all duration-300 ease-in-out group-hover:rotate-[60deg] group-hover:text-indigo-500" aria-hidden="true"></i>
       </button>
     </div>
-    <h1 class="text-lg sm:text-xl font-medium max-w-[15ch] mt-8 leading-tight">
-      Share with people and groups
-    </h1>
-    <div class="flex flex-wrap gap-2 items-center w-full border border-slate-100/30 mt-6 rounded-3xl p-2 bg-[#242641]" id="contacts">
-      <!-- <div class="border border-white/20 flex items-center gap-2 bg-[#41436d] rounded-3xl py-1 px-2">
-        <img class="w-7 h-7 rounded-full" src="https://i.pravatar.cc/100" alt="">
-        <span>Karan</span>
-        <button>
-          <span class="sr-only">Remove Contact</span>
+    <h1 class="mt-8 max-w-[15ch] text-lg font-medium leading-tight sm:text-xl">Share with people and groups</h1>
+    <div class="mt-6 flex w-full flex-wrap items-center gap-2 rounded-3xl border border-slate-100/30 bg-[#242641] p-2" id="contacts">
+      <!-- 
+        <div class="flex items-center gap-2 rounded-3xl border border-white/20 bg-[#41436d] px-2 py-1">
+          <img class="h-7 w-7 rounded-full" src="https://i.pravatar.cc/100" alt="" />
+          <span>Karan</span>
+          <button>
+            <span class="sr-only">Remove Contact</span>
+            <i class="fa-solid fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+       -->
+      <label class="sr-only" for="people">People and group</label>
+      <input class="flex-1 bg-transparent pl-4 outline-none" type="text" name="people" aria-describedby="hint" id="people" />
+      <div class="fixed bottom-4 right-4 flex flex-row-reverse gap-4" id="popup-hint">
+        <img class="h-14 w-14 rounded-full opacity-0" src="https://shismqklzntzxworibfn.supabase.co/storage/v1/object/public/avatars/928d4517-f2db-4be1-9782-556ee3ee37f8.jpeg" alt="" />
+        <p class="relative ml-4 flex items-center rounded bg-blue-500 p-2 text-sm opacity-0 after:absolute after:-right-[1rem] after:top-5 after:border-[.5rem] after:border-transparent after:border-l-blue-500 after:content-['']" id="hint">Type any name and press enter</p>
+        <button class="absolute right-0 top-0 h-4 w-4 rounded-full bg-white text-[10px] text-black opacity-0">
+          <span class="sr-only">Close Popup</span>
           <i class="fa-solid fa-times" aria-hidden="true"></i>
         </button>
-      </div> -->
-      <label class="sr-only" for="people">People and group</label>
-      <input class="flex-1 pl-4 bg-transparent outline-none" type="text" name="people" id="people">
+      </div>
     </div>
     <div class="mt-4 flex items-center gap-2 text-sm font-medium">
-      <input type="checkbox" name="notify" id="notify">
+      <input type="checkbox" name="notify" id="notify" />
       <label for="notify">Notify people</label>
     </div>
-    <div class="text-sm font-medium mt-8 flex flex-wrap justify-center items-center gap-4">
-      <a class="w-full text-blue-500 text-center hover:underline hover:underline-offset-4 hover:text-indigo-500 sm:w-auto" href="javascript:void(0)">
-        Send feedback
-      </a>
-      <button class="py-3 px-6 sm:ml-auto rounded-md bg-[#242641] hover:bg-indigo-500 shadow-xl transition-500 duration-300" id="cancel-btn">Cancel</button>
-      <button class="py-3 px-7 rounded-md bg-blue-500 shadow-xl hover:bg-indigo-500 transition-500 duration-300" id="send-btn">Send</button>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-medium">
+      <a class="w-full text-center text-blue-500 hover:text-indigo-500 hover:underline hover:underline-offset-4 sm:w-auto" href="javascript:void(0)"> Send feedback </a>
+      <button class="transition-500 rounded-md bg-[#242641] px-6 py-3 shadow-xl duration-300 hover:bg-indigo-500 sm:ml-auto" id="cancel-btn">Cancel</button>
+      <button class="transition-500 rounded-md bg-blue-500 px-7 py-3 shadow-xl duration-300 hover:bg-indigo-500" id="send-btn">Send</button>
     </div>
   </main>
-
+  
   <script src="script.js"></script>
 </body>
 </html>

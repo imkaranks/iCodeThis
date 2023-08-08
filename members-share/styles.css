@@ -1,3 +1,31 @@
 #contacts:has(>#people:focus) {
   border-color: #3b82f6;
 }
+
+.animate-enter {
+  animation: grow-out 300ms ease forwards;
+}
+
+.animate-grow-shrink {
+  animation: grow-shrink 3000ms ease-in-out infinite;
+}
+
+@keyframes grow-shrink {
+  30%, 38% {
+    transform: scale(1.1);
+  }
+  0%, 26%, 31%, 34%, 42%, 100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow-out {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

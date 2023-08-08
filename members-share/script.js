@@ -7,6 +7,8 @@
 
   addContact("Emma james"); // Placeholder Contact
 
+  setTimeout(showPopup, 3000); // Help visitor with hint
+
   $contactWrapper.onclick = () => $contactInput.focus();
 
   $contactInput.oninput = function (e) {
@@ -78,5 +80,26 @@
     if (contacts.hasOwnProperty(target)) {
       delete contacts[target];
     }
+  }
+
+  function showPopup() {
+    try {
+      const audio = new Audio('https://cdn.freesound.org/previews/320/320181_274531-lq.mp3');
+      audio.play();
+    } catch(err) {
+      console.log(err);
+    }
+    const $popupHint = document.getElementById('popup-hint');
+    const $popupHintImg = $popupHint.querySelector('img');
+    const $popupHintMsg = $popupHint.querySelector('p');
+    const $popupHintBtn = $popupHint.querySelector('button');
+
+    $popupHintImg.classList.replace('opacity-0', 'animate-enter');
+    $popupHintBtn.classList.replace('opacity-0', 'animate-enter');
+    $popupHintBtn.onclick = removeContact;
+    setTimeout(() => {
+      $popupHintImg.classList.add('animate-grow-shrink');
+      $popupHintMsg.classList.add('animate-enter');
+    }, 300);
   }
 })();
