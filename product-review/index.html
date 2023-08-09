@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            primary: ['Merriweather', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="grid min-h-screen place-items-center bg-slate-100 py-6 font-primary overflow-x-hidden">
+  <form class="relative mx-auto w-11/12 max-w-lg rounded-3xl bg-white px-4 py-6 shadow-lg shadow-[#fdd4d5]/30 before:absolute before:-left-24 before:-right-24 before:bottom-20 before:top-20 before:-z-10 before:rounded-3xl before:bg-[#fdd4d5] before:content-[''] sm:px-7 sm:py-10 md:px-10 md:py-12">
+    <h1 class="text-lg mb-2 font-bold">Overall rating</h1>
+    <fieldset class="flex flex-wrap items-center gap-2">
+      <legend class="sr-only">Rating</legend>
+      <div class="relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border">
+        <label for="1-star">
+          <span class="sr-only">1 Star</span>
+          <i class="fa-regular fa-star text-xl text-gray-400" aria-hidden="true"></i>
+        </label>
+        <input type="radio" name="rating" id="1-star" class="appearence-none absolute inset-0 opacity-0" />
+      </div>
+      <div class="relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border">
+        <label for="2-star">
+          <span class="sr-only">2 Star</span>
+          <i class="fa-regular fa-star text-xl text-gray-400" aria-hidden="true"></i>
+        </label>
+        <input type="radio" name="rating" id="2-star" class="appearence-none absolute inset-0 opacity-0" />
+      </div>
+      <div class="relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border">
+        <label for="3-star">
+          <span class="sr-only">3 Star</span>
+          <i class="fa-regular fa-star text-xl text-gray-400" aria-hidden="true"></i>
+        </label>
+        <input type="radio" name="rating" id="3-star" class="appearence-none absolute inset-0 opacity-0" />
+      </div>
+      <div class="relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border">
+        <label for="4-star">
+          <span class="sr-only">4 Star</span>
+          <i class="fa-regular fa-star text-xl text-gray-400" aria-hidden="true"></i>
+        </label>
+        <input type="radio" name="rating" id="4-star" class="appearence-none absolute inset-0 opacity-0" />
+      </div>
+      <div class="relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border">
+        <label for="5-star">
+          <span class="sr-only">5 Star</span>
+          <i class="fa-regular fa-star text-xl text-gray-400" aria-hidden="true"></i>
+        </label>
+        <input type="radio" name="rating" id="5-star" class="appearence-none absolute inset-0 opacity-0" />
+      </div>
+      <span class="mt-2 inline-block w-full text-xs">Click to rate</span>
+    </fieldset>
+  
+    <div class="mt-4 flex flex-col gap-1 text-xs">
+      <label class="text-xs font-semibold" for="review-title">Review title</label>
+      <input placeholder="Example: Easy to use" class="rounded-md border px-3 py-2 outline-none focus:border-blue-500" type="text" name="review-title" id="review-title" />
+    </div>
+  
+    <fieldset class="mt-6 flex flex-wrap gap-x-4 gap-y-2">
+      <legend class="w-full text-sm font-semibold">Would you recommend this product to a friend?</legend>
+      <div class="flex items-center gap-2 text-xs">
+        <input class="accent-black" type="radio" name="would-you" id="yes" />
+        <label for="yes">Yes</label>
+      </div>
+      <div class="flex items-center gap-2 text-xs">
+        <input class="accent-black" type="radio" name="would-you" id="no" />
+        <label for="no">No</label>
+      </div>
+    </fieldset>
+  
+    <div class="mt-4 flex flex-col gap-1 text-xs">
+      <label class="text-xs font-semibold" for="review">Product review</label>
+      <textarea placeholder="Example: Since I bought this a month ago, it has been used a lot what i like best/what is worst about the app..." class="h-[5rem] resize-none rounded-md border px-3 py-2 outline-none focus:border-blue-500" name="review" id="review"></textarea>
+    </div>
+  
+    <fieldset class="mt-4 flex flex-wrap gap-2">
+      <legend class="sr-only">Personal Information</legend>
+      <div class="flex w-full flex-col gap-1 text-xs sm:flex-1">
+        <label class="text-xs font-semibold" for="nickname">Nickname</label>
+        <input placeholder="Example: bob27" class="rounded-md border px-3 py-2 outline-none focus:border-blue-500" type="text" name="nickname" id="nickname" />
+      </div>
+      <div class="flex w-full flex-col gap-1 text-xs sm:flex-1">
+        <label class="text-xs font-semibold" for="email">Email address (will not be published)</label>
+        <input placeholder="Example: your@gmail.com" class="rounded-md border px-3 py-2 outline-none focus:border-blue-500" type="email" name="email" id="email" />
+      </div>
+    </fieldset>
+  
+    <div class="my-6 flex items-center gap-2">
+      <input class="accent-black" type="checkbox" name="term-&-cond" id="term-&-cond" />
+      <label class="text-sm" for="term-&-cond">I accept the <span class="cursor-pointer underline underline-offset-4 hover:text-black/75">terms and conditions</span></label>
+    </div>
+  
+    <p class="text-xs font-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium non cupiditate impedit laboriosam quam a. Similique sunt maiores aspernatur architecto fugiat consequuntur ipsa necessitatibus, amet maxime veniam? Asperiores, error maiores.</p>
+  
+    <button class="mt-4 rounded-md bg-black px-3 py-2.5 text-sm text-slate-200 shadow-xl transition-all duration-500 hover:bg-black/75 active:scale-95 active:shadow-black/30" type="submit">Submit product review</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
