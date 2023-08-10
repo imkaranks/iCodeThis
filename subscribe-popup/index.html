@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          keyframes: {
+            'enter': {
+              '0%': {
+                transform: 'rotateY(90deg)'
+              },
+              '100%': {
+                transform: 'rotateY(0deg)'
+              }
+            },
+            'exit': {
+              '0%': {
+                transform: 'rotateY(0deg)'
+              },
+              '100%': {
+                transform: 'rotateY(90deg)'
+              }
+            }
+          },
+          animation: {
+            'enter': 'enter 300ms linear forwards',
+            'exit': 'exit 300ms linear forwards',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="grid min-h-screen place-items-center bg-slate-100">
+  <main class="mx-auto w-11/12 max-w-[24rem]">
+    <div class="relative rounded-lg bg-white/60 px-6 py-12 shadow-lg shadow-black/30 backdrop-blur-sm sm:px-16" id="form-container">
+      <button class="absolute right-2 top-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-slate-300 bg-white text-[#2e2865] transition-all hover:bg-[#2e2865] hover:text-white focus:outline-1 focus:outline-blue-500" id="close-popup">
+        <span class="sr-only">Close Popup</span>
+        <i class="fa-solid fa-times" aria-hidden="true"></i>
+      </button>
+  
+      <h1 class="text-xl font-bold">Enjoyed the read?</h1>
+      <p class="mt-2 text-sm">Join our monthly newsletter for helpful tips on design and more.</p>
+      <form class="mt-6" id="form">
+        <div class="flex flex-col gap-1">
+          <label class="sr-only" for="email">Email Address</label>
+          <input class="w-full rounded-md border-2 border-slate-400 px-3 py-3 text-sm outline-none transition-all duration-300 focus:border-blue-500" placeholder="Your email address" type="email" name="email" id="email" required />
+        </div>
+        <div class="mb-6 mt-4 flex items-center gap-2">
+          <input class="accent-[#2E2A65] focus:outline-1 focus:outline-blue-500" type="checkbox" name="term-&-cond" id="term-&-cond" required />
+          <label class="max-w-[15rem] text-xs font-medium" for="term-&-cond"> I agree to receive this newsletter and Subscribe at any time </label>
+        </div>
+  
+        <button class="mt-3 mt-3 w-full rounded-md bg-[#2E2A65] py-2.5 text-center uppercase text-white shadow-xl drop-shadow-[0px_5px_rgba(132,_132,_255,_0.493)] transition-all duration-300 hover:scale-110 hover:shadow-[#2e2865]/30 focus:outline-1 focus:outline-offset-4 focus:outline-[#2E2A65]" id="subscribe-btn">Subscribe</button>
+      </form>
+    </div>
+  
+    <div class="rounded-lg bg-white/60 px-6 py-12 shadow-lg shadow-black/30 backdrop-blur-sm sm:px-16" id="cta" hidden>
+      <button class="mt-3 w-full rounded-md bg-[#2E2A65] py-2.5 text-center uppercase text-white shadow-xl drop-shadow-[0px_5px_rgba(132,_132,_255,_0.493)] transition-all duration-300 hover:scale-110 hover:shadow-[#2e2865]/30 focus:outline-1 focus:outline-offset-4 focus:outline-[#2E2A65]">Call to action</button>
+    </div>
+  
+    <div class="relative rounded-lg bg-white/60 px-6 py-12 text-center shadow-lg shadow-black/30 backdrop-blur-sm sm:px-16" id="success-alert" hidden>
+      <button class="absolute right-2 top-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-slate-300 bg-white text-[#2e2865] transition-all hover:bg-[#2e2865] hover:text-white focus:outline-1 focus:outline-blue-500" id="close-success-alert">
+        <span class="sr-only">Close Alert</span>
+        <i class="fa-solid fa-times" aria-hidden="true"></i>
+      </button>
+      <div class="text-6xl text-green-400 animate-pulse" aria-hidden="true">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <p class="mt-4 text-xl font-bold leading-tight">Successfully Subscribed to Newsletter</p>
+    </div>
+  </main>
+  
+  <div class="absolute top-1/2 -z-10 aspect-square w-[20rem] -translate-y-1/2 translate-x-1/3 rounded-full bg-gradient-to-r from-[#0051FF] to-[#B700FF] opacity-20 blur-md"></div>
+  <div class="absolute top-1/2 -z-10 aspect-square w-[15rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#FFA600] to-[#FF4400] opacity-20 blur-md"></div>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
