@@ -25,21 +25,15 @@
     <div class="timer__body">
       <h1>Timer</h1>
       <div class="timer__time">
-        <p>
-          <span id="minutes">26</span>:<span id="seconds">04</span>
-        </p>
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <filter id="shadow" color-interpolation-filters="sRGB">
-              <feDropShadow dx="0" dy="0" stdDeviation="0.5" flood-color="white"></feDropShadow>
-              <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="white"></feDropShadow>
-              <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="white"></feDropShadow>
-          </filter>
-
-          <circle class="timer__progress" cx="50" cy="50" r="45"></circle>
-          <circle class="timer__progress" cx="50" cy="50" r="45" stroke-linecap="round" stroke-dasharray="282.7433388230814" stroke-dashoffset="282.7433388230814" style="stroke-dashoffset: 70.6858;">
-          </circle>
-          <circle cx="50" cy="50" r="45" stroke-linecap="round" class="timer__progress-dot" filter="url(#shadow)" stroke-dasharray="0 282.7433388230814" stroke-dashoffset="282.7433388230814" style="stroke-dashoffset: 70.6858;"></circle>
-        </svg>
+        <div class="timer__progress">
+          <div class="timer__progress-content">
+            <div class="timer__progress-input">
+              <input type="number" name="mins" id="mins" value="03">
+              <input type="number" name="secs" id="secs" value="30">
+            </div>
+            <p class="timer__progress-time">00:00</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="timer__controls">
@@ -53,5 +47,7 @@
       </button>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

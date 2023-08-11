@@ -71,38 +71,67 @@ body {
   margin-inline: auto;
 }
 
-.timer__time > p {
+.timer__progress {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(white var(--progress, 0deg), #edededb0 var(--progress, 0deg));
+}
+
+.timer__progress-content {
   font-size: 2rem;
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  background-color: #5be0c8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
-.timer__time > svg {
-  width: 100%;
-  aspect-ratio: 1;
+.timer__progress.running .timer__progress-input {
+  display: none;
 }
 
-.timer__progress,
-.timer__progress-dot {
-  fill: transparent;
-  stroke: white;
+.timer__progress-time {
+  display: none;
 }
 
-.timer__progress:first-child {
-  stroke-width: 0.5;
-  transition: all 150ms ease;
+.timer__progress.running .timer__progress-time {
+  display: block;
 }
 
-.timer__progress:last-child {
-  stroke-width: 2;
-  transition: all 150ms ease;
+.timer__progress-input {
+  display: flex;
+  gap: .25rem;
 }
 
-.timer__progress-dot {
-  stroke-width: 4;
-  transition: all 150ms ease;
+.timer__progress-input input::-webkit-inner-spin-button, 
+.timer__progress-input input::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
+
+.timer__progress-input input {
+  font-size: 1.25rem;
+  color: inherit;
+  width: 4rem;
+  text-align: center;
+  border: 2px solid #edededb0;
+  background-color: transparent;
+  border-radius: .5em;
+}
+
+.timer__progress-input input:focus {
+  outline: none;
+  border: 2px solid white;
 }
 
 .timer__controls {
