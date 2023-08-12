@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          backgroundImage: {
+            poster:
+              'linear-gradient(rgba(20, 2, 2, .6), rgba(20, 2, 2, .6)), url(https://i.ibb.co/tb4WjMf/dune-bg.webp)',
+          },
+          colors: {
+            primary: '#fafbf9',
+            secondary: '#fcc915',
+            accent: '#ec5b26',
+            'clr-stop': '#5C5E62',
+          },
+          fontFamily: {
+            primary: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-poster grid min-h-screen place-items-center bg-cover bg-fixed bg-no-repeat py-16 font-primary backdrop-blur-md">
+  <main class="from-clr-stop to-clr-stop/20 text-primary relative mx-auto w-11/12 max-w-[52.5rem] bg-gradient-to-bl px-8 py-14 shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] backdrop-blur-md sm:px-14 sm:py-20">
+    <div class="absolute left-5 right-5 top-5 flex items-center gap-6">
+      <button class="ml-auto">
+        <span class="sr-only">Share</span>
+        <i class="material-icons">share</i>
+      </button>
+      <button>
+        <span class="sr-only">Close</span>
+        <i class="material-icons">close</i>
+      </button>
+    </div>
+    <div class="flex flex-col items-start gap-4 sm:flex-row">
+      <div class="mx-auto w-52">
+        <img class="shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]" src="https://eu-images.contentstack.com/v3/assets/blt781c383a1983f673/bltee24d3a62861a498/621c6304fadae129354cce58/DuneSeries.jpg?width=734&auto=webp&format=png" alt="Dune Novel Cover Page" />
+        <div class="text-secondary mt-4 flex justify-center gap-1">
+          <i class="material-icons">star</i>
+          <i class="material-icons">star</i>
+          <i class="material-icons">star</i>
+          <i class="material-icons">star</i>
+          <i class="material-icons">star_half</i>
+        </div>
+      </div>
+      <article class="sm:flex-1">
+        <h1 class="text-secondary text-4xl font-bold sm:text-5xl md:text-6xl lg:text-[4.0625rem] lg:leading-none">Dune</h1>
+        <p class="text-xl font-normal leading-none sm:text-2xl">Novel by <cite class="font-semibold not-italic">Frank Herbert</cite></p>
+        <p class="mt-3">Set in the far future amidst a sprawling feudal interstellar empire where planetary dynasties are controlled by noble houses that owe an allegiance to the imperial House Corrino, Dune tells the story of young Paul Atreides (the heir apparent to Duke Leto Atreides and heir of House Atreides) as he and his family accept control of the desert planet Arrakis...</p>
+        <button class="border-accent text-accent mt-7 rounded-full border-2 bg-[#36312b] px-6 py-2 font-medium uppercase">Continue Reading</button>
+      </article>
+    </div>
+    <table class="mt-[4.6875rem] w-full" style="border-collapse: collapse;">
+      <tr class="border-b-primary/30 flex w-full flex-col border-b-[6px] sm:flex-row">
+        <th class="text-secondary sm:border-r-primary/30 pb-1 pt-1 leading-tight sm:w-56 sm:border-r-[6px] sm:pb-3 sm:pr-5 sm:text-right">Originally published</th>
+        <td class="pb-3 pt-1 text-center sm:flex-1 sm:pl-5 sm:text-left">1965</td>
+      </tr>
+      <tr class="border-b-primary/30 flex w-full flex-col border-b-[6px] sm:flex-row">
+        <th class="text-secondary sm:border-r-primary/30 pb-1 pt-1 leading-tight sm:w-56 sm:border-r-[6px] sm:pb-3 sm:pr-5 sm:text-right">Author</th>
+        <td class="pb-3 pt-1 text-center sm:flex-1 sm:pl-5 sm:text-left">Frank Herbert</td>
+      </tr>
+      <tr class="border-b-primary/30 flex w-full flex-col border-b-[6px] sm:flex-row">
+        <th class="text-secondary sm:border-r-primary/30 pb-1 pt-1 leading-tight sm:w-56 sm:border-r-[6px] sm:pb-3 sm:pr-5 sm:text-right">Followed by</th>
+        <td class="pb-3 pt-1 text-center sm:flex-1 sm:pl-5 sm:text-left">Dune Messiah</td>
+      </tr>
+      <tr class="border-b-primary/30 flex w-full flex-col border-b-[6px] sm:flex-row">
+        <th class="text-secondary sm:border-r-primary/30 pb-1 pt-1 leading-tight sm:w-56 sm:border-r-[6px] sm:pb-3 sm:pr-5 sm:text-right">Page counts</th>
+        <td class="pb-3 pt-1 text-center sm:flex-1 sm:pl-5 sm:text-left">412</td>
+      </tr>
+      <tr class="border-b-primary/30 flex w-full flex-col border-b-[6px] sm:flex-row">
+        <th class="text-secondary sm:border-r-primary/30 pb-1 pt-1 leading-tight sm:w-56 sm:border-r-[6px] sm:pb-3 sm:pr-5 sm:text-right">Adaptations</th>
+        <td class="pb-3 pt-1 text-center sm:flex-1 sm:pl-5 sm:text-left">Dune<time>(1984)</time>, Frank Herbert's Dune<time>(2000)</time></td>
+      </tr>
+      <tr class="flex w-full flex-col sm:flex-row">
+        <th class="text-secondary sm:border-r-primary/30 pb-1 pt-1 leading-tight sm:w-56 sm:border-r-[6px] sm:pb-3 sm:pr-5 sm:text-right">Characters</th>
+        <td class="pb-3 pt-1 text-center sm:flex-1 sm:pl-5 sm:text-left">Paul Atreides, Vladimir Harkonnen, Chani, Leto Atreides I, Lady Jessica, Princess Irulan, Alla Atreides, Duncan Idaho, Feyd-Rautha, Thufir Hawat, Gurney Halleck, Shaddam IV Liet-Kynes, Piter De Vries, Gaius Helen Mohiam, Glossu Rabban Hasimir Fenring</td>
+      </tr>
+    </table>
+  </main>  
+</body>
+</html>
