@@ -4,7 +4,14 @@ const $daysTag = document.getElementById("days"),
   $prevNextBtns = document.querySelectorAll(".calendar-control"),
   $prevYear = document.getElementById("previous-year"),
   $nextYear = document.getElementById("next-year"),
-  $taskForm = document.getElementById('task-form');
+  $addEvent = document.getElementById("add-event"),
+  $saveEventBtn = document.getElementById("save"),
+  $cancelEventBtn = document.getElementById("cancel"),
+  $eventDateInput = document.getElementById('event-date'),
+  $eventNameInput = document.getElementById('event-name'),
+  $eventIconRadios = document.querySelectorAll('[name="icon"]'),
+  $eventContainer = document.getElementById('event-container'),
+  $eventForm = document.getElementById('event-form');
 
 // getting new date, current year and month
 let date = new Date(),
@@ -24,7 +31,7 @@ const renderCalendar = () => {
   let liTag = "";
 
   for (let i = firstDayofMonth; i > 0; i--) { // creating li of previous month last days
-    liTag += createDateItem(lastDateofLastMonth - i + 1, 'text-lighter-lighter hover:bg-tertiary transition-all duration-300 ease hover:rounded-full hover:text-primary hover:outline hover:outline-tertiary hover:outline-offset-4');
+    liTag += createDateItem(lastDateofLastMonth - i + 1, 'text-neutral-lighter hover:bg-tertiary transition-all duration-300 ease hover:rounded-full hover:text-primary hover:outline hover:outline-tertiary hover:outline-offset-4');
   }
 
   for (let i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
@@ -36,7 +43,7 @@ const renderCalendar = () => {
   }
 
   for (let i = lastDayofMonth; i < 6; i++) { // creating li of next month first days
-    liTag += createDateItem(i - lastDayofMonth + 1, 'text-lighter-lighter hover:bg-tertiary transition-all duration-300 ease hover:rounded-full hover:text-primary hover:outline hover:outline-tertiary hover:outline-offset-4');
+    liTag += createDateItem(i - lastDayofMonth + 1, 'text-neutral-lighter hover:bg-tertiary transition-all duration-300 ease hover:rounded-full hover:text-primary hover:outline hover:outline-tertiary hover:outline-offset-4');
   }
 
   let tempMonths = [];
@@ -78,34 +85,44 @@ $prevNextBtns.forEach(icon => { // getting prev and next icons
   });
 });
 
-$taskForm.onsubmit = function (e) {
+$addEvent.onclick = function () {
+  $eventForm.classList.toggle('hidden');
+}
+
+$cancelEventBtn.onclick = function (e) {
   e.preventDefault();
-  const $dateInput = document.getElementById('date');
-  const $taskInput = document.getElementById('task');
-  const $taskContainer = document.getElementById('tasks-container');
+  if (editElement) {
+    editElement = null;
+  }
+  $eventForm.classList.toggle('hidden');
+}
 
-  const { value: taskVal } = $taskInput;
-  const { value: dateVal } = $dateInput;
+$eventForm.onsubmit = function (e) {
+  e.preventDefault();
 
-  if (taskVal.trim() && dateVal.trim()) {
+  const { value: eventVal } = $eventNameInput;
+  const { value: dateVal } = $eventDateInput;
+
+  if (eventVal.trim() && dateVal.trim()) {
     if (editElement) {
-      const $taskTitle = editElement.querySelector('.task__title');
-      const $taskDate = editElement.querySelector('.task__date');
-      const removalIndex = schedule.findIndex(sch => sch === new Date($taskDate.textContent.trim()));
+      const $eventTitle = editElement.querySelector('.event__title');
+      const $eventDate = editElement.querySelector('.event__date');
+      const removalIndex = schedule.findIndex(sch => sch === new Date($eventDate.textContent.trim()));
       schedule.splice(removalIndex, 1, new Date(dateVal));
-      $taskTitle.textContent = taskVal;
-      $taskDate.textContent = dateVal;
+      $eventTitle.textContent = eventVal;
+      $eventDate.textContent = dateVal;
       editElement = null;
     } else {
-      const newDate = new Date($dateInput.value);
+      const newDate = new Date($eventDateInput.value);
       schedule.push(newDate);
-      $taskContainer.append(createTask(taskVal, dateVal));
+      $eventContainer.append(createEvent(eventVal, dateVal));
     }
-    $dateInput.value = '';
-    $taskInput.value = '';
+    $eventDateInput.value = '';
+    $eventNameInput.value = '';
     renderCalendar();
+    $eventForm.classList.toggle('hidden');
   } else {
-    alert('Both date and task are required');
+    alert('Both date and event are required');
   }
 }
 
@@ -113,17 +130,17 @@ function createDateItem(date, classes='') {
   return `<li class="p-1 aspect-square grid place-items-center m-2 text-center cursor-pointer ${classes}">${date}</li>`;
 }
 
-function createTask(taskTitle, taskTime) {
-  const task = document.createElement('div');
-  const taskBtnContainer = document.createElement('div');
-  const taskDeleteBtn = document.createElement('button');
-  const taskEditBtn = document.createElement('button');
-  taskBtnContainer.className = "flex items-center justify-center gap-3";
-  taskDeleteBtn.onclick = () => deleteTask(task);
-  taskEditBtn.onclick = () => editTask(task);
-  task.className = "mx-5 flex items-center justify-between border-b border-[#e96462] py-3";
+function createEvent(eventTitle, eventTime) {
+  const event = document.createElement('div');
+  const eventBtnContainer = document.createElement('div');
+  const eventDeleteBtn = document.createElement('button');
+  const eventEditBtn = document.createElement('button');
+  eventBtnContainer.className = "flex items-center justify-center gap-3";
+  eventDeleteBtn.onclick = () => deleteEvent(event);
+  eventEditBtn.onclick = () => editEvent(event);
+  event.className = "mx-5 flex items-center justify-between border-b border-[#e96462] py-3";
 
-  taskDeleteBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24"
+  eventDeleteBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
     stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -134,7 +151,7 @@ function createTask(taskTitle, taskTime) {
     <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
   </svg>`;
 
-  taskEditBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24"
+  eventEditBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
     stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -142,8 +159,8 @@ function createTask(taskTitle, taskTime) {
     <path d="M13.5 6.5l4 4"></path>
   </svg>`;
 
-  task.innerHTML = `<div>
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tools-kitchen-2" width="24"
+  event.innerHTML = `<div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24"
       height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#fdecba" fill="none" stroke-linecap="round"
       stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -153,17 +170,18 @@ function createTask(taskTitle, taskTime) {
   </div>
 
   <div class="ml-5 mr-auto">
-    <h2 class="task__title font-bold uppercase text-[#fdecba]">${taskTitle}</h2>
-    <p class="task__date text-sm font-medium capitalize">${taskTime}</p>
+    <h2 class="event__title font-bold uppercase text-[#fdecba]">${eventTitle}</h2>
+    <p class="event__date text-sm font-medium capitalize">${eventTime}</p>
   </div>`;
 
-  taskBtnContainer.appendChild(taskEditBtn);
-  taskBtnContainer.appendChild(taskDeleteBtn);
-  task.appendChild(taskBtnContainer);
-  return task;
+  eventBtnContainer.appendChild(eventEditBtn);
+  eventBtnContainer.appendChild(eventDeleteBtn);
+  event.appendChild(eventBtnContainer);
+  return event;
 }
 
-function deleteTask(task) {
+function deleteEvent(event) {
+  const newDate = new Date(event.textContent.trim());
   const removalIndex = schedule
     .findIndex(sch => 
       sch.getFullYear() == newDate.getFullYear()
@@ -171,17 +189,16 @@ function deleteTask(task) {
       && sch.getDate() == newDate.getDate()
     );
   schedule.splice(removalIndex, 1);
-  task.remove();
+  event.remove();
   renderCalendar();
 }
 
-function editTask(task) {
+function editEvent(event) {
   alert("You're in editing mode! For now there's no way to cancel editing mode...");
-  const $dateInput = document.getElementById('date');
-  const $taskInput = document.getElementById('task');
-  const $taskTitle = task.querySelector('.task__title');
-  const $taskDate = task.querySelector('.task__date');
-  $taskInput.value = $taskTitle.textContent.trim();
-  $dateInput.value = $taskDate.textContent.trim();
-  editElement = task;
+  const $eventTitle = event.querySelector('.event__title');
+  const $eventDate = event.querySelector('.event__date');
+  $eventNameInput.value = $eventTitle.textContent.trim();
+  $eventDateInput.value = $eventDate.textContent.trim();
+  editElement = event;
+  $eventForm.classList.toggle('hidden');
 }
