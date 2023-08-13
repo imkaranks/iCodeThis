@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#374140',
+            secondary: '#ec7263',
+            tertiary: '#febe7e',
+            neutral: {
+              lighter: '#959597',
+              light: '#babbbb',
+              dark: '#29393c'
+            },
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="backdrop-blur-md grid place-items-center min-h-screen">
+  <main class="text-neutral-light flex flex-col justify-center gap-5 p-8 md:flex-row md:items-center md:gap-0">
+    <div class="bg-primary px-5 py-11">
+      <div class="text-neutral-lighter mb-3 flex items-center justify-center gap-10 font-bold uppercase tracking-wide">
+        <span id="previous-year">2015</span>
+        <span class="text-neutral-light text-xl" id="current-month-year">feb. 2016</span>
+        <span id="next-year">2017</span>
+      </div>
+      <ul class="text-tertiary/50 grid grid-cols-7 font-bold uppercase">
+        <li class="p-2">sun</li>
+        <li class="p-2">mon</li>
+        <li class="p-2">tue</li>
+        <li class="p-2">wed</li>
+        <li class="p-2">thu</li>
+        <li class="p-2">fri</li>
+        <li class="p-2">sat</li>
+      </ul>
+      <ul class="grid grid-cols-7 font-bold" id="days"></ul>
+      <div class="flex items-center justify-between">
+        <button class="calendar-control" id="prev">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M15 6l-6 6l6 6"></path>
+          </svg>
+        </button>
+        <ul class="flex text-lg uppercase" id="calendar-months"></ul>
+        <button class="calendar-control" id="next">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M9 6l6 6l-6 6"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  
+    <div class="bg-secondary text-primary flex min-h-[35rem] flex-col">
+      <div class="bg-tertiary px-20 py-8">
+        <h1 class="text-center text-xl font-bold uppercase">events of the month</h1>
+      </div>
+  
+      <div class="h-full max-h-[245px] overflow-y-auto" id="tasks-container"></div>
+  
+      <form class="m-auto mb-5 mt-auto flex flex-wrap items-center px-4" id="task-form">
+        <input class="focus:outline-tertiary w-full border p-3" required placeholder="what'd you like to do?" type="text" name="task" id="task" />
+        <input class="focus:outline-tertiary w-full border p-3" required type="date" name="date" id="date" />
+        <button id="add-event" type="submit" class="flex w-full items-center justify-center gap-3 rounded bg-[#374140] px-5 py-3 uppercase text-[#ffffff]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 5l0 14"></path>
+            <path d="M5 12l14 0"></path>
+          </svg>
+          add event
+        </button>
+      </form>
+    </div>
+  </main>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
