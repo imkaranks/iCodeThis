@@ -4,24 +4,23 @@ const $navToggle = document.querySelector('[aria-controls="primary-nav"]');
 $dropdownMenu.addEventListener('click', (event) => {
   const $dropdownBtn = event.target.closest('.dropdown__control');
   if ($dropdownBtn) {
-    $dropdownBtn.onclick = function (event) {
-      const $target = event.currentTarget;
+    const $dropdown = document.getElementById(
+      $dropdownBtn.getAttribute('aria-controls')
+    );
+    const $dropdownBtnIcon = $dropdownBtn.querySelector('.fa-chevron-right');
 
-      const $dropdown = document.getElementById(
-        $target.getAttribute('aria-controls')
-      );
-
-      if ($target.getAttribute('aria-expanded') === 'true') {
-        $dropdown.classList.replace('grid-rows-[1fr]', 'grid-rows-[0fr]');
-        $dropdown.style.paddingBlock = '0em';
-        $target.setAttribute('aria-expanded', false);
-        $dropdown.setAttribute('aria-hidden', true);
-      } else {
-        $dropdown.classList.replace('grid-rows-[0fr]', 'grid-rows-[1fr]');
-        $dropdown.style.paddingBlock = '0.5em';
-        $target.setAttribute('aria-expanded', true);
-        $dropdown.setAttribute('aria-hidden', false);
-      }
+    if ($dropdownBtn.getAttribute('aria-expanded') === 'true') {
+      $dropdown.classList.replace('grid-rows-[1fr]', 'grid-rows-[0fr]');
+      $dropdown.style.paddingBlock = '0em';
+      $dropdownBtnIcon.classList.remove('rotate-[90deg]');
+      $dropdownBtn.setAttribute('aria-expanded', false);
+      $dropdown.setAttribute('aria-hidden', true);
+    } else {
+      $dropdown.classList.replace('grid-rows-[0fr]', 'grid-rows-[1fr]');
+      $dropdown.style.paddingBlock = '0.5em';
+      $dropdownBtnIcon.classList.add('rotate-[90deg]');
+      $dropdownBtn.setAttribute('aria-expanded', true);
+      $dropdown.setAttribute('aria-hidden', false);
     }
   }
 });
