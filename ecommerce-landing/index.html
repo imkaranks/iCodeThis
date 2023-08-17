@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pale: 'hsl(150, 20%, 96%)',
+            gray: '#535353',
+            dark: '#2D3047',
+            red: '#ED217C',
+          },
+          fontFamily: {
+            primary: ['Inter', 'sans-serif'],
+            cursive: ['Pacifico', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-primary bg-pale text-dark min-h-screen overflow-x-hidden">
+  <header>
+    <div class="mx-auto flex w-11/12 max-w-7xl flex-wrap items-center justify-between gap-3 py-4">
+      <a class="hidden cursor-pointer text-[2rem] font-bold uppercase leading-none opacity-20 sm:block sm:w-full" href="javascript:void(0)">Logo</a>
+  
+      <button class="text-dark absolute left-6 top-6 z-50 transition-colors duration-300 sm:hidden" aria-controls="primary-nav" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+  
+      <nav class="fixed bottom-0 left-0 top-0 z-40 w-3/5 -translate-x-full bg-slate-700 text-white transition-all duration-300 sm:static sm:w-auto sm:translate-x-0 sm:bg-transparent sm:text-inherit" id="primary-nav">
+        <ul class="flex h-full flex-col justify-center gap-8 pl-6 font-medium uppercase sm:flex-row sm:items-center sm:pl-0">
+          <li>
+            <a href="javascript:void(0)">New</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">Gift guide</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">Promo</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">Trends</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">Socials</a>
+          </li>
+        </ul>
+      </nav>
+  
+      <ul class="ml-auto flex items-center gap-4">
+        <li>
+          <button>Log in</button>
+        </li>
+        <li>
+          <button class="bg-red border-red rounded-full border px-4 py-0.5 text-white">Sign up</button>
+        </li>
+        <li>
+          <button class="relative">
+            <span class="sr-only">Cart</span>
+            <span class="text-red absolute right-0 top-0 inline-flex aspect-square w-4 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full bg-white text-[10px] font-medium">1</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+  
+  <div class="bg-white py-4">
+    <div class="mx-auto flex w-11/12 max-w-7xl items-center justify-between">
+      <ul class="flex items-center gap-4">
+        <li>
+          <span>Home</span>
+        </li>
+        <li class="text-xs">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </li>
+        <li>
+          <span>Category</span>
+        </li>
+        <li class="text-xs">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </li>
+        <li>
+          <span>Outerwear</span>
+        </li>
+      </ul>
+      <button>
+        <span class="sr-only">Search</span>
+        <i class="fa-solid fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  
+  <div class="mx-auto flex w-11/12 max-w-7xl flex-col gap-4 py-8 sm:flex-row">
+    <aside class="relative sm:flex-[0.3]">
+      <div class="mb-8">
+        <h2 class="text-red text-lg font-medium uppercase">Category</h2>
+        <ul class="mt-2 flex flex-wrap gap-4 sm:flex-col" id="dropdown__menu">
+          <li class="relative">
+            <button class="dropdown__control flex items-center gap-2" aria-expanded="false" aria-controls="dropdown-1">
+              <i class="fa-solid fa-chevron-right text-red" aria-hidden="true"></i>
+              <span>Women</span>
+            </button>
+            <div class="sm:min-w-auto absolute left-0 top-8 z-40 grid min-w-[10rem] grid-rows-[0fr] rounded bg-white shadow transition-all duration-300 sm:static sm:z-auto sm:bg-transparent sm:shadow-none" id="dropdown-1" aria-hidden="true">
+              <ul class="flex flex-col gap-2 overflow-hidden px-5">
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="relative">
+            <button class="dropdown__control flex items-center gap-2" aria-expanded="false" aria-controls="dropdown-2">
+              <i class="fa-solid fa-chevron-right text-red" aria-hidden="true"></i>
+              <span>Man kids</span>
+            </button>
+            <div class="sm:min-w-auto absolute left-0 top-8 z-40 grid min-w-[10rem] grid-rows-[0fr] rounded bg-white shadow transition-all duration-300 sm:static sm:z-auto sm:bg-transparent sm:shadow-none" id="dropdown-2" aria-hidden="true">
+              <ul class="flex flex-col gap-2 overflow-hidden px-5">
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="relative">
+            <button class="dropdown__control flex items-center gap-2" aria-expanded="false" aria-controls="dropdown-3">
+              <i class="fa-solid fa-chevron-right text-red" aria-hidden="true"></i>
+              <span>Accesories</span>
+            </button>
+            <div class="sm:min-w-auto absolute left-0 top-8 z-40 grid min-w-[10rem] grid-rows-[0fr] rounded bg-white shadow transition-all duration-300 sm:static sm:z-auto sm:bg-transparent sm:shadow-none" id="dropdown-3" aria-hidden="true">
+              <ul class="flex flex-col gap-2 overflow-hidden px-5">
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="relative">
+            <button class="dropdown__control flex items-center gap-2" aria-expanded="false" aria-controls="dropdown-4">
+              <i class="fa-solid fa-chevron-right text-red" aria-hidden="true"></i>
+              <span>Editorial</span>
+            </button>
+            <div class="sm:min-w-auto absolute left-0 top-8 z-40 grid min-w-[10rem] grid-rows-[0fr] rounded bg-white shadow transition-all duration-300 sm:static sm:z-auto sm:bg-transparent sm:shadow-none" id="dropdown-4" aria-hidden="true">
+              <ul class="flex flex-col gap-2 overflow-hidden px-5">
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)">Link</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="sticky left-0 right-0 top-6 rounded-2xl bg-white p-6 text-center">
+        <h2 class="text-red text-lg font-medium uppercase">Newsletter</h2>
+        <p class="mt-2 text-sm">Sign up for our newsletter, get good deals and stay updated on our hottest products</p>
+      </div>
+    </aside>
+    <main class="sm:flex-1">
+      <div class="relative grid min-h-[60vh] items-center justify-center overflow-hidden text-center text-white sm:justify-end">
+        <div class="mx-10 max-w-xl sm:mx-20">
+          <h1 class="font-cursive text-3xl font-bold sm:text-4xl md:text-5xl">new winter collection</h1>
+          <p class="mx-auto mt-3 max-w-[40ch] text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, mollitia architecto? Dolorum dicta rerum repellat.</p>
+          <button class="text-red mx-auto mt-5 inline-flex rounded-full bg-white px-8 py-2">View collection</button>
+        </div>
+        <div class="absolute flex h-full w-full items-center justify-between">
+          <button class="h-20 bg-white/20 px-1">
+            <span class="sr-only">Previous Slide</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+          <button class="h-20 bg-white/20 px-1">
+            <span class="sr-only">Next Slide</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+        </div>
+        <img class="absolute inset-0 -z-10 h-full w-full rounded-md object-cover object-center" src="https://gray-woio-prod.cdn.arcpublishing.com/resizer/E7iFc_6lmrODLjDULRse4Nivzys=/1200x675/smart/filters:quality(85)/cloudfront-us-east-1.images.arcpublishing.com/gray/N6CVLTM4UNEK3BBQGT7XTDWY2A.jpg" alt="..." />
+      </div>
+  
+      <div class="grid gap-4 py-4 sm:grid-cols-2 md:grid-cols-3">
+        <div class="group relative overflow-hidden bg-white">
+          <img class="aspect-square w-full object-cover object-center" src="https://i.ibb.co/NKvRNxb/product1.webp" alt="..." />
+          <div class="flex flex-col-reverse gap-1 p-5 text-center">
+            <h2 class="text-[.875rem] font-semibold capitalize">Short oversized sweatshirt</h2>
+            <p class="text-[1.75rem] font-bold">249,99</p>
+          </div>
+          <button class="bg-red ease absolute bottom-0 left-0 right-0 w-full translate-y-full py-5 text-base text-white outline-none transition-all duration-300 focus:translate-y-0 group-hover:translate-y-0">Add to bag</button>
+        </div>
+  
+        <div class="group relative overflow-hidden bg-white">
+          <img class="aspect-square w-full object-cover object-center" src="https://i.ibb.co/NKvRNxb/product1.webp" alt="..." />
+          <div class="flex flex-col-reverse gap-1 p-5 text-center">
+            <h2 class="text-[.875rem] font-semibold capitalize">Short oversized sweatshirt</h2>
+            <p class="text-[1.75rem] font-bold">249,99</p>
+          </div>
+          <button class="bg-red ease absolute bottom-0 left-0 right-0 w-full translate-y-full py-5 text-base text-white outline-none transition-all duration-300 focus:translate-y-0 group-hover:translate-y-0">Add to bag</button>
+        </div>
+  
+        <div class="group relative overflow-hidden bg-white">
+          <img class="aspect-square w-full object-cover object-center" src="https://i.ibb.co/NKvRNxb/product1.webp" alt="..." />
+          <div class="flex flex-col-reverse gap-1 p-5 text-center">
+            <h2 class="text-[.875rem] font-semibold capitalize">Short oversized sweatshirt</h2>
+            <p class="text-[1.75rem] font-bold">249,99</p>
+          </div>
+          <button class="bg-red ease absolute bottom-0 left-0 right-0 w-full translate-y-full py-5 text-base text-white outline-none transition-all duration-300 focus:translate-y-0 group-hover:translate-y-0">Add to bag</button>
+        </div>
+  
+        <div class="group relative overflow-hidden bg-white">
+          <img class="aspect-square w-full object-cover object-center" src="https://i.ibb.co/NKvRNxb/product1.webp" alt="..." />
+          <div class="flex flex-col-reverse gap-1 p-5 text-center">
+            <h2 class="text-[.875rem] font-semibold capitalize">Short oversized sweatshirt</h2>
+            <p class="text-[1.75rem] font-bold">249,99</p>
+          </div>
+          <button class="bg-red ease absolute bottom-0 left-0 right-0 w-full translate-y-full py-5 text-base text-white outline-none transition-all duration-300 focus:translate-y-0 group-hover:translate-y-0">Add to bag</button>
+        </div>
+  
+        <div class="group relative overflow-hidden bg-white">
+          <img class="aspect-square w-full object-cover object-center" src="https://i.ibb.co/NKvRNxb/product1.webp" alt="..." />
+          <div class="flex flex-col-reverse gap-1 p-5 text-center">
+            <h2 class="text-[.875rem] font-semibold capitalize">Short oversized sweatshirt</h2>
+            <p class="text-[1.75rem] font-bold">249,99</p>
+          </div>
+          <button class="bg-red ease absolute bottom-0 left-0 right-0 w-full translate-y-full py-5 text-base text-white outline-none transition-all duration-300 focus:translate-y-0 group-hover:translate-y-0">Add to bag</button>
+        </div>
+  
+        <div class="group relative overflow-hidden bg-white">
+          <img class="aspect-square w-full object-cover object-center" src="https://i.ibb.co/NKvRNxb/product1.webp" alt="..." />
+          <div class="flex flex-col-reverse gap-1 p-5 text-center">
+            <h2 class="text-[.875rem] font-semibold capitalize">Short oversized sweatshirt</h2>
+            <p class="text-[1.75rem] font-bold">249,99</p>
+          </div>
+          <button class="bg-red ease absolute bottom-0 left-0 right-0 w-full translate-y-full py-5 text-base text-white outline-none transition-all duration-300 focus:translate-y-0 group-hover:translate-y-0">Add to bag</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
