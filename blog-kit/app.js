@@ -1,32 +1,37 @@
 const $cursor = document.getElementById('cursor');
 const $cursorBlur = document.getElementById('cursor-blur');
-const $hoverables = document.querySelectorAll('[data-hoverable]');
 
 const $bookmarkBtns = document.querySelectorAll('.bookmark-btn');
 
 const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-document.onmousemove = function (e) {
-  $cursor.style.left = `${e.x - ($cursor.clientWidth / 2)}px`;
-  $cursorBlur.style.left = `${e.x - ($cursorBlur.clientWidth / 2)}px`;
-  $cursor.style.opacity = '1';
-  $cursor.style.top = `${e.y - ($cursor.clientWidth / 2)}px`;
-  $cursorBlur.style.top = `${e.y - ($cursorBlur.clientWidth / 2)}px`;
-  $cursorBlur.style.opacity = '1';
+if (window.matchMedia('(pointer: fine)').matches) {
+  document.onmousemove = function (e) {
+    if (
+      e.target.tagName === 'A' ||
+      e.target.tagName === 'BUTTON' ||
+      e.target.parentNode.tagName === 'A' ||
+      e.target.parentNode.tagName === 'BUTTON'
+    ) {
+      $cursor.style.backgroundColor = 'transparent';
+      $cursor.style.transform = 'scale(3)';
+      $cursor.style.border = `1px solid ${document.documentElement.classList.contains('dark') ? 'white' : 'black'}`;
+    } else {
+      $cursor.style.backgroundColor = 'rgb(147 51 234)';
+      $cursor.style.transform = 'scale(1)';
+      $cursor.style.border = 'none';
+    }
+    setTimeout(() => {
+      $cursor.style.left = `${e.x - ($cursor.clientWidth / 2)}px`;
+      $cursorBlur.style.left = `${e.x - ($cursorBlur.clientWidth / 2)}px`;
+      $cursor.style.opacity = '1';
+      $cursor.style.top = `${e.y - ($cursor.clientWidth / 2)}px`;
+      $cursorBlur.style.top = `${e.y - ($cursorBlur.clientWidth / 2)}px`;
+      $cursorBlur.style.opacity = '1';
+    }, 30);
+  }
 }
-$hoverables.forEach($hoverable => {
-  $hoverable.onmouseover = function () {
-    $cursor.style.backgroundColor = 'transparent'
-    $cursor.style.transform = 'scale(3)';
-    $cursor.style.border = `1px solid ${document.documentElement.classList.contains('dark') ? 'white' : 'black'}`;
-  }
-  $hoverable.onmouseout = function () {
-    $cursor.style.backgroundColor = 'rgb(147 51 234)'
-    $cursor.style.transform = 'scale(1)';
-    $cursor.style.border = 'none';
-  }
-});
 
 $bookmarkBtns.forEach($bookmarkBtn => {
   $bookmarkBtn.onclick = function (e) {
@@ -69,5 +74,4 @@ themeToggleBtn.addEventListener('click', function () {
       localStorage.setItem('color-theme', 'dark');
     }
   }
-
 });
