@@ -8,7 +8,7 @@
   const $messageForm = document.getElementById('message-form');
   const $searchInput = document.getElementById('search-input');
   const $backToNewChatsBtn = document.getElementById('back-to-new-chats');
-  
+
   const contacts = [
     {
       id: 1,
@@ -18,31 +18,31 @@
         {
           userId: 1,
           message: 'High demand for improved user experiences and strong focus on the end-users have made interaction designers',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:43',
           seen: true
         },
         {
           userId: MY_ID,
           message: 'There are many key factors to understanding interaction design and how it can enable a pleasurable end user experience.',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:50',
           seen: true
         },
         {
           userId: MY_ID,
           message: 'Find-ability is the most critical success factor for Information architecture',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:56',
           seen: true
         },
         {
           userId: 1,
           message: 'Visual design represents the aesthetics or look-and-feel of the front end of any user interface. Graphic treatment of Interface elements is often perceived as the visual design. The purpose of visual design is to use',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:32:03',
           seen: false
         },
         {
           userId: 1,
           message: 'Visual design represents the aesthetics or look-and-feel of the front end of any user interface. Graphic treatment of Interface elements is often perceived as the visual design. The purpose of visual design is to use',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:32:20',
           seen: false
         },
       ]
@@ -55,25 +55,25 @@
         {
           userId: 2,
           message: 'High demand for improved user experiences and strong focus on the end-users have made interaction designers',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:43',
           seen: true
         },
         {
           userId: MY_ID,
           message: 'There are many key factors to understanding interaction design and how it can enable a pleasurable end user experience.',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:50',
           seen: true
         },
         {
           userId: MY_ID,
           message: 'Find-ability is the most critical success factor for Information architecture',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:56',
           seen: true
         },
         {
           userId: 2,
           message: 'Visual design represents the aesthetics or look-and-feel of the front end of any user interface. Graphic treatment of Interface elements is often perceived as the visual design. The purpose of visual design is to use',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:32:03',
           seen: false
         },
       ]
@@ -86,25 +86,25 @@
         {
           userId: 3,
           message: 'High demand for improved user experiences and strong focus on the end-users have made interaction designers',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:43',
           seen: true
         },
         {
           userId: MY_ID,
           message: 'There are many key factors to understanding interaction design and how it can enable a pleasurable end user experience.',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:50',
           seen: true
         },
         {
           userId: MY_ID,
           message: 'Find-ability is the most critical success factor for Information architecture',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:56',
           seen: true
         },
         {
           userId: 3,
           message: 'Visual design represents the aesthetics or look-and-feel of the front end of any user interface. Graphic treatment of Interface elements is often perceived as the visual design. The purpose of visual design is to use',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:32:03',
           seen: true
         },
       ]
@@ -117,25 +117,25 @@
         {
           userId: 4,
           message: 'High demand for improved user experiences and strong focus on the end-users have made interaction designers',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:43',
           seen: true
         },
         {
           userId: MY_ID,
           message: 'There are many key factors to understanding interaction design and how it can enable a pleasurable end user experience.',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:50',
           seen: true
         },
         {
           userId: MY_ID,
           message: 'Find-ability is the most critical success factor for Information architecture',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:56',
           seen: true
         },
         {
           userId: 4,
           message: 'Visual design represents the aesthetics or look-and-feel of the front end of any user interface. Graphic treatment of Interface elements is often perceived as the visual design. The purpose of visual design is to use',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:32:03',
           seen: true
         },
       ]
@@ -148,32 +148,32 @@
         {
           userId: 5,
           message: 'High demand for improved user experiences and strong focus on the end-users have made interaction designers',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:43',
           seen: true
         },
         {
           userId: MY_ID,
           message: 'There are many key factors to understanding interaction design and how it can enable a pleasurable end user experience.',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:50',
           seen: true
         },
         {
           userId: MY_ID,
           message: 'Find-ability is the most critical success factor for Information architecture',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:31:56',
           seen: true
         },
         {
           userId: 5,
           message: 'Visual design represents the aesthetics or look-and-feel of the front end of any user interface. Graphic treatment of Interface elements is often perceived as the visual design. The purpose of visual design is to use',
-          timestamp: randomTimestamp(),
+          timestamp: 'Wed Aug 30 2023 23:32:03',
           seen: true
         },
       ]
     },
   ];
   let activeContact = null;
-  
+
   const contactReducer = (action) => {
     if (action.type === CONSTANTS.SEND_MESSAGE) {
       const { id, userId, message, timestamp } = action.payload;
@@ -183,7 +183,7 @@
   }
 
   function sendMessage(id, message) {
-    const newChat = { id, userId: MY_ID, message, timestamp: new Date() };
+    const newChat = { id, userId: MY_ID, message, timestamp: new Date().toUTCString() };
     contactReducer({
       type: CONSTANTS.SEND_MESSAGE,
       payload: newChat
@@ -201,10 +201,6 @@
       backToNewChats();
     }
   }
- 
-  function randomTimestamp() {
-    return new Date().setSeconds(Math.floor(Math.random() * 10 - 2) - 2);
-  }
 
   function showChats(contactUserId) {
     activeContact = contactUserId;
@@ -215,7 +211,7 @@
       $chatPage.classList.replace('translate-y-full', 'translate-y-0')
     , 0);
   }
-  
+
   function hideChats() {
     $chatPage.classList.replace('translate-y-0', 'translate-y-full');
     setTimeout(() =>
@@ -223,16 +219,16 @@
     , 300);
   }
 
-  function renderContacts(contactsData=null) {
+  function renderContacts(contactsData = null) {
     let clutter = '';
     (contactsData || contacts).forEach((contact, i) => {
-      const lastChat = contact.chats[contact.chats.length-1];
+      const lastChat = contact.chats[contact.chats.length - 1];
       const lastMsg = lastChat.message;
       const lastMsgTimestamp = new Date(lastChat.timestamp).toLocaleTimeString();
       const lastUnseenMsgs = numOfLastUnseenMsgs(contact.chats);
       clutter += `
-        <div class="contact__item | cursor-pointer p-4 flex gap-2 items-center transition-all duration-300 ease hover:bg-purple-800 hover:shadow-lg hover:shadow-black/20" data-user-id="${contact.id}" style="--delay: ${i}">
-          <div class="bg-purple-500 w-12 aspect-square rounded-full border-4 border-purple-500"
+        <div class="contact__item | cursor-pointer p-4 flex gap-2 items-center transition-all hover:shadow-lg hover:shadow-black/20" data-user-id="${contact.id}" style="--delay: ${i}">
+          <div class="bg-purple-600 w-12 aspect-square rounded-full border-4 border-purple-600"
             data-image>
             <img src="${contact.avatar}" alt="${contact.name}"
               class="w-full h-full rounded-full object-cover object-center">
@@ -243,7 +239,7 @@
               ${lastUnseenMsgs > 0 ? `<span class="inline-flex justify-center items-center rounded-full bg-red-400 w-5 h-5 text-xs">${lastUnseenMsgs}</span>` : ''}
               <span class="ml-auto text-sm text-gray-300">${lastMsgTimestamp}</span>
             </div>
-            <p class="text-sm">${lastMsg.length > 80 ? lastMsg.slice(0, 80)+'...' : lastMsg}</p>
+            <p class="text-sm">${lastChat.userId === MY_ID ? 'You: ' : ''}${lastMsg.length > 80 ? lastMsg.slice(0, 80) + '...' : lastMsg}</p>
           </div>
         </div>
       `;
@@ -254,7 +250,7 @@
 
   function numOfLastUnseenMsgs(chats) {
     let count = 0;
-    for (let i = chats.length-1; i >= 0; i--) {
+    for (let i = chats.length - 1; i >= 0; i--) {
       if (chats[i].userId !== MY_ID && chats[i].seen === false) count++;
       else {
         break;
@@ -274,7 +270,7 @@
     backToNewChats();
   }
 
-  function createChatTemplate(chat, i=0, contact=null) {
+  function createChatTemplate(chat, i = 0, contact = null) {
     return `
       <div class="chat__item | flex ${chat.userId === MY_ID ? 'flex-row-reverse' : ''} my-6 items-start gap-2" style="--direction: ${chat.userId === MY_ID ? 1 : -1};--delay: ${i}">
         <div class="mt-2 border-4 bg-gray-200 w-12 aspect-square rounded-full" data-image>
@@ -290,6 +286,7 @@
     e.preventDefault();
     const $messageInput = e.target.querySelector('input');
     const message = $messageInput.value;
+    if (!message.trim()) return;
     sendMessage(activeContact, message);
     $messageInput.value = '';
     backToNewChats();
@@ -300,7 +297,7 @@
   }
 
   $chatBox.onscroll = function (e) {
-    if (e.target.scrollTop < e.target.scrollHeight-e.target.clientHeight-20) {
+    if (e.target.scrollTop < e.target.scrollHeight - e.target.clientHeight - 20) {
       $backToNewChatsBtn.style.display = 'inline-flex';
     } else {
       $backToNewChatsBtn.style.display = 'none';
@@ -309,7 +306,7 @@
 
   $searchInput.oninput = function (e) {
     const filteredContacts = contacts
-      .filter(contact => contact.name.toLowerCase().includes(e.target.value));
+      .filter(contact => contact.name.toLowerCase().includes(e.target.value.toLowerCase()));
     renderContacts(filteredContacts);
   }
 })();
