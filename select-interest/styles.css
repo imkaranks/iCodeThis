@@ -1,0 +1,25 @@
+[data-check-icon] {
+  animation: entrance 600ms ease forwards;
+}
+[data-check-icon][hidden] {
+  animation: none;
+}
+@keyframes entrance {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@supports (clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%)) and (clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%)) {
+  @keyframes entrance {
+    0% {
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+}

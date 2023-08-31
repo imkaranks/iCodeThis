@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            primary: ['Josefin Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-primary grid min-h-screen place-items-center bg-gradient-to-r from-[#9b81ff] from-0% via-[#86acff] via-40% to-[#b057ff] to-75% md:py-6">
+  <main class="mx-auto flex w-full max-w-4xl md:w-11/12 md:flex-col">
+    <nav class="relative mx-auto w-14 max-w-3xl sm:w-16 md:w-full">
+      <ul class="sticky top-0 flex w-full flex-col flex-wrap justify-center gap-8 py-4 md:static md:flex-row md:gap-0 md:py-0">
+        <li class="relative flex flex-1 flex-col items-center before:absolute before:left-[calc(50%+2rem)] before:top-6 before:-z-10 before:h-1 before:w-[calc(100%-4rem)] before:-translate-y-1/2 before:bg-[#7192fe] before:content-['']">
+          <div class="relative flex aspect-square w-10 items-center justify-center rounded-full border-4 border-[#7192fe] bg-[#ffe98a] text-xl text-[#60719a] sm:w-12 sm:text-2xl">
+            <i class="fa-solid fa-check absolute -right-2 -top-0.5 inline-flex aspect-square w-4 items-center justify-center rounded-full bg-white text-[10px] sm:w-5 sm:text-xs"></i>
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <span class="mt-1 hidden font-medium leading-tight text-white md:inline">Create account</span>
+        </li>
+        <li class="relative flex flex-1 flex-col items-center before:absolute before:left-[calc(50%+2rem)] before:top-6 before:-z-10 before:h-1 before:w-[calc(100%-4rem)] before:-translate-y-1/2 before:bg-[#7192fe] before:content-['']">
+          <div class="flex aspect-square w-10 items-center justify-center rounded-full border-4 border-[#7192fe] bg-[#ffe98a] text-xl text-[#60719a] sm:w-12 sm:text-2xl">
+            <i class="fa-solid fa-camera-retro"></i>
+          </div>
+          <span class="mt-1 hidden font-medium leading-tight text-white md:inline">Set your interests</span>
+        </li>
+        <li class="flex flex-1 flex-col items-center text-gray-300">
+          <div class="flex aspect-square w-10 items-center justify-center rounded-full border-4 border-[#7192fe] bg-[#6456d4] text-xl sm:w-12 sm:text-2xl">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <span class="mt-1 hidden font-medium leading-tight md:inline">Customize your profile</span>
+        </li>
+      </ul>
+    </nav>
+  
+    <form class="flex-1 bg-white p-6 text-[#4d4d4d] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:mt-8">
+      <fieldset>
+        <legend class="text-center text-2xl font-bold leading-none">Choose your interests</legend>
+        <div class="mt-6 flex flex-wrap justify-center gap-10 py-2" id="interest-content">
+          <!-- Interest Checkbox -->
+          <!-- <label class="relative inline-block flex-shrink-0 basis-32 cursor-pointer">
+              <input class="appearence-none peer absolute inset-0 opacity-0" type="checkbox" name="interests" />
+              <img src="" class="aspect-square w-full rounded-full object-cover" alt="Woman exercising indoors" />
+              <div class="ease absolute left-0 top-0 aspect-square w-full rounded-full bg-black/40 opacity-0 transition-all duration-300 peer-checked:opacity-100"></div>
+              <img src="https://i.ibb.co/HhdMZqS/checked.png" class="ease absolute left-0 top-0 aspect-square w-full object-cover opacity-0 transition-all duration-300 peer-checked:opacity-100" data-check-icon hidden alt="check-icon" />
+              <p class="mt-2 text-center text-lg font-semibold uppercase">Fitness</p>
+            </label> -->
+        </div>
+      </fieldset>
+      <button class="mx-auto mt-6 flex w-fit items-center justify-center gap-1 rounded-full bg-gray-200 px-8 py-3 text-lg font-semibold leading-none" type="submit">
+        <span>Next</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </form>
+  </main>
+  
+  <script src="script.js"></script>
+</body>
+</html>
