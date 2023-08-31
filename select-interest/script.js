@@ -1,7 +1,10 @@
 (function () {
-  const $interestContent = document.getElementById('interest-content');
+  const $optionContent = document.getElementById('option-content');
+  const $pickedInterests = document.getElementById('picked-interests');
+  const $customizePage = document.getElementById('customize-page');
   const $form = document.querySelector('form');
-  const interests = [
+  const $navListItems = document.querySelectorAll('.nav-list-item');
+  const options = [
     {
       name: 'Fitness',
       pic: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zml0bmVzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60'
@@ -23,11 +26,11 @@
       pic: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZSUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60'
     },
     {
-      name: 'Food&Drink',
+      name: 'Food & Drink',
       pic: 'https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zm9vZCUyMGFuZCUyMGRyaW5rfGVufDB8fDB8fHww&auto=format&fit=crop&w=700&q=60'
     },
     {
-      name: 'Hair&Beauty',
+      name: 'Hair & Beauty',
       pic: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFpciUyMGFuZCUyMGJlYXV0eXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60'
     },
     {
@@ -41,8 +44,9 @@
     {
       name: 'Travels',
       pic: 'https://images.unsplash.com/photo-1504150558240-0b4fd8946624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60'
-    },
+    }
   ];
+  let interests = {};
 
   $form.onsubmit = function (e) {
     e.preventDefault();
@@ -54,26 +58,71 @@
       const $checkIcon = $checkbox.parentNode.querySelector('[data-check-icon]');
       if ($checkbox.checked) {
         $checkIcon.removeAttribute('hidden');
+        interests[$checkbox.name] = $checkbox.checked;
       } else {
         $checkIcon.setAttribute('hidden', true);
+        delete interests[$checkbox.name];
       }
+    } else if (e.target.closest('#submit-choices')) {
+      if (Object.keys(interests).length === 0) {
+        alert('Pick Atleast One Interest');
+        return;
+      }
+      $form.setAttribute('hidden', true);
+      $customizePage.removeAttribute('hidden');
+      $navListItems[1].setAttribute('data-completed', true);
+      $navListItems[2].classList.remove('text-gray-300');
+      $navListItems[2].firstElementChild.classList.replace('bg-[#6456d4]', 'bg-[#ffe98a]');
+      $navListItems[2].firstElementChild.classList.add('text-[#60719a]');
+      $navListItems[2].lastElementChild.classList.add('text-white');
+      renderPickedInterests();
+    } else if (e.target.closest('#change-interests')) {
+      $customizePage.setAttribute('hidden', true);
+      $form.removeAttribute('hidden');
+      $navListItems[1].removeAttribute('data-completed');
+      $navListItems[2].classList.add('text-gray-300');
+      $navListItems[2].firstElementChild.classList.replace('bg-[#ffe98a]', 'bg-[#6456d4]');
+      $navListItems[2].firstElementChild.classList.remove('text-[#60719a]');
+      $navListItems[2].lastElementChild.classList.remove('text-white');
+      renderOptions();
     }
   }
 
-  function renderInterests() {
+  function hyphenate(str) {
+    return str.toLowerCase().replace(' ', '-')
+  }
+
+  function renderOptions() {
     let clutter = '';
-    interests.forEach(interest => {
+    options.forEach(option => {
+      const isChecked = hyphenate(option.name) in interests;
       clutter += `
-        <label class="relative inline-block flex-shrink-0 flex-grow-0 w-28 cursor-pointer">
-          <input class="appearence-none peer absolute inset-0 opacity-0" type="checkbox" name="interests" />
-          <img src="${interest.pic}" class="aspect-square w-full rounded-full object-cover shadow-[0_8px_30px_rgb(0,0,0,0.12)]" alt="${interest.name}" />
+        <label class="relative inline-block flex-shrink-0 flex-grow-0 w-20 sm:w-24 md:w-28 cursor-pointer">
+          <input ${isChecked ? 'checked="true"' : ''} class="appearance-none peer absolute z-10 inset-0 opacity-0" type="checkbox" name="${hyphenate(option.name)}" />
+          <img src="${option.pic}" class="aspect-square w-full rounded-full object-cover object-center shadow-[0_8px_30px_rgb(0,0,0,0.12)]" alt="${option.name}" />
           <div class="ease absolute left-0 top-0 aspect-square w-full rounded-full bg-black/40 opacity-0 transition-all duration-300 peer-hover:opacity-100 peer-checked:opacity-100"></div>
-          <img src="https://i.ibb.co/HhdMZqS/checked.png" class="ease absolute left-0 top-0 aspect-square w-full object-cover opacity-0 transition-all duration-300 peer-checked:opacity-100" data-check-icon hidden alt="check-icon" />
-          <p class="mt-2 text-center font-semibold uppercase">${interest.name}</p>
+          <img src="https://i.ibb.co/HhdMZqS/checked.png" class="ease absolute left-0 top-0 aspect-square w-full object-cover opacity-0 transition-all duration-300 peer-checked:opacity-100" data-check-icon ${!isChecked ? 'hidden' : ''} alt="check-icon" />
+          <p class="mt-3 text-sm sm:text-base text-center font-semibold uppercase leading-none">${option.name}</p>
         </label>
       `;
     });
-    $interestContent.innerHTML = clutter;
+    $optionContent.innerHTML = clutter;
   }
-  renderInterests();
+  renderOptions();
+
+  function renderPickedInterests() {
+    let clutter = '';
+    options.forEach(option => {
+      const key = hyphenate(option.name);
+      if (key in interests) {
+        clutter += `
+          <div class="flex-shrink-0 flex-grow-0 w-20 sm:w-24 md:w-28">
+            <img src="${option.pic}" class="aspect-square w-full rounded-full object-cover object-center shadow-[0_8px_30px_rgb(0,0,0,0.12)]" alt="${option.name}" />
+            <p class="mt-3 text-sm sm:text-base text-center font-semibold uppercase leading-none">${option.name}</p>
+          </div>
+        `;
+      }
+    });
+    $pickedInterests.innerHTML = clutter;
+  }
 })();
