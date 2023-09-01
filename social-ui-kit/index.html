@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              900: '#051429',
+              800: '#011633',
+              700: '#091d36',
+              650: '#081a32',
+              600: '#0e2746',
+              500: '#3949ab',
+              400: '#567dfc'
+            },
+            accent: '#ff9700',
+            neutral: '#f8feff'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-primary-900 text-neutral grid min-h-screen place-items-center">
+  <div class="container max-w-4xl">
+    <div class="bg-primary-700 rounded p-6">
+      <h2 class="font-semibold sm:text-lg">24 Comments</h2>
+      <div class="mt-6 space-y-4" id="posts-content">
+        <!-- Dynamically Load Posts -->
+      </div>
+    </div>
+  
+    <div class="bg-primary-700 mt-4 flex items-center rounded p-6 text-slate-400">
+      <ul class="flex items-center gap-6">
+        <li class="hover:decoration-accent underline decoration-transparent underline-offset-8">
+          <a class="flex items-center" href="javascript:void(0)">
+            <i class="fa-regular fa-images"></i>
+            &nbsp;
+            <span>Gallery</span>
+          </a>
+        </li>
+        <li class="decoration-accent underline underline-offset-8">
+          <a class="flex items-center" href="javascript:void(0)">
+            <i class="fa-solid fa-file-pen"></i>
+            &nbsp;
+            <span>About</span>
+          </a>
+        </li>
+        <li class="hover:decoration-accent underline decoration-transparent underline-offset-8">
+          <a class="flex items-center" href="javascript:void(0)">
+            <i class="fa-regular fa-images"></i>
+            &nbsp;
+            <span>Gallery</span>
+          </a>
+        </li>
+      </ul>
+  
+      <div class="ml-auto flex items-center gap-4">
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+          </svg>
+        </button>
+        <img class="border-primary-650 aspect-square w-12 cursor-pointer rounded-full border-4" src="https://i.pravatar.cc/300?img=43" data-modal-show alt="" />
+      </div>
+    </div>
+  
+    <dialog class="bg-primary-700 text-primary-400 w-11/12 max-w-sm rounded px-6 py-12 text-center shadow-lg" data-modal>
+      <img class="border-primary-900 mx-auto aspect-square w-24 rounded-full border-[.85rem] md:w-28" src="https://i.pravatar.cc/300?img=43" alt="Avatar" />
+      <h1 class="text-neutral mt-1 text-3xl font-light">Frances P. Troia</h1>
+      <p>Photographer</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <div class="flex-1">
+          <h3 class="text-neutral text-xl font-bold leading-none">753</h3>
+          <p>Posts</p>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-neutral text-xl font-bold leading-none">1477</h3>
+          <p>Following</p>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-neutral text-xl font-bold leading-none">874</h3>
+          <p>Followers</p>
+        </div>
+      </div>
+      <button class="bg-accent mt-12 rounded px-8 py-2 font-medium text-slate-800 shadow-md sm:px-12 md:px-16">Follow</button>
+    </dialog>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
