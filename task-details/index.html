@@ -9,80 +9,80 @@
 </head>
 
 <body class="grid min-h-screen place-items-center bg-sky-700">
-  <main class="mx-auto w-full max-w-4xl bg-white">
+  <main class="mx-auto w-full max-w-4xl bg-white text-slate-500">
     <section id="task-edit">
       <header class="flex items-center justify-between bg-sky-950 px-6 py-4 text-white">
         <h2 class="text-lg font-medium">Task Name</h2>
-        <button data-task-close>
+        <button class="text-xl" data-task-close>
           <span>&times;</span>
         </button>
       </header>
-  
-      <form class="p-6" id="form">
-        <div class="flex flex-wrap gap-4">
-          <fieldset class="flex flex-1 gap-2">
+
+      <form class="pb-6" id="form">
+        <div class="flex flex-wrap gap-4 bg-sky-50 px-6 py-3">
+          <fieldset class="flex flex-1 flex-wrap gap-2 md:flex-nowrap">
             <legend class="sr-only">Task Commencement</legend>
             <div class="flex flex-1 flex-col gap-1">
-              <label class="font-medium" for="start_date">Start Date</label>
-              <input class="w-full min-w-[122px] border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="date" name="start_date" id="start_date" />
+              <label class="font-medium text-slate-800" for="start_date">Start Date</label>
+              <input value="2017-06-10" class="w-full min-w-[122px] border border-gray-400 px-3 py-1.5 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="date" name="start_date" id="start_date" />
             </div>
             <div class="flex flex-1 flex-col gap-1">
-              <label class="font-medium opacity-0" for="start_time">Start Time</label>
-              <input class="w-full min-w-[122px] border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="time" name="start_time" id="start_time" />
+              <label class="font-medium text-slate-800 opacity-0" for="start_time">Start Time</label>
+              <input value="15:00" class="w-full min-w-[122px] border border-gray-400 px-3 py-1.5 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="time" name="start_time" id="start_time" />
             </div>
           </fieldset>
-  
-          <fieldset class="flex flex-1 gap-2">
+
+          <fieldset class="flex flex-1 flex-wrap gap-2 md:flex-nowrap">
             <legend class="sr-only">Task End</legend>
             <div class="flex flex-1 flex-col gap-1">
-              <label class="font-medium" for="end_date">End Date</label>
-              <input class="w-full min-w-[122px] border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="date" name="end_date" id="end_date" />
+              <label class="font-medium text-slate-800" for="end_date">End Date</label>
+              <input value="2017-06-18" class="w-full min-w-[122px] border border-gray-400 px-3 py-1.5 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="date" name="end_date" id="end_date" />
             </div>
             <div class="flex flex-1 flex-col gap-1">
-              <label class="font-medium opacity-0" for="end_time">End Time</label>
-              <input class="w-full min-w-[122px] border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="time" name="end_time" id="end_time" />
+              <label class="font-medium text-slate-800 opacity-0" for="end_time">End Time</label>
+              <input value="17:00" class="w-full min-w-[122px] border border-gray-400 px-3 py-1.5 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="time" name="end_time" id="end_time" />
             </div>
           </fieldset>
-  
+
           <div class="flex flex-1 flex-col gap-1">
-            <label class="font-medium" for="task_type">Type</label>
-            <select class="w-full min-w-[122px] border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" name="task_type" id="task_type">
+            <label class="font-medium text-slate-800" for="task_type">Type</label>
+            <select class="w-full min-w-[122px] border border-gray-400 px-3 py-1.5 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" name="task_type" id="task_type">
               <option value="task" selected>Task</option>
               <option value="not-task">Not Task</option>
             </select>
           </div>
-  
+
           <div class="flex w-full items-center gap-4">
             <div class="flex flex-1 flex-col gap-1">
-              <h3 class="font-medium">Progress</h3>
-              <div class="relative h-2.5 rounded-full border-gray-400 bg-sky-300 before:absolute before:left-0 before:top-0 before:h-full before:w-[var(--percentage)] before:rounded-full before:bg-sky-600 before:content-['']" style="--percentage: 70%;" id="progress-bar"></div>
+              <h3 class="font-medium text-slate-800">Progress</h3>
+              <div class="relative h-2.5 rounded-full bg-sky-200 before:absolute before:left-0 before:top-0 before:h-full before:w-[var(--percentage)] before:rounded-full before:bg-sky-600 before:transition-all before:duration-1000 before:content-['']" style="--percentage: 0%;" id="progress-bar"></div>
             </div>
             <div class="flex w-20 flex-col gap-1">
-              <label class="font-medium opacity-0" for="progress">Progress</label>
+              <label class="font-medium text-slate-800 opacity-0" for="progress">Progress</label>
               <div class="flex items-center gap-2">
-                <input placeholder="70" class="w-full border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="number" name="progress" id="progress" min="0" max="100" />
-                <span>%</span>
+                <input value="59" class="w-full border border-gray-400 px-3 py-1.5 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="number" name="progress" id="progress" min="0" max="100" />
+                <span aria-hidden="true">%</span>
               </div>
             </div>
           </div>
         </div>
-  
-        <div class="flex flex-col gap-4 md:flex-row">
+
+        <div class="flex flex-col gap-4 px-6 py-3 md:flex-row">
           <fieldset class="flex flex-col gap-4 md:flex-[0.6]">
             <legend class="sr-only">Task Details</legend>
             <div class="flex flex-col gap-1">
-              <label class="font-medium" for="task_name">Task Name</label>
-              <input value="10 June 2017" class="w-full border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="text" name="task_name" id="task_name" />
+              <label class="font-medium text-slate-800" for="task_name">Task Name</label>
+              <input value="10 June 2017" class="w-full border border-gray-400 px-3 py-1.5 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="text" name="task_name" id="task_name" />
             </div>
             <div class="flex flex-col gap-1">
-              <label class="font-medium" for="task_desc">Task Description</label>
-              <textarea class="w-full resize-none border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" name="task_desc" id="task_desc" rows="5" placeholder="Add task description"></textarea>
+              <label class="font-medium text-slate-800" for="task_desc">Task Description</label>
+              <textarea class="w-full resize-none border border-gray-400 px-3 py-1.5 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" name="task_desc" id="task_desc" rows="7" placeholder="Add task description"></textarea>
             </div>
           </fieldset>
-  
+
           <div class="flex flex-col gap-4 md:flex-[0.4]">
             <div>
-              <h3 class="font-medium">Working on this</h3>
+              <h3 class="font-medium text-slate-800">Working on this</h3>
               <div class="mt-2 flex items-center gap-2">
                 <img class="aspect-square w-10 rounded-full object-cover" src="https://i.pravatar.cc/150?img=12" alt="" />
                 <img class="aspect-square w-10 rounded-full object-cover" src="https://i.pravatar.cc/150?img=11" alt="" />
@@ -92,16 +92,19 @@
               </div>
             </div>
             <div>
-              <h3 class="font-medium">Attachments</h3>
+              <h3 class="font-medium text-slate-800">Attachments</h3>
               <div class="mt-2 flex flex-wrap items-center gap-2">
-                <img class="aspect-square w-16 object-cover" src="https://i.pravatar.cc/150?img=12" alt="" />
-                <img class="aspect-square w-16 object-cover" src="https://i.pravatar.cc/150?img=11" alt="" />
+                <img class="aspect-square w-16 object-cover" src="https://images.unsplash.com/photo-1682686581264-c47e25e61d95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60" alt="" />
+                <img class="aspect-square w-16 object-cover" src="https://images.unsplash.com/photo-1692952565594-a8bc60590d33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60" alt="" />
+                <img class="aspect-square w-16 object-cover" src="https://images.unsplash.com/photo-1682688759157-57988e10ffa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+                <img class="aspect-square w-16 object-cover" src="https://images.unsplash.com/photo-1693156400307-af6be6dcf8d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+                <img class="aspect-square w-16 object-cover" src="https://images.unsplash.com/photo-1692983279086-cd5c7b5f0df8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
                 <input class="focus:shadow-md focus:shadow-blue-400 focus:outline focus:-outline-offset-[5px] focus:outline-blue-400" type="file" name="attachment" id="attachment" accept="image/png, image/jpg, image/gif, image/jpeg" />
               </div>
             </div>
           </div>
         </div>
-        <button class="ml-auto mt-6 block w-fit rounded bg-blue-400 px-10 py-1.5 font-medium text-white">Save</button>
+        <button class="ml-auto mr-6 mt-6 block w-fit rounded bg-blue-400 px-10 py-1.5 font-medium text-white shadow-md shadow-blue-400/30 transition-all duration-300 ease hover:bg-blue-500 hover:shadow-blue-400">Save</button>
       </form>
     </section>
   </main>
