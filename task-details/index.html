@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="grid min-h-screen place-items-center bg-sky-700">
+  <main class="mx-auto w-full max-w-4xl bg-white">
+    <section id="task-edit">
+      <header class="flex items-center justify-between bg-sky-950 px-6 py-4 text-white">
+        <h2 class="text-lg font-medium">Task Name</h2>
+        <button data-task-close>
+          <span>&times;</span>
+        </button>
+      </header>
+  
+      <form class="p-6" id="form">
+        <div class="flex flex-wrap gap-4">
+          <fieldset class="flex flex-1 gap-2">
+            <legend class="sr-only">Task Commencement</legend>
+            <div class="flex flex-1 flex-col gap-1">
+              <label class="font-medium" for="start_date">Start Date</label>
+              <input class="w-full min-w-[122px] border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="date" name="start_date" id="start_date" />
+            </div>
+            <div class="flex flex-1 flex-col gap-1">
+              <label class="font-medium opacity-0" for="start_time">Start Time</label>
+              <input class="w-full min-w-[122px] border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="time" name="start_time" id="start_time" />
+            </div>
+          </fieldset>
+  
+          <fieldset class="flex flex-1 gap-2">
+            <legend class="sr-only">Task End</legend>
+            <div class="flex flex-1 flex-col gap-1">
+              <label class="font-medium" for="end_date">End Date</label>
+              <input class="w-full min-w-[122px] border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="date" name="end_date" id="end_date" />
+            </div>
+            <div class="flex flex-1 flex-col gap-1">
+              <label class="font-medium opacity-0" for="end_time">End Time</label>
+              <input class="w-full min-w-[122px] border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="time" name="end_time" id="end_time" />
+            </div>
+          </fieldset>
+  
+          <div class="flex flex-1 flex-col gap-1">
+            <label class="font-medium" for="task_type">Type</label>
+            <select class="w-full min-w-[122px] border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" name="task_type" id="task_type">
+              <option value="task" selected>Task</option>
+              <option value="not-task">Not Task</option>
+            </select>
+          </div>
+  
+          <div class="flex w-full items-center gap-4">
+            <div class="flex flex-1 flex-col gap-1">
+              <h3 class="font-medium">Progress</h3>
+              <div class="relative h-2.5 rounded-full border-gray-400 bg-sky-300 before:absolute before:left-0 before:top-0 before:h-full before:w-[var(--percentage)] before:rounded-full before:bg-sky-600 before:content-['']" style="--percentage: 70%;" id="progress-bar"></div>
+            </div>
+            <div class="flex w-20 flex-col gap-1">
+              <label class="font-medium opacity-0" for="progress">Progress</label>
+              <div class="flex items-center gap-2">
+                <input placeholder="70" class="w-full border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="number" name="progress" id="progress" min="0" max="100" />
+                <span>%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="flex flex-col gap-4 md:flex-row">
+          <fieldset class="flex flex-col gap-4 md:flex-[0.6]">
+            <legend class="sr-only">Task Details</legend>
+            <div class="flex flex-col gap-1">
+              <label class="font-medium" for="task_name">Task Name</label>
+              <input value="10 June 2017" class="w-full border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" type="text" name="task_name" id="task_name" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-medium" for="task_desc">Task Description</label>
+              <textarea class="w-full resize-none border border-gray-400 p-2 focus:shadow-md focus:shadow-blue-400 focus:outline-blue-400" name="task_desc" id="task_desc" rows="5" placeholder="Add task description"></textarea>
+            </div>
+          </fieldset>
+  
+          <div class="flex flex-col gap-4 md:flex-[0.4]">
+            <div>
+              <h3 class="font-medium">Working on this</h3>
+              <div class="mt-2 flex items-center gap-2">
+                <img class="aspect-square w-10 rounded-full object-cover" src="https://i.pravatar.cc/150?img=12" alt="" />
+                <img class="aspect-square w-10 rounded-full object-cover" src="https://i.pravatar.cc/150?img=11" alt="" />
+                <button class="inline-flex aspect-square w-10 items-center justify-center rounded-full border border-gray-400 text-blue-400">
+                  <span>&plus;</span>
+                </button>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-medium">Attachments</h3>
+              <div class="mt-2 flex flex-wrap items-center gap-2">
+                <img class="aspect-square w-16 object-cover" src="https://i.pravatar.cc/150?img=12" alt="" />
+                <img class="aspect-square w-16 object-cover" src="https://i.pravatar.cc/150?img=11" alt="" />
+                <input class="focus:shadow-md focus:shadow-blue-400 focus:outline focus:-outline-offset-[5px] focus:outline-blue-400" type="file" name="attachment" id="attachment" accept="image/png, image/jpg, image/gif, image/jpeg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="ml-auto mt-6 block w-fit rounded bg-blue-400 px-10 py-1.5 font-medium text-white">Save</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
