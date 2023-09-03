@@ -1,0 +1,26 @@
+.animate-bell {
+  animation: bell-ringing 1500ms linear infinite;
+}
+
+@keyframes bell-ringing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  7.5%, 30% {
+    transform: rotate(10deg);
+  }
+
+  15%, 37.5% {
+    transform: rotate(0deg);
+  }
+
+  22.5%, 45% {
+    transform: rotate(-10deg);
+  }
+
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+}

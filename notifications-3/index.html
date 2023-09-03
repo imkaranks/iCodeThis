@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="grid min-h-screen place-items-center bg-slate-100">
+  <div class="w-11/12 max-w-md">
+    <input class="appearence-none peer absolute opacity-0" type="checkbox" name="alert-toggle" id="alert-toggle" />
+    <label class="relative ml-auto block w-fit rounded-md border border-[#161545] bg-[#161545] px-3 py-3 text-sm text-white animate-bell peer-checked:animate-none before:absolute before:right-2 before:top-2 before:inline-grid before:aspect-square before:w-4 before:place-items-center before:rounded-full before:bg-red-400 before:text-xs before:text-white before:content-[attr(data-alert-count)] focus:outline-offset-4 focus:outline-blue-500" data-alert-count="2" data-new-alerts="true" for="alert-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5" />
+      </svg>
+    </label>
+    <div class="ease grid grid-rows-[0fr] bg-white transition-all duration-1000 peer-checked:mt-1 peer-checked:grid-rows-[1fr] peer-checked:pb-4 peer-checked:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
+      <main class="overflow-hidden rounded-md px-6 text-[#151339]">
+        <div class="flex items-center justify-between gap-2 border-b py-6">
+          <h1 class="text-lg font-bold">Notifications</h1>
+          <button class="rounded-full bg-slate-100 px-3 py-2 text-sm text-blue-500 focus:outline-offset-4 focus:outline-blue-500" data-mark-read>Mark all as read</button>
+        </div>
+        <div id="notification-content">
+          <div class="flex items-start gap-2 border-b py-6">
+            <img class="aspect-square w-14 rounded-full object-cover object-center" src="https://i.pravatar.cc/150?img=63" alt="" />
+            <div class="flex-1 space-y-3">
+              <p><strong>Paul Waga</strong> shared the file <strong>Android UI kit</strong> with you.</p>
+              <span class="block text-[#84828b]">an hour ago</span>
+              <div class="flex flex-wrap gap-2 font-medium">
+                <button data-decline class="rounded-md border px-6 py-3 text-sm focus:outline-offset-4 focus:outline-blue-500 sm:px-8">Decline</button>
+                <button data-accept class="rounded-md border border-[#161545] bg-[#161545] px-6 py-3 text-sm text-white focus:outline-offset-4 focus:outline-blue-500 sm:px-8">Accept</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="flex items-start gap-2 py-6">
+            <img class="aspect-square w-14 rounded-full object-cover object-center" src="https://i.pravatar.cc/150?img=57" alt="" />
+            <div class="flex-1 space-y-3">
+              <p><strong>Denise Selover</strong> made you an editor in the team <strong>Power</strong>.</p>
+              <span class="block text-[#84828b]">Yesterday</span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
