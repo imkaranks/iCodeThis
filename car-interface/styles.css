@@ -1,0 +1,14 @@
+.pointer {
+  clip-path: polygon(50% 0%, 60% 30%, 100% 40%, 0 40%, 40% 30%);
+}
+
+.circular-icon::before {
+  --clr-start: #f59e0b;
+  --start: 45deg;
+  --end: 160deg;
+  background-image: conic-gradient(
+    var(--clr-start) var(--start),
+    #252525 var(--start) var(--end),
+    var(--clr-start) var(--end)
+  );
+}

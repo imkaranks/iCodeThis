@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          keyframes: {
+            speedo: {
+              '0%, 20%': { transform: 'rotate(-120deg)' },
+              '50%, 75%, 100%': { transform: 'rotate(70deg)' },
+              '60%, 90%': { transform: 'rotate(60deg)' }
+            }
+          },
+          animation: {
+            'speedo': 'speedo 10000ms ease infinite alternate'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen grid place-items-center bg-neutral-950 overflow-x-hidden">
+  <main class="w-11/12 max-w-3xl text-neutral-600">
+    <nav class="py-4">
+      <ul class="flex flex-wrap items-center justify-center gap-x-12 gap-y-2 text-sm uppercase">
+        <li class="cursor-pointer transition-colors hover:text-amber-500">Settings</li>
+        <li class="cursor-pointer transition-colors hover:text-amber-500">Navigation</li>
+        <li class="cursor-pointer text-amber-500 transition-colors hover:text-amber-500">Phone</li>
+        <li class="cursor-pointer transition-colors hover:text-amber-500">Music</li>
+      </ul>
+    </nav>
+  
+    <div class="flex flex-col items-center space-y-2 py-8 uppercase">
+      <div class="relative w-28 rounded-full bg-white/10 p-1">
+        <img class="aspect-square w-full rounded-full border border-white" src="https://i.pravatar.cc/150?img=53" alt="Robert" />
+        <i class="fa-solid fa-phone absolute inset-0 grid animate-pulse place-items-center rounded-full bg-white/10 text-4xl text-white/60"></i>
+      </div>
+      <p>Robert is calling</p>
+      <div class="flex bg-neutral-900 text-sm text-amber-500">
+        <button class="border-r border-r-white/10 px-3 py-1 uppercase transition-colors hover:bg-amber-500 hover:text-white">Accept</button>
+        <button class="px-3 py-1 uppercase transition-colors hover:bg-amber-500 hover:text-white">Decline</button>
+      </div>
+    </div>
+  
+    <div class="flex flex-col items-center gap-8 sm:gap-12 py-4 sm:flex-row sm:justify-between" id="meter-wrapper"></div>
+  
+    <div class="flex items-center justify-between gap-8 -mt-4 px-4 pb-8 sm:px-0">
+      <div class="circular-icon relative grid aspect-square w-12 place-items-center rounded-full bg-neutral-950 before:absolute before:-inset-2 before:-z-10 before:rounded-full">
+        <i class="fa-solid fa-oil-can"></i>
+      </div>
+      <div class="circular-icon relative grid aspect-square w-12 place-items-center rounded-full bg-neutral-950 before:absolute before:-inset-2 before:-z-10 before:rounded-full">
+        <i class="fa-solid fa-gas-pump"></i>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
