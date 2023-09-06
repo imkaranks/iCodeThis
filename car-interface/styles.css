@@ -6,6 +6,7 @@
   --clr-start: #f59e0b;
   --start: 45deg;
   --end: 160deg;
+
   background-image: conic-gradient(
     var(--clr-start) var(--start),
     #252525 var(--start) var(--end),

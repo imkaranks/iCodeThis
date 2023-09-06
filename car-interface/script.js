@@ -3,7 +3,7 @@
 
   $meterWrapper.appendChild(createMeter());
   $meterWrapper.appendChild(createMeter(20, true));
-  function createMeter(initialVal=10, hasDelay=false) {
+  function createMeter(initialVal=1, hasDelay=false) {
     const $meterBody = document.createElement('div');
     $meterBody.className = "text-sm sm:text-base border-2 border-dotted border-white w-4/5 max-w-[18rem] aspect-square rounded-full relative bg-neutral-900/30";
     let clutter = '';
