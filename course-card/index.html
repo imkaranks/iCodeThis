@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="grid min-h-screen place-items-center bg-sky-50 py-6">
+  <article class="w-11/12 max-w-sm bg-white font-light shadow-2xl shadow-sky-400/40">
+    <div class="card__img relative h-[15rem]">
+      <img class="h-full w-full object-cover object-center" src="https://lh3.googleusercontent.com/Dn4jnN5tNtTx8kWQ7WTMl7alBwnpGXMr_X2HfUWMk6ugbAxBsTCEgYeNXb2MINzLWuf7hP_eOSLIWh4-0-iqc4Y29dkVJiqWiRDf_JrCuwcR8jmv6maFn_Ohe5MMj6nDdfYBAAEVqKEdS49oQg" alt="..." />
+      <div class="card__course-booked absolute bottom-0 right-4 aspect-square w-20 translate-y-1/2 rounded-full p-1.5 text-center text-sm shadow-lg shadow-sky-400/30" style="--percent: 45;">
+        <p class="flex flex aspect-square flex-col items-center justify-center rounded-full bg-white uppercase leading-none text-blue-400"><span class="text-lg font-bold leading-none">45%</span> Booked</p>
+      </div>
+    </div>
+  
+    <div class="space-y-3 px-4">
+      <h1 class="w-[calc(100%-6rem)] text-xl font-semibold uppercase !leading-none text-blue-400 sm:text-2xl">Building a successful e-business</h1>
+      <p class="font-normal">Learn how using computer and internet technology can facilate a business to successfully build an online e-business.</p>
+  
+      <div class="flex flex-wrap justify-center gap-2 text-center" id="countdown">
+        <h2 class="w-full font-medium uppercase text-blue-400">Time remaining</h2>
+        <div class="flex w-fit flex-col">
+          <span class="inline-flex aspect-square w-14 items-center justify-center border border-blue-300 text-lg font-semibold" id="days">2</span>
+          <span class="text-sm text-[#8b8f90]">Days</span>
+        </div>
+        <div class="flex w-fit flex-col">
+          <span class="inline-flex aspect-square w-14 items-center justify-center border border-blue-300 text-lg font-semibold" id="hours">14</span>
+          <span class="text-sm text-[#8b8f90]">Hours</span>
+        </div>
+        <div class="flex w-fit flex-col">
+          <span class="inline-flex aspect-square w-14 items-center justify-center border border-blue-300 text-lg font-semibold" id="mins">53</span>
+          <span class="text-sm text-[#8b8f90]">Minutes</span>
+        </div>
+        <div class="flex w-fit flex-col">
+          <span class="inline-flex aspect-square w-14 items-center justify-center border border-blue-300 text-lg font-semibold" id="secs">26</span>
+          <span class="text-sm text-[#8b8f90]">Seconds</span>
+        </div>
+      </div>
+    </div>
+  
+    <button class="card__cta mt-4 w-full bg-[#2e97ce] pb-6 pt-8 text-2xl font-semibold uppercase text-white transition-colors duration-300 hover:bg-[#2e97ce]/75">Take course</button>
+  </article>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

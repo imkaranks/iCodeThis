@@ -1,0 +1,62 @@
+:root {
+  --clr-primary-500: #0284C7;
+  --clr-primary-400: #2e97ce;
+  --clr-primary-50: #E0F2FE;
+  --edge-tilt: 2rem;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.card__img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--clr-primary-400);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - var(--edge-tilt) + .45rem)
+  );
+}
+
+.card__img>img {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - var(--edge-tilt))
+  );
+}
+
+.card__course-booked {
+  background-image: conic-gradient(
+    var(--clr-primary-50) 0deg,
+    var(--clr-primary-500) 0deg var(--angle),
+    var(--clr-primary-50) var(--angle)
+  );
+  animation: 200ms progress 1000ms linear forwards;
+}
+
+@keyframes progress {
+  to {
+    --angle: calc(var(--percent) / 100 * 360deg);
+  }
+}
+
+@property --angle {
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+
+.card__cta {
+  clip-path: polygon(
+    0 0,
+    100% calc(var(--edge-tilt) * 60 / 100),
+    100% 100%,
+    0 100%
+  );
+}
