@@ -1,0 +1,51 @@
+#uploads::-webkit-scrollbar {
+  width: 0.2rem;
+  background-color: rgb(171, 171, 171);
+}
+
+#uploads::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--progress, 0%);
+  background-color: #38bdf8;
+}
+
+.uploading .progress-bar::before {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, .15) 25%,
+    transparent 25%, transparent 50%,
+    rgba(255, 255, 255, .15) 50%,
+    rgba(255, 255, 255, .15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem;
+  animation: uploading 1s linear infinite;
+}
+
+@keyframes uploading {
+  100% {
+    background-position: 1rem;
+  }
+}
+
+[data-pause] {
+  display: none;
+}
+
+.uploading [data-pause] {
+  display: block;
+}
+
+.uploading [data-share],
+.uploading [data-view] {
+  display: none;
+}

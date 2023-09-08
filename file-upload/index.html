@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="grid min-h-screen place-items-center bg-orange-50">
+  <main class="w-full max-w-md rounded border-2 border-orange-500 bg-white px-6 pb-6">
+    <header class="-mx-6 bg-orange-400 py-4 text-center text-white">
+      <h1 class="text-lg font-semibold uppercase">File Upload</h1>
+    </header>
+    <div class="my-8 flex h-[250px] flex-col gap-4 overflow-y-auto pr-4" id="uploads">
+      <div class="uploading flex items-center gap-2">
+        <div class="w-8 text-[#636363]">
+          <i class="fa-regular fa-file-pdf fa-2x"></i>
+        </div>
+        <div class="flex-1">
+          <p>LB concepts.pdf</p>
+          <div class="progress-bar | relative h-5 rounded border-2 border-sky-600" style="--progress: 65%"></div>
+          <div class="flex items-center justify-end gap-4">
+            <button class="text-sm text-orange-400 underline" data-pause>Pause</button>
+            <button class="text-sm text-orange-400 underline" data-share>Share link</button>
+            <button class="text-sm text-orange-400 underline" data-view>View file</button>
+          </div>
+        </div>
+        <button data-delete-upload>
+          <span class="sr-only">Delete</span>
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
+  
+      <div class="flex items-center gap-2">
+        <div class="w-8 text-[#636363]">
+          <i class="fa-regular fa-file-image fa-2x"></i>
+        </div>
+        <div class="flex-1">
+          <p>File Upload_Dailyui.png</p>
+          <div class="progress-bar | relative h-5 rounded border-2 border-sky-600" style="--progress: 100%"></div>
+          <div class="flex items-center justify-end gap-4">
+            <button class="text-sm text-orange-400 underline" data-pause>Pause</button>
+            <button class="text-sm text-orange-400 underline" data-share>Share link</button>
+            <button class="text-sm text-orange-400 underline" data-view>View file</button>
+          </div>
+        </div>
+        <button data-delete-upload>
+          <span class="sr-only">Delete</span>
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
+  
+      <div class="flex items-center gap-2">
+        <div class="w-8 text-[#636363]">
+          <i class="fa-regular fa-file-image fa-2x"></i>
+        </div>
+        <div class="flex-1">
+          <p>Layout.png</p>
+          <div class="progress-bar | relative h-5 rounded border-2 border-sky-600" style="--progress: 100%"></div>
+          <div class="flex items-center justify-end gap-4">
+            <button class="text-sm text-orange-400 underline" data-pause>Pause</button>
+            <button class="text-sm text-orange-400 underline" data-share>Share link</button>
+            <button class="text-sm text-orange-400 underline" data-view>View file</button>
+          </div>
+        </div>
+        <button data-delete-upload>
+          <span class="sr-only">Delete</span>
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
+    </div>
+    <div class="relative isolate py-10" id="drop-area">
+      <i class="fa-solid fa-cloud absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 text-[10.5rem] text-sky-200" aria-hidden="true"></i>
+      <form class="flex flex-col items-center gap-2" id="file-upload-form">
+        <p>Drag and drop files here</p>
+        <span class="uppercase">or</span>
+        <input class="appearence-none absolute inset-0 opacity-0" type="file" name="file-upload" id="file-upload" multiple="true" />
+        <label class="rounded border-b-4 border-b-orange-600 bg-orange-400 px-4 py-2 font-semibold uppercase text-white shadow-md" for="file-upload" id="file-upload-btn">Select files</label>
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
